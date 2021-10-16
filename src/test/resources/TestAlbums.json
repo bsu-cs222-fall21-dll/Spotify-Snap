@@ -1,0 +1,231 @@
+
+{
+  "href": "https://api.spotify.com/v1/artists/7dGJo4pcD2V6oG8kP0tJRR/albums?offset=0&limit=5&include_groups=album&market=NA",
+  "items": [
+    {
+      "album_group": "album",
+      "album_type": "album",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/7dGJo4pcD2V6oG8kP0tJRR"
+          },
+          "href": "https://api.spotify.com/v1/artists/7dGJo4pcD2V6oG8kP0tJRR",
+          "id": "7dGJo4pcD2V6oG8kP0tJRR",
+          "name": "Eminem",
+          "type": "artist",
+          "uri": "spotify:artist:7dGJo4pcD2V6oG8kP0tJRR"
+        }
+      ],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/3MKvhQoFSrR2PrxXXBHe9B"
+      },
+      "href": "https://api.spotify.com/v1/albums/3MKvhQoFSrR2PrxXXBHe9B",
+      "id": "3MKvhQoFSrR2PrxXXBHe9B",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b273b84b0516d901f95461bb5165",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e02b84b0516d901f95461bb5165",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d00004851b84b0516d901f95461bb5165",
+          "width": 64
+        }
+      ],
+      "name": "Music To Be Murdered By - Side B (Deluxe Edition)",
+      "release_date": "2020-12-18",
+      "release_date_precision": "day",
+      "total_tracks": 36,
+      "type": "album",
+      "uri": "spotify:album:3MKvhQoFSrR2PrxXXBHe9B"
+    },
+    {
+      "album_group": "album",
+      "album_type": "album",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/7dGJo4pcD2V6oG8kP0tJRR"
+          },
+          "href": "https://api.spotify.com/v1/artists/7dGJo4pcD2V6oG8kP0tJRR",
+          "id": "7dGJo4pcD2V6oG8kP0tJRR",
+          "name": "Eminem",
+          "type": "artist",
+          "uri": "spotify:artist:7dGJo4pcD2V6oG8kP0tJRR"
+        }
+      ],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/7JhGOo4ojHVgNbFdxHGUgD"
+      },
+      "href": "https://api.spotify.com/v1/albums/7JhGOo4ojHVgNbFdxHGUgD",
+      "id": "7JhGOo4ojHVgNbFdxHGUgD",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b2736851bc06fc0d85bbe74cffd7",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e026851bc06fc0d85bbe74cffd7",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d000048516851bc06fc0d85bbe74cffd7",
+          "width": 64
+        }
+      ],
+      "name": "Music To Be Murdered By - Side B (Deluxe Edition)",
+      "release_date": "2020-12-18",
+      "release_date_precision": "day",
+      "total_tracks": 36,
+      "type": "album",
+      "uri": "spotify:album:7JhGOo4ojHVgNbFdxHGUgD"
+    },
+    {
+      "album_group": "album",
+      "album_type": "album",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/7dGJo4pcD2V6oG8kP0tJRR"
+          },
+          "href": "https://api.spotify.com/v1/artists/7dGJo4pcD2V6oG8kP0tJRR",
+          "id": "7dGJo4pcD2V6oG8kP0tJRR",
+          "name": "Eminem",
+          "type": "artist",
+          "uri": "spotify:artist:7dGJo4pcD2V6oG8kP0tJRR"
+        }
+      ],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/4otkd9As6YaxxEkIjXPiZ6"
+      },
+      "href": "https://api.spotify.com/v1/albums/4otkd9As6YaxxEkIjXPiZ6",
+      "id": "4otkd9As6YaxxEkIjXPiZ6",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b2732f44aec83b20e40f3baef73c",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e022f44aec83b20e40f3baef73c",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d000048512f44aec83b20e40f3baef73c",
+          "width": 64
+        }
+      ],
+      "name": "Music To Be Murdered By",
+      "release_date": "2020-01-17",
+      "release_date_precision": "day",
+      "total_tracks": 20,
+      "type": "album",
+      "uri": "spotify:album:4otkd9As6YaxxEkIjXPiZ6"
+    },
+    {
+      "album_group": "album",
+      "album_type": "album",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/7dGJo4pcD2V6oG8kP0tJRR"
+          },
+          "href": "https://api.spotify.com/v1/artists/7dGJo4pcD2V6oG8kP0tJRR",
+          "id": "7dGJo4pcD2V6oG8kP0tJRR",
+          "name": "Eminem",
+          "type": "artist",
+          "uri": "spotify:artist:7dGJo4pcD2V6oG8kP0tJRR"
+        }
+      ],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/2LWLgGY15e9im0KUaASnFa"
+      },
+      "href": "https://api.spotify.com/v1/albums/2LWLgGY15e9im0KUaASnFa",
+      "id": "2LWLgGY15e9im0KUaASnFa",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b2730bb096916743c3b7852ea818",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e020bb096916743c3b7852ea818",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d000048510bb096916743c3b7852ea818",
+          "width": 64
+        }
+      ],
+      "name": "Music To Be Murdered By",
+      "release_date": "2020-01-17",
+      "release_date_precision": "day",
+      "total_tracks": 20,
+      "type": "album",
+      "uri": "spotify:album:2LWLgGY15e9im0KUaASnFa"
+    },
+    {
+      "album_group": "album",
+      "album_type": "album",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/7dGJo4pcD2V6oG8kP0tJRR"
+          },
+          "href": "https://api.spotify.com/v1/artists/7dGJo4pcD2V6oG8kP0tJRR",
+          "id": "7dGJo4pcD2V6oG8kP0tJRR",
+          "name": "Eminem",
+          "type": "artist",
+          "uri": "spotify:artist:7dGJo4pcD2V6oG8kP0tJRR"
+        }
+      ],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/3HNnxK7NgLXbDoxRZxNWiR"
+      },
+      "href": "https://api.spotify.com/v1/albums/3HNnxK7NgLXbDoxRZxNWiR",
+      "id": "3HNnxK7NgLXbDoxRZxNWiR",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b273e4073def0c03a91e3fceaf73",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e02e4073def0c03a91e3fceaf73",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d00004851e4073def0c03a91e3fceaf73",
+          "width": 64
+        }
+      ],
+      "name": "Kamikaze",
+      "release_date": "2018-08-31",
+      "release_date_precision": "day",
+      "total_tracks": 13,
+      "type": "album",
+      "uri": "spotify:album:3HNnxK7NgLXbDoxRZxNWiR"
+    }
+  ],
+  "limit": 5,
+  "next": "https://api.spotify.com/v1/artists/7dGJo4pcD2V6oG8kP0tJRR/albums?offset=5&limit=5&include_groups=album&market=NA",
+  "offset": 0,
+  "previous": null,
+  "total": 44
+}
