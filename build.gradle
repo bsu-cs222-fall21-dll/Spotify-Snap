@@ -15,6 +15,7 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
     // https://mvnrepository.com/artifact/se.michaelthelin.spotify/spotify-web-api-java
     implementation group: 'se.michaelthelin.spotify', name: 'spotify-web-api-java', version: '6.5.4'
+    implementation group: 'com.jayway.jsonpath', name: 'json-path', version: '2.6.0'
 
 }
 
