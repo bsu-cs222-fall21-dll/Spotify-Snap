@@ -30,3 +30,7 @@ Project is created with:
 ## Setup
 
 ## Known Errors
+
+##Credit
+* got code for retrieving access token from API, and other functions from dargmuesli
+* dargmuesli GitHub Repository: https://github.com/spotify-web-api-java/spotify-web-api-java
