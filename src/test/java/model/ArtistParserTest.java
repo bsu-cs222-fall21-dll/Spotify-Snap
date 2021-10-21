@@ -17,7 +17,7 @@ public class ArtistParserTest {
         JSONArray testArray = JsonPath.read(inputStream,"$.*");
         ArtistParser artistParser = new ArtistParser();
 
-        String result = artistParser.parseId(testArray);
+        String result = artistParser.parseArtistId(testArray);
         Assertions.assertEquals("1IQ2e1buppatiN1bxUVkrk",result);
 
     }
@@ -29,7 +29,7 @@ public class ArtistParserTest {
         JSONArray testArray = JsonPath.read(inputStream,"$.*");
         ArtistParser artistParser = new ArtistParser();
 
-        String result = artistParser.parseName(testArray);
+        String result = artistParser.parseArtistName(testArray);
         Assertions.assertEquals("Slayer",result);
 
     }
@@ -40,8 +40,19 @@ public class ArtistParserTest {
         JSONArray inputArray = JsonPath.read(inputStream,"$.*");
         ArtistParser artistParser = new ArtistParser();
 
-        String result = artistParser.parseUri(inputArray);
+        String result = artistParser.parseArtistUri(inputArray);
         Assertions.assertEquals("spotify:artist:1IQ2e1buppatiN1bxUVkrk",result);
+
+    }
+    @Test
+    public void parseArtistFollowersTotalTest() throws IOException {
+        InputStream inputStream = Thread.currentThread().getContextClassLoader()
+                .getResourceAsStream("TestArtist.json");
+        JSONArray inputArray = JsonPath.read(inputStream,"$.*");
+        ArtistParser artistParser = new ArtistParser();
+
+        String result = artistParser.parseArtistFollowersTotal(inputArray);
+        Assertions.assertEquals("2751373",result);
 
     }
 
