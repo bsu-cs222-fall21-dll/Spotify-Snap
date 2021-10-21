@@ -21,4 +21,28 @@ public class ArtistParserTest {
         Assertions.assertEquals("1IQ2e1buppatiN1bxUVkrk",result);
 
     }
+
+    @Test
+    public void parseNameTest() throws IOException {
+        InputStream inputStream = Thread.currentThread().getContextClassLoader()
+                .getResourceAsStream("TestArtist.json");
+        JSONArray testArray = JsonPath.read(inputStream,"$.*");
+        ArtistParser artistParser = new ArtistParser();
+
+        String result = artistParser.parseName(testArray);
+        Assertions.assertEquals("Slayer",result);
+
+    }
+    @Test
+    public void parseUriTest() throws IOException {
+        InputStream inputStream = Thread.currentThread().getContextClassLoader()
+                .getResourceAsStream("TestArtist.json");
+        JSONArray inputArray = JsonPath.read(inputStream,"$.*");
+        ArtistParser artistParser = new ArtistParser();
+
+        String result = artistParser.parseUri(inputArray);
+        Assertions.assertEquals("spotify:artist:1IQ2e1buppatiN1bxUVkrk",result);
+
+    }
+
 }
