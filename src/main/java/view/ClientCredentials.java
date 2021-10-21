@@ -5,13 +5,13 @@ public class ClientCredentials {
 
     public String getClientID() {
         System.out.println("Enter Client ID: ");
-        final String clientID = cmdInput.inputString();
+        final String clientID = cmdInput.inputStringViaCommandLine();
         return clientID;
     }
 
     public String getClientSecretID() {
         System.out.println("Enter Client Secret ID: ");
-        final String clientSecretID = cmdInput.inputString();
+        final String clientSecretID = cmdInput.inputStringViaCommandLine();
         return clientSecretID;
     }
 }

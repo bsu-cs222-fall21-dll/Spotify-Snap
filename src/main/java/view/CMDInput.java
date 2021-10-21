@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class CMDInput {
 
-    public String inputString(){
+    public String inputStringViaCommandLine(){
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();
     }
