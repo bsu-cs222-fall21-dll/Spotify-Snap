@@ -1,68 +1,41 @@
 package model;
 
 import com.wrapper.spotify.SpotifyApi;
+import com.wrapper.spotify.enums.ModelObjectType;
 import com.wrapper.spotify.exceptions.SpotifyWebApiException;
-import com.wrapper.spotify.model_objects.specification.Artist;
-import com.wrapper.spotify.model_objects.specification.Paging;
-import com.wrapper.spotify.requests.data.search.simplified.SearchArtistsRequest;
+import com.wrapper.spotify.model_objects.special.SearchResult;
+import com.wrapper.spotify.requests.data.search.SearchItemRequest;
 import org.apache.hc.core5.http.ParseException;
-
+import view.ArtistFinder;
 
 import java.io.IOException;
-import java.util.concurrent.CancellationException;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.CompletionException;
 
 public class findArtist {
-    ClientCredentialsAuthorization clientCredentialsAuthorization = new ClientCredentialsAuthorization();
+    getAccessToken getAccessToken = new getAccessToken();
+    ArtistFinder artistFinder = new ArtistFinder();
 
-    public  String clientAccessToken = clientCredentialsAuthorization.getAccessToken();
+    public String clientAccessToken = getAccessToken.getAccessToken();
 
-    private final String accessToken = "taHZ2SdB-bPA3FsK3D7ZN5npZS47cMy-IEySVEGttOhXmqaVAIo0ESvTCLjLBifhHOHOIuhFUKPW1WMDP7w6dj3MAZdWT8CLI2MkZaXbYLTeoDvXesf2eeiLYPBGdx8tIwQJKgV8XdnzH_DONk";
-    private final String q = "Abba";
+    private final String q = artistFinder.getArtist();
+    private final String type = ModelObjectType.ARTIST.getType();
 
     private final SpotifyApi spotifyApi = new SpotifyApi.Builder()
             .setAccessToken(clientAccessToken)
             .build();
-    private final SearchArtistsRequest searchArtistsRequest = spotifyApi.searchArtists(q)
-//          .market(CountryCode.SE)
-//          .limit(10)
-//          .offset(0)
-//          .includeExternal("audio")
-            .build();
+
+    private final SearchItemRequest searchItemRequest = spotifyApi.searchItem(q, type).build();
 
     public findArtist() throws IOException, ParseException, SpotifyWebApiException {
     }
 
     public void searchArtists_Sync() {
         try {
-            final Paging<Artist> artistPaging = searchArtistsRequest.execute();
+            final SearchResult searchResult = searchItemRequest.execute();
 
-            System.out.println("Total: " + artistPaging.getTotal());
+            System.out.println("Artist: " + searchResult.getArtists());
         } catch (IOException | SpotifyWebApiException | org.apache.hc.core5.http.ParseException e) {
             System.out.println("Error: " + e.getMessage());
         }
     }
 
-    public void searchArtists_Async() {
-        try {
-            final CompletableFuture<Paging<Artist>> pagingFuture = searchArtistsRequest.executeAsync();
-
-            // Thread free to do other tasks...
-
-            // Example Only. Never block in production code.
-            final Paging<Artist> artistPaging = pagingFuture.join();
-
-            System.out.println("Total: " + artistPaging.getTotal().toString());
-        } catch (CompletionException e) {
-            System.out.println("Error: " + e.getCause().getMessage());
-        } catch (CancellationException e) {
-            System.out.println("Async operation cancelled.");
-        }
-    }
-
-    public void main(String[] args) {
-        searchArtists_Sync();
-        searchArtists_Async();
-    }
 }
