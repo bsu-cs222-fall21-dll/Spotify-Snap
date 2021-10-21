@@ -8,17 +8,17 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class SearcherTest {
+public class ArtistParserTest {
 
     @Test
     public void parseIdTest() throws IOException {
         InputStream inputStream = Thread.currentThread().getContextClassLoader()
-                .getResourceAsStream("TestSearch.json");
+                .getResourceAsStream("TestArtist.json");
         JSONArray testArray = JsonPath.read(inputStream,"$.*");
-        Searcher searcher = new Searcher();
+        ArtistParser artistParser = new ArtistParser();
 
-        String result = searcher.parseId(testArray);
-        Assertions.assertEquals("7dGJo4pcD2V6oG8kP0tJRR",result);
+        String result = artistParser.parseId(testArray);
+        Assertions.assertEquals("1IQ2e1buppatiN1bxUVkrk",result);
 
     }
 }
