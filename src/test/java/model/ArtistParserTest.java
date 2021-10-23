@@ -31,8 +31,8 @@ public class ArtistParserTest {
 
         String result = artistParser.parseArtistName(testArray);
         Assertions.assertEquals("Slayer",result);
-
     }
+
     @Test
     public void parseUriTest() throws IOException {
         InputStream inputStream = Thread.currentThread().getContextClassLoader()

@@ -8,11 +8,12 @@ import view.ClientCredentials;
 
 import java.io.IOException;
 
-public class getAccessToken {
+public class GetAccessToken {
     ClientCredentials clientCredentials = new ClientCredentials();
 
     private final String clientId = clientCredentials.getClientID();
     private final String clientSecret = clientCredentials.getClientSecretID();
+
 
     private final SpotifyApi spotifyApi = new SpotifyApi.Builder()
             .setClientId(clientId)
