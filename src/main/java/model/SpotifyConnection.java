@@ -1,33 +1,38 @@
 package model;
 
+import io.restassured.RestAssured;
+import io.restassured.http.Method;
+import io.restassured.specification.RequestSpecification;
 import view.ClientCredentials;
+import view.UserInput;
 
 import javax.net.ssl.HttpsURLConnection;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
+
 public class SpotifyConnection {
 
-    public String accessToken() throws IOException {
+    ClientCredentials credentials = new ClientCredentials();
+    String clientID = credentials.getClientID();
+    String clientSecret = credentials.getClientSecretID();
 
-        JSONAccessToken parse = new JSONAccessToken();
+    private String accessToken() throws IOException {
+
+        AccessTokenParser parse = new AccessTokenParser();
         return parse.parseAccessToken(authorizeCredentials());
     }
 
-    public String encodeClientCredentials() {
-        ClientCredentials credentials = new ClientCredentials();
-        String clientID = credentials.getClientID();
-        String clientSecret = credentials.getClientSecretID();
+    private String encodeClientCredentials() {
         return Base64.getEncoder().encodeToString((clientID + ":" + clientSecret).getBytes(StandardCharsets.UTF_8));
     }
 
 
-    public String authorizeCredentials() throws IOException {
+    private String authorizeCredentials() throws IOException {
         //This method is authorizing the credentials and reading the access token sent from spotify
         URL url = new URL("https://accounts.spotify.com/api/token");
         HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
@@ -49,29 +54,24 @@ public class SpotifyConnection {
         }
 
         InputStream inputStream = connection.getInputStream();
-        String accessToken = new String(inputStream.readAllBytes());
-        //System.out.println(accessToken);
-        return accessToken;
+        return new String(inputStream.readAllBytes());
     }
 
 
-    public void searchItemRequest() throws IOException {
-        String query = "https://api.spotify.com/v1/search"+ "?" + "q=Drake&type=artist"; //TODO this causes error code 400, need correct format
+    public String searchItemRequest() throws IOException {
+        UserInput input = new UserInput();
+        RestAssured.baseURI = "https://api.spotify.com/v1";
 
-        URL url = new URL(query);
-        HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
-        connection.setDoOutput(true);
+        RequestSpecification http = RestAssured.given();
+        String response =  http.given()
+                .header("Authorization", String.format("Bearer %s" , accessToken())).given()
+                .param("q",input.getArtist())
+                .param("type", input.getTypes())
 
-        connection.setRequestMethod("GET");
-        connection.setRequestProperty("Content-Type", "application/json");
-        connection.setRequestProperty("Authorization ", String.format("Bearer %s", accessToken()));
+                .request(Method.GET, "/search").asString();
+        System.out.println(response);
 
-        connection.connect();
-
-        InputStream inputStream = connection.getInputStream();
-        String data = new String(inputStream.readAllBytes());
-        System.out.println(data);
-
+        return response;
     }
 
     public static void main(String[] args) throws IOException {

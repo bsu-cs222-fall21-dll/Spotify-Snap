@@ -17,7 +17,7 @@ dependencies {
     implementation group: 'se.michaelthelin.spotify', name: 'spotify-web-api-java', version: '6.5.4'
     implementation group: 'com.jayway.jsonpath', name: 'json-path', version: '2.6.0'
     // https://mvnrepository.com/artifact/io.rest-assured/rest-assured
-    testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '4.4.0'
+    implementation group: 'io.rest-assured', name: 'rest-assured', version: '4.4.0'
 
 }
 

@@ -5,15 +5,17 @@ public class UserInput {
     CMDInput cmdInput = new CMDInput();
 
     public String getArtist() {
-        System.out.println("Enter artist:");
+        System.out.println("Enter search:\n");
         return cmdInput.inputStringViaCommandLine();
     }
 
     public String getTypes() {
         System.out.println("""
                 Valid Types are album, artist, playlist, track, show and episode
-
-                Enter type:
+                
+                Enter search type:
+                
+               
                 """);
         return cmdInput.inputStringViaCommandLine();
     }
