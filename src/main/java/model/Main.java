@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException, ParseException, SpotifyWebApiException {
-        findArtist findArtist = new findArtist();
-        findArtist.searchArtists_Sync();
+        //findArtist findArtist = new findArtist();
+        //findArtist.searchArtists_Sync();
     }
 }

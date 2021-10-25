@@ -9,7 +9,7 @@ public class UserInput {
         return cmdInput.inputStringViaCommandLine();
     }
 
-    public String getType() {
+    public String getTypes() {
         System.out.println("""
                 Valid Types are album, artist, playlist, track, show and episode
 
