@@ -56,21 +56,16 @@ public class SpotifyConnection {
 
 
     public void searchItemRequest() throws IOException {
-        URL url = new URL("https://api.spotify.com/v1/search");
+        String query = "https://api.spotify.com/v1/search"+ "?" + "q=Drake&type=artist"; //TODO this causes error code 400, need correct format
+
+        URL url = new URL(query);
         HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
         connection.setDoOutput(true);
 
         connection.setRequestMethod("GET");
         connection.setRequestProperty("Content-Type", "application/json");
         connection.setRequestProperty("Authorization ", String.format("Bearer %s", accessToken()));
-        /*
-        String query = "q=Drake" + "type=artist"; //TODO this causes error code 400, need correct format
 
-        byte[] output = query.getBytes(StandardCharsets.UTF_8);
-        int length = output.length;
-        connection.setFixedLengthStreamingMode(length);
-
-         */
         connection.connect();
 
         InputStream inputStream = connection.getInputStream();
