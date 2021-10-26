@@ -1,8 +1,10 @@
 package model;
 
+import com.jayway.jsonpath.JsonPath;
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.specification.RequestSpecification;
+import net.minidev.json.JSONArray;
 import view.ClientCredentials;
 import view.UserInput;
 
@@ -58,7 +60,7 @@ public class SpotifyConnection {
     }
 
 
-    public String searchItemRequest() throws IOException {
+    public JSONArray searchItemRequest() throws IOException {
         UserInput input = new UserInput();
         RestAssured.baseURI = "https://api.spotify.com/v1";
 
@@ -69,15 +71,9 @@ public class SpotifyConnection {
                 .param("type", input.getTypes())
 
                 .request(Method.GET, "/search").asString();
-        System.out.println(response);
-
-        return response;
+        return JsonPath.read(response,"$..items");
     }
 
-    public static void main(String[] args) throws IOException {
-        SpotifyConnection spotifyConnection = new SpotifyConnection();
-        spotifyConnection.searchItemRequest();
-    }
 
 }
 
