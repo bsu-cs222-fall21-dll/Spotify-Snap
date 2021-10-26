@@ -8,19 +8,19 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class ArtistTest {
+public class SnapArtistTest {
 
     @Test
     public void readArtistInfoAsJsonTest() throws IOException {
         InputStream inputStream = Thread.currentThread().getContextClassLoader()
-                .getResourceAsStream("TestArtist.json");
-        JSONArray inputArray = JsonPath.read(inputStream,"$.*");
+                .getResourceAsStream("newResults.json");
+        JSONArray inputArray = JsonPath.read(inputStream,"$..items");
 
-        Artist testArtist = new Artist(inputArray);
-        String testJsonString = "{\"artist\": [{\"name\": \"Slayer\", \"id\": \"1IQ2e1buppatiN1bxUVkrk\",\"uri\": " +
-                "\"spotify:artist:1IQ2e1buppatiN1bxUVkrk\", \"total\": \"2751373\"}]}";
+        SnapArtist testSnapArtist = new SnapArtist(inputArray);
+        String testJsonString = "{\"artist\": [{\"name\": \"Drake\", \"id\": \"3TVXtAsR1Inumwj472S9r4\",\"uri\": " +
+                "\"spotify:artist:3TVXtAsR1Inumwj472S9r4\", \"total\": \"58055243\"}]}";
 
-        JSONArray artistJsonArray = testArtist.readArtistInfoAsJson();
+        JSONArray artistJsonArray = testSnapArtist.readArtistInfoAsJson();
         JSONArray testArray = JsonPath.read(testJsonString,"$.*");
         Assertions.assertEquals(testArray,artistJsonArray);
     }

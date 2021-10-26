@@ -1,5 +1,7 @@
 package view;
 
+import java.util.Locale;
+
 public class UserInput {
 
     CMDInput cmdInput = new CMDInput();
@@ -17,6 +19,6 @@ public class UserInput {
                 
                
                 """);
-        return cmdInput.inputStringViaCommandLine();
+        return cmdInput.inputStringViaCommandLine().toLowerCase(Locale.ROOT);
     }
 }

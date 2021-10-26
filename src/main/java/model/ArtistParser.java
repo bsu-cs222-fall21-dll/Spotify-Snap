@@ -8,17 +8,17 @@ public class ArtistParser {
     //indexes are used to find the correct position of the data we need in the json
 
     public String parseArtistId(JSONArray inputArray) {
-        JSONArray arrayContents = JsonPath.read(inputArray, "$..[4]");
+        JSONArray arrayContents = JsonPath.read(inputArray, "$..id");
         return arrayContents.get(0).toString();
     }
 
     public String parseArtistName(JSONArray inputArray) {
-        JSONArray arrayContents = JsonPath.read(inputArray, "$..[6]");
+        JSONArray arrayContents = JsonPath.read(inputArray, "$..name");
         return arrayContents.get(0).toString();
     }
 
     public String parseArtistUri(JSONArray inputArray) {
-        JSONArray arrayContents = JsonPath.read(inputArray, "$..[9]");
+        JSONArray arrayContents = JsonPath.read(inputArray, "$..uri");
         return arrayContents.get(0).toString();
     }
 
