@@ -4,32 +4,26 @@ import com.jayway.jsonpath.JsonPath;
 import net.minidev.json.JSONArray;
 
 public class ArtistFormatter {
-    public String formatSnapArtist(SnapArtist snapArtist) {
-        JSONArray artistArray = snapArtist.readArtistInfoAsJson();
-        String name = formatName(artistArray);
 
-        String id = formatID(artistArray);
-        String uri = formatUri(artistArray);
-        String total = formatTotal(artistArray);
+    private JSONArray artistArray;
+
+    public ArtistFormatter(SnapArtist snapArtist) {
+        this.artistArray = snapArtist.readArtistInfoAsJson();
+    }
+
+    public String formatSnapArtist() {
+
+        String name = formatValueInArtistJson("name");
+        String id = formatValueInArtistJson("id");
+        String uri = formatValueInArtistJson("uri");
+        String total = formatValueInArtistJson("total");
 
         return String.format("Name: %s\nId: %s\nUri: %s\nFollower Total: %s",
                 name,id,uri,total);
     }
 
-    private String formatName(JSONArray artistArray){
-        JSONArray nameArray = JsonPath.read(artistArray, "$..name");
-        return nameArray.get(0).toString();
-    }
-    private String formatID(JSONArray artistArray){
-        JSONArray idArray = JsonPath.read(artistArray, "$..id");
-        return idArray.get(0).toString();
-    }
-    private String formatUri(JSONArray artistArray){
-        JSONArray uriArray = JsonPath.read(artistArray, "$..uri");
-        return uriArray.get(0).toString();
-    }
-    private String formatTotal(JSONArray artistArray){
-        JSONArray totalArray = JsonPath.read(artistArray, "$..total");
-        return totalArray.get(0).toString();
+    private String formatValueInArtistJson(String valueToBeRead) {
+        JSONArray itemArray = JsonPath.read(artistArray, String.format("$..%s", valueToBeRead));
+        return itemArray.get(0).toString();
     }
 }

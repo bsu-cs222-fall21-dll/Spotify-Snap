@@ -14,7 +14,7 @@ public class CMDController {
         JSONArray artistSearchResultJsonArray = spotifyConnection.searchItemRequest();
         SnapArtist resultArtist = new SnapArtist(artistSearchResultJsonArray);
 
-        ArtistFormatter artistFormatter = new ArtistFormatter();
-        System.out.println(artistFormatter.formatSnapArtist(resultArtist));
+        ArtistFormatter artistFormatter = new ArtistFormatter(resultArtist);
+        System.out.println(artistFormatter.formatSnapArtist());
     }
 }

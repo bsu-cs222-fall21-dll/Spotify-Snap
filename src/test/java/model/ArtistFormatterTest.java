@@ -17,8 +17,8 @@ public class ArtistFormatterTest {
 
 
         SnapArtist snapArtist = new SnapArtist(testArray);
-        ArtistFormatter artistFormatter = new ArtistFormatter();
-        String formattedArtist = artistFormatter.formatSnapArtist(snapArtist);
+        ArtistFormatter artistFormatter = new ArtistFormatter(snapArtist);
+        String formattedArtist = artistFormatter.formatSnapArtist();
 
         String expected = "Name: Drake\nId: 3TVXtAsR1Inumwj472S9r4\nUri: spotify:artist:3TVXtAsR1Inumwj472S9r4\nFollower Total: 58055243";
         Assertions.assertEquals(expected,formattedArtist);
