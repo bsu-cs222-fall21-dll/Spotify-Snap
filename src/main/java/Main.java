@@ -1,5 +1,4 @@
 import Controller.CMDController;
-import model.SpotifyConnection;
 
 import java.io.IOException;
 
