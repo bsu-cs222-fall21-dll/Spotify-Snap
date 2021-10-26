@@ -1,5 +1,6 @@
 Spotify Snap
 
+This application is for users who are trying to pull live data about their favorite artists. Requires entering of a client id and secret as password hiding, is not quite ready thus making this project more for developers trying to pull basic data.
 
 ## General info
 This is the v0.1.0 release.
@@ -14,6 +15,7 @@ Eyvn King
 Gerardo Garcia
 
 ## Main Entrypoints
+* Main.java: Run to use application with the command line.
 
 ## Technologies
 Project is created with:
@@ -21,26 +23,22 @@ Project is created with:
 * junit-jupiter: 5.8.0
 * junit-jupiter-params: 5.8.0
 * org.openjfx.javafxplugin: 0.07
+* REST API (also known as RESTful API): 4.4.0
 * junit: 5.8
 * json-path: 2.6.0
 
 ## Features
-Enter an artist name and return very basic info via the command line
-
+* Enter an artist name and return very basic info via the command line
+* Returns searched artists name, ID, URL, and total followers.
 
 ## Setup
-Current entry point is Main.java. It is recommended to run this in intellij Idea and right click run on Main.
+To run this project, clone this repository, and download the dependencies and plugins listed in build.gradle.
 
 ## Known Errors
-Requires entering of a client id and secret as password hiding is not quite ready thus making this project more for developrs
-and very enthusiastic power users
-
 The following messages still appear in the compiler due to gradle settings
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
 
+I believe these are a problem with gradle and don't affect the program.
 
-##Credit
-* got code for retrieving access token from API, and other functions from dargmuesli
-* dargmuesli GitHub Repository: https://github.com/spotify-web-api-java/spotify-web-api-java
