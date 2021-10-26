@@ -1,0 +1,493 @@
+{
+  "artists" : {
+    "href" : "https://api.spotify.com/v1/search?query=Drake&type=artist&offset=0&limit=20",
+    "items" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/3TVXtAsR1Inumwj472S9r4"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 58055243
+      },
+      "genres" : [ "canadian hip hop", "canadian pop", "hip hop", "rap", "toronto rap" ],
+      "href" : "https://api.spotify.com/v1/artists/3TVXtAsR1Inumwj472S9r4",
+      "id" : "3TVXtAsR1Inumwj472S9r4",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/ab6761610000e5eb9e46a78c5cd2f7a8e7669980",
+        "width" : 640
+      }, {
+        "height" : 320,
+        "url" : "https://i.scdn.co/image/ab676161000051749e46a78c5cd2f7a8e7669980",
+        "width" : 320
+      }, {
+        "height" : 160,
+        "url" : "https://i.scdn.co/image/ab6761610000f1789e46a78c5cd2f7a8e7669980",
+        "width" : 160
+      } ],
+      "name" : "Drake",
+      "popularity" : 100,
+      "type" : "artist",
+      "uri" : "spotify:artist:3TVXtAsR1Inumwj472S9r4"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/0p4ViyfJUTW0IT4SCBLexf"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 184986
+      },
+      "genres" : [ "cali rap", "vapor trap" ],
+      "href" : "https://api.spotify.com/v1/artists/0p4ViyfJUTW0IT4SCBLexf",
+      "id" : "0p4ViyfJUTW0IT4SCBLexf",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/ab6761610000e5eba603aef1d62687aa6af6f01f",
+        "width" : 640
+      }, {
+        "height" : 320,
+        "url" : "https://i.scdn.co/image/ab67616100005174a603aef1d62687aa6af6f01f",
+        "width" : 320
+      }, {
+        "height" : 160,
+        "url" : "https://i.scdn.co/image/ab6761610000f178a603aef1d62687aa6af6f01f",
+        "width" : 160
+      } ],
+      "name" : "Drakeo the Ruler",
+      "popularity" : 65,
+      "type" : "artist",
+      "uri" : "spotify:artist:0p4ViyfJUTW0IT4SCBLexf"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/29ijED2bnnprp2TciAK1aO"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 79312
+      },
+      "genres" : [ "contemporary country" ],
+      "href" : "https://api.spotify.com/v1/artists/29ijED2bnnprp2TciAK1aO",
+      "id" : "29ijED2bnnprp2TciAK1aO",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/ab6761610000e5eb3af491f459fac4d1940d1313",
+        "width" : 640
+      }, {
+        "height" : 320,
+        "url" : "https://i.scdn.co/image/ab676161000051743af491f459fac4d1940d1313",
+        "width" : 320
+      }, {
+        "height" : 160,
+        "url" : "https://i.scdn.co/image/ab6761610000f1783af491f459fac4d1940d1313",
+        "width" : 160
+      } ],
+      "name" : "Drake White",
+      "popularity" : 55,
+      "type" : "artist",
+      "uri" : "spotify:artist:29ijED2bnnprp2TciAK1aO"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/5c3GLXai8YOMid29ZEuR9y"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 580820
+      },
+      "genres" : [ "british folk", "folk", "folk rock", "indie folk", "melancholia", "rock", "singer-songwriter" ],
+      "href" : "https://api.spotify.com/v1/artists/5c3GLXai8YOMid29ZEuR9y",
+      "id" : "5c3GLXai8YOMid29ZEuR9y",
+      "images" : [ {
+        "height" : 1484,
+        "url" : "https://i.scdn.co/image/d364b498f85ae764cd278fbba9a8ed7f00c3e434",
+        "width" : 1000
+      }, {
+        "height" : 950,
+        "url" : "https://i.scdn.co/image/087fb05851e498c2791ca99000acf35b0fd49f19",
+        "width" : 640
+      }, {
+        "height" : 297,
+        "url" : "https://i.scdn.co/image/9a74a7d885abe5da94ac812546d0146cfe4a1ceb",
+        "width" : 200
+      }, {
+        "height" : 95,
+        "url" : "https://i.scdn.co/image/267080662cf3c019ea8020a4e0e8dd5a7be4d909",
+        "width" : 64
+      } ],
+      "name" : "Nick Drake",
+      "popularity" : 64,
+      "type" : "artist",
+      "uri" : "spotify:artist:5c3GLXai8YOMid29ZEuR9y"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/03ilIKH0i08IxmjKcn63ne"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 353540
+      },
+      "genres" : [ "post-teen pop" ],
+      "href" : "https://api.spotify.com/v1/artists/03ilIKH0i08IxmjKcn63ne",
+      "id" : "03ilIKH0i08IxmjKcn63ne",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/ab6761610000e5ebf022697d475649654541eecc",
+        "width" : 640
+      }, {
+        "height" : 320,
+        "url" : "https://i.scdn.co/image/ab67616100005174f022697d475649654541eecc",
+        "width" : 320
+      }, {
+        "height" : 160,
+        "url" : "https://i.scdn.co/image/ab6761610000f178f022697d475649654541eecc",
+        "width" : 160
+      } ],
+      "name" : "Drake Bell",
+      "popularity" : 53,
+      "type" : "artist",
+      "uri" : "spotify:artist:03ilIKH0i08IxmjKcn63ne"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/0onYmFlLt2WsFEL5YzEhEz"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 43
+      },
+      "genres" : [ ],
+      "href" : "https://api.spotify.com/v1/artists/0onYmFlLt2WsFEL5YzEhEz",
+      "id" : "0onYmFlLt2WsFEL5YzEhEz",
+      "images" : [ ],
+      "name" : "Drakeo The Ruler",
+      "popularity" : 37,
+      "type" : "artist",
+      "uri" : "spotify:artist:0onYmFlLt2WsFEL5YzEhEz"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/2m5ti7YuYYCVs8xfZgnVkx"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 13883
+      },
+      "genres" : [ ],
+      "href" : "https://api.spotify.com/v1/artists/2m5ti7YuYYCVs8xfZgnVkx",
+      "id" : "2m5ti7YuYYCVs8xfZgnVkx",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/ab67616d0000b2737645656d7c2dc87d84204986",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/ab67616d00001e027645656d7c2dc87d84204986",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/ab67616d000048517645656d7c2dc87d84204986",
+        "width" : 64
+      } ],
+      "name" : "Drake",
+      "popularity" : 6,
+      "type" : "artist",
+      "uri" : "spotify:artist:2m5ti7YuYYCVs8xfZgnVkx"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/4OBEXKiH8BvUmMaAwW9ZUN"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 6
+      },
+      "genres" : [ ],
+      "href" : "https://api.spotify.com/v1/artists/4OBEXKiH8BvUmMaAwW9ZUN",
+      "id" : "4OBEXKiH8BvUmMaAwW9ZUN",
+      "images" : [ ],
+      "name" : "Drakeo The Ruler",
+      "popularity" : 33,
+      "type" : "artist",
+      "uri" : "spotify:artist:4OBEXKiH8BvUmMaAwW9ZUN"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/7rvB7ONJSqlmaCrcbhelir"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 8403
+      },
+      "genres" : [ "la pop" ],
+      "href" : "https://api.spotify.com/v1/artists/7rvB7ONJSqlmaCrcbhelir",
+      "id" : "7rvB7ONJSqlmaCrcbhelir",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/ab6761610000e5eb51e4f176590eb53ad702f404",
+        "width" : 640
+      }, {
+        "height" : 320,
+        "url" : "https://i.scdn.co/image/ab6761610000517451e4f176590eb53ad702f404",
+        "width" : 320
+      }, {
+        "height" : 160,
+        "url" : "https://i.scdn.co/image/ab6761610000f17851e4f176590eb53ad702f404",
+        "width" : 160
+      } ],
+      "name" : "Jamie Drake",
+      "popularity" : 44,
+      "type" : "artist",
+      "uri" : "spotify:artist:7rvB7ONJSqlmaCrcbhelir"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/4A9luWHjT9sLC0ZFZ3TmpS"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 16
+      },
+      "genres" : [ ],
+      "href" : "https://api.spotify.com/v1/artists/4A9luWHjT9sLC0ZFZ3TmpS",
+      "id" : "4A9luWHjT9sLC0ZFZ3TmpS",
+      "images" : [ ],
+      "name" : "Drake",
+      "popularity" : 7,
+      "type" : "artist",
+      "uri" : "spotify:artist:4A9luWHjT9sLC0ZFZ3TmpS"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/4W9G3Vnt9eXWTo4VeOQkSa"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 2437
+      },
+      "genres" : [ ],
+      "href" : "https://api.spotify.com/v1/artists/4W9G3Vnt9eXWTo4VeOQkSa",
+      "id" : "4W9G3Vnt9eXWTo4VeOQkSa",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/ab67616d0000b2734e40f50e0793eb7423dc056d",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/ab67616d00001e024e40f50e0793eb7423dc056d",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/ab67616d000048514e40f50e0793eb7423dc056d",
+        "width" : 64
+      } ],
+      "name" : "Drake",
+      "popularity" : 1,
+      "type" : "artist",
+      "uri" : "spotify:artist:4W9G3Vnt9eXWTo4VeOQkSa"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/5M7hCkA0s91a3BqfktxLfK"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 4582
+      },
+      "genres" : [ "christian indie" ],
+      "href" : "https://api.spotify.com/v1/artists/5M7hCkA0s91a3BqfktxLfK",
+      "id" : "5M7hCkA0s91a3BqfktxLfK",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/ab6761610000e5ebfeca4e21881d405efcf3231b",
+        "width" : 640
+      }, {
+        "height" : 320,
+        "url" : "https://i.scdn.co/image/ab67616100005174feca4e21881d405efcf3231b",
+        "width" : 320
+      }, {
+        "height" : 160,
+        "url" : "https://i.scdn.co/image/ab6761610000f178feca4e21881d405efcf3231b",
+        "width" : 160
+      } ],
+      "name" : "Drakeford",
+      "popularity" : 33,
+      "type" : "artist",
+      "uri" : "spotify:artist:5M7hCkA0s91a3BqfktxLfK"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/3KLA7mvD10XxcjRbo3uTdB"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 10139
+      },
+      "genres" : [ "scorecore", "soundtrack", "video game music" ],
+      "href" : "https://api.spotify.com/v1/artists/3KLA7mvD10XxcjRbo3uTdB",
+      "id" : "3KLA7mvD10XxcjRbo3uTdB",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/ab67616d0000b273fded328c6ba87b43251c5abb",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/ab67616d00001e02fded328c6ba87b43251c5abb",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/ab67616d00004851fded328c6ba87b43251c5abb",
+        "width" : 64
+      } ],
+      "name" : "Christopher Drake",
+      "popularity" : 40,
+      "type" : "artist",
+      "uri" : "spotify:artist:3KLA7mvD10XxcjRbo3uTdB"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/7oG6EHNxDqfG1Ua0BvJamw"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 297
+      },
+      "genres" : [ ],
+      "href" : "https://api.spotify.com/v1/artists/7oG6EHNxDqfG1Ua0BvJamw",
+      "id" : "7oG6EHNxDqfG1Ua0BvJamw",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/ab6761610000e5ebbeb55471595ec92050a92ab5",
+        "width" : 640
+      }, {
+        "height" : 320,
+        "url" : "https://i.scdn.co/image/ab67616100005174beb55471595ec92050a92ab5",
+        "width" : 320
+      }, {
+        "height" : 160,
+        "url" : "https://i.scdn.co/image/ab6761610000f178beb55471595ec92050a92ab5",
+        "width" : 160
+      } ],
+      "name" : "Drake",
+      "popularity" : 1,
+      "type" : "artist",
+      "uri" : "spotify:artist:7oG6EHNxDqfG1Ua0BvJamw"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/6ngQXmcwKjGqfKIxpuevPm"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 3
+      },
+      "genres" : [ ],
+      "href" : "https://api.spotify.com/v1/artists/6ngQXmcwKjGqfKIxpuevPm",
+      "id" : "6ngQXmcwKjGqfKIxpuevPm",
+      "images" : [ ],
+      "name" : "Drakeo the Ruler",
+      "popularity" : 26,
+      "type" : "artist",
+      "uri" : "spotify:artist:6ngQXmcwKjGqfKIxpuevPm"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/2y7pPMQioLwMFUKhK9Pyow"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 7874
+      },
+      "genres" : [ "british singer-songwriter" ],
+      "href" : "https://api.spotify.com/v1/artists/2y7pPMQioLwMFUKhK9Pyow",
+      "id" : "2y7pPMQioLwMFUKhK9Pyow",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/ab6761610000e5ebac9220c075a8d2ade93f1a17",
+        "width" : 640
+      }, {
+        "height" : 320,
+        "url" : "https://i.scdn.co/image/ab67616100005174ac9220c075a8d2ade93f1a17",
+        "width" : 320
+      }, {
+        "height" : 160,
+        "url" : "https://i.scdn.co/image/ab6761610000f178ac9220c075a8d2ade93f1a17",
+        "width" : 160
+      } ],
+      "name" : "Eleni Drake",
+      "popularity" : 42,
+      "type" : "artist",
+      "uri" : "spotify:artist:2y7pPMQioLwMFUKhK9Pyow"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/4PrHn62sbAwEY2TkPYXOxN"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 34
+      },
+      "genres" : [ ],
+      "href" : "https://api.spotify.com/v1/artists/4PrHn62sbAwEY2TkPYXOxN",
+      "id" : "4PrHn62sbAwEY2TkPYXOxN",
+      "images" : [ ],
+      "name" : "Drake",
+      "popularity" : 1,
+      "type" : "artist",
+      "uri" : "spotify:artist:4PrHn62sbAwEY2TkPYXOxN"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/6ZHXjIaTeFamrqlcfWYvbC"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 13
+      },
+      "genres" : [ ],
+      "href" : "https://api.spotify.com/v1/artists/6ZHXjIaTeFamrqlcfWYvbC",
+      "id" : "6ZHXjIaTeFamrqlcfWYvbC",
+      "images" : [ ],
+      "name" : "Drakeo the Ruler",
+      "popularity" : 25,
+      "type" : "artist",
+      "uri" : "spotify:artist:6ZHXjIaTeFamrqlcfWYvbC"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/4JyqVVSF1Zj6EJhdMQp5Fq"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 65
+      },
+      "genres" : [ ],
+      "href" : "https://api.spotify.com/v1/artists/4JyqVVSF1Zj6EJhdMQp5Fq",
+      "id" : "4JyqVVSF1Zj6EJhdMQp5Fq",
+      "images" : [ ],
+      "name" : "Drake",
+      "popularity" : 0,
+      "type" : "artist",
+      "uri" : "spotify:artist:4JyqVVSF1Zj6EJhdMQp5Fq"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/4mskfuiHWZ3nX3qAdeaGiR"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 587
+      },
+      "genres" : [ ],
+      "href" : "https://api.spotify.com/v1/artists/4mskfuiHWZ3nX3qAdeaGiR",
+      "id" : "4mskfuiHWZ3nX3qAdeaGiR",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/ab6761610000e5eb5364222e4e685b9908ab8442",
+        "width" : 640
+      }, {
+        "height" : 320,
+        "url" : "https://i.scdn.co/image/ab676161000051745364222e4e685b9908ab8442",
+        "width" : 320
+      }, {
+        "height" : 160,
+        "url" : "https://i.scdn.co/image/ab6761610000f1785364222e4e685b9908ab8442",
+        "width" : 160
+      } ],
+      "name" : "Drake Milligan",
+      "popularity" : 25,
+      "type" : "artist",
+      "uri" : "spotify:artist:4mskfuiHWZ3nX3qAdeaGiR"
+    } ],
+    "limit" : 20,
+    "next" : "https://api.spotify.com/v1/search?query=Drake&type=artist&offset=20&limit=20",
+    "offset" : 0,
+    "previous" : null,
+    "total" : 919
+  }
+}
+
+
