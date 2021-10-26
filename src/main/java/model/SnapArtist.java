@@ -3,13 +3,13 @@ package model;
 import com.jayway.jsonpath.JsonPath;
 import net.minidev.json.JSONArray;
 
-public class Artist {
+public class SnapArtist {
     private String name;
     private String id;
     private String uri;
     private String followerCount;
 
-    public Artist(JSONArray inputArray) {
+    public SnapArtist(JSONArray inputArray) {
         ArtistParser artistParser = new ArtistParser();
         this.name = artistParser.parseArtistName(inputArray);
         this.id = artistParser.parseArtistId(inputArray);
