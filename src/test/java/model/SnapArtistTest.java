@@ -17,8 +17,10 @@ public class SnapArtistTest {
         JSONArray inputArray = JsonPath.read(inputStream,"$..items");
 
         SnapArtist testSnapArtist = new SnapArtist(inputArray);
-        String testJsonString = "{\"artist\": [{\"name\": \"Drake\", \"id\": \"3TVXtAsR1Inumwj472S9r4\",\"uri\": " +
-                "\"spotify:artist:3TVXtAsR1Inumwj472S9r4\", \"total\": \"58055243\"}]}";
+        String testJsonString = "[[{\"name\":\"Drake\"," +
+                "\"id\":\"3TVXtAsR1Inumwj472S9r4\",\"uri\":\"spotify:artist:3TVXtAsR1Inumwj472S9r4\"," +
+                "\"url\":\"https:\\/\\/open.spotify.com\\/artist\\/3TVXtAsR1Inumwj472S9r4\"," +
+                "\"total\":\"58055243\"}]]";
 
         JSONArray artistJsonArray = testSnapArtist.readArtistInfoAsJson();
         JSONArray testArray = JsonPath.read(testJsonString,"$.*");

@@ -19,10 +19,6 @@ import java.util.Base64;
 
 public class SpotifyConnection {
 
-    ClientCredentials credentials = new ClientCredentials();
-    String clientID = credentials.getClientID();
-    String clientSecret = credentials.getClientSecretID();
-
     private String accessToken() throws IOException {
 
         AccessTokenParser parse = new AccessTokenParser();
@@ -30,6 +26,10 @@ public class SpotifyConnection {
     }
 
     private String encodeClientCredentials() {
+        ClientCredentials credentials = new ClientCredentials();
+        String clientID = credentials.getClientID();
+        String clientSecret = credentials.getClientSecretID();
+
         return Base64.getEncoder().encodeToString((clientID + ":" + clientSecret).getBytes(StandardCharsets.UTF_8));
     }
 
@@ -68,7 +68,7 @@ public class SpotifyConnection {
         String response =  http.given()
                 .header("Authorization", String.format("Bearer %s" , accessToken())).given()
                 .param("q",input.getArtist())
-                .param("type", input.getTypes())
+                .param("type", "artist")
 
                 .request(Method.GET, "/search").asString();
         return JsonPath.read(response,"$..items");

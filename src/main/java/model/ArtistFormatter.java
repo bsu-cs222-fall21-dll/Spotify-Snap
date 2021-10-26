@@ -5,7 +5,7 @@ import net.minidev.json.JSONArray;
 
 public class ArtistFormatter {
 
-    private JSONArray artistArray;
+    private final JSONArray artistArray;
 
     public ArtistFormatter(SnapArtist snapArtist) {
         this.artistArray = snapArtist.readArtistInfoAsJson();
@@ -16,10 +16,11 @@ public class ArtistFormatter {
         String name = formatValueInArtistJson("name");
         String id = formatValueInArtistJson("id");
         String uri = formatValueInArtistJson("uri");
+        String url = formatValueInArtistJson("url");
         String total = formatValueInArtistJson("total");
 
-        return String.format("Name: %s\nId: %s\nUri: %s\nFollower Total: %s",
-                name,id,uri,total);
+        return String.format("Name: %s\nId: %s\nExternal URL: %s\nUri: %s\nFollower Total: %s",
+                name,id,url,uri,total);
     }
 
     private String formatValueInArtistJson(String valueToBeRead) {

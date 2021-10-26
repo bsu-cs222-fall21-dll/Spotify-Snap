@@ -21,6 +21,11 @@ public class ArtistParser {
         return arrayContents.get(0).toString();
     }
 
+    public String parseExternalUrl(JSONArray inputArray) {
+        JSONArray arrayContents = JsonPath.read(inputArray, "$..spotify");
+        return arrayContents.get(0).toString();
+    }
+
     public String parseArtistFollowersTotal(JSONArray inputArray) {
         JSONArray arrayContents = JsonPath.read(inputArray, "$..total");
         return arrayContents.get(0).toString();
