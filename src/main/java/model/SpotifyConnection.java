@@ -74,6 +74,24 @@ public class SpotifyConnection {
         return JsonPath.read(response,"$..items");
     }
 
+    public void searchAlbumRequest() throws IOException {
+        String id = "3TVXtAsR1Inumwj472S9r4";
+        RestAssured.baseURI = "https://api.spotify.com/v1";
+
+        RequestSpecification http = RestAssured.given();
+
+        String response = http.given()
+                .header("Authorization", String.format("Bearer %s" , accessToken())).given()
+                .request(Method.GET, String.format("/artists/%s/albums", id)).asString();
+        System.out.println(response);
+
+    }
+
+    public static void main(String[] args) throws IOException {
+        SpotifyConnection connection = new SpotifyConnection();
+        connection.searchAlbumRequest();
+    }
+
 
 }
 
