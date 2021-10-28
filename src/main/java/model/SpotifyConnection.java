@@ -62,7 +62,7 @@ public class SpotifyConnection {
         return JsonPath.read(response,"$..items");
     }
 
-    public JSONArray searchAlbumRequest(String id) {
+    public JSONArray searchAlbumRequest(SnapArtist snapArtist) {
         /**
          * This method sends a GET request to the /albums/{id} endpoint.
          *
@@ -72,6 +72,7 @@ public class SpotifyConnection {
          *
          * @return: Spotify catalog information for a single album.
          */
+        String id = JsonPath.read(snapArtist.readArtistInfoAsJson(), "$..id");
         RestAssured.baseURI = "https://api.spotify.com/v1";
 
         RequestSpecification http = RestAssured.given();
@@ -79,7 +80,7 @@ public class SpotifyConnection {
         String response = http.given()
                 .header("Authorization", String.format("Bearer %s" , accessToken())).given()
                 .request(Method.GET, String.format("/artists/%s/albums", id)).asString();
-        return JsonPath.read(response, "$..name");
+        return JsonPath.read(response, "$..items");
 
     }
 
