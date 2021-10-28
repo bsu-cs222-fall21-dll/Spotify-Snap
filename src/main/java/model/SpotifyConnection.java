@@ -8,59 +8,47 @@ import net.minidev.json.JSONArray;
 import view.ClientCredentials;
 import view.UserInput;
 
-import javax.net.ssl.HttpsURLConnection;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
 
 public class SpotifyConnection {
 
-    private String accessToken() throws IOException {
+    private String authorizeCredentials() {
+        /**
+         * This method sends a POST request to the https://accounts.spotify.com/api/token endpoint of the Spotify OAuth 2.0 Service.
+         *
+         * The request must contain the following headers and parameters:
+         *             @header: Authorization: Base64 encoded Client Credentials
+         *             @header: Content-Type: Encodes parameters to URL format
+         *             @Param:  grant_Type: Client Credentials
+         *
+         * @return: Access Token in Json format from Spotify Web Api
+         */
 
-        AccessTokenParser parse = new AccessTokenParser();
-        return parse.parseAccessToken(authorizeCredentials());
-    }
+        RestAssured.baseURI = "https://accounts.spotify.com/";
 
-    private String encodeClientCredentials() {
-        ClientCredentials credentials = new ClientCredentials();
-        String clientID = credentials.getClientID();
-        String clientSecret = credentials.getClientSecretID();
-
-        return Base64.getEncoder().encodeToString((clientID + ":" + clientSecret).getBytes(StandardCharsets.UTF_8));
-    }
-
-
-    private String authorizeCredentials() throws IOException {
-        //This method is authorizing the credentials and reading the access token sent from spotify
-        URL url = new URL("https://accounts.spotify.com/api/token");
-        HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
-        connection.setDoOutput(true);
-
-        connection.setRequestMethod("POST");
-        connection.setRequestProperty("Authorization",String.format("Basic %s", encodeClientCredentials()));
-        connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-
-        String parameter = "grant_type=client_credentials";
-
-        byte[] output = parameter.getBytes(StandardCharsets.UTF_8);
-        int length = output.length;
-        connection.setFixedLengthStreamingMode(length);
-        connection.connect();
-
-        try (OutputStream outputStream = connection.getOutputStream()){
-            outputStream.write(output);
-        }
-
-        InputStream inputStream = connection.getInputStream();
-        return new String(inputStream.readAllBytes());
+        RequestSpecification http = RestAssured.given();
+        return http.given()
+                .header("Authorization",String.format("Basic %s", encodeClientCredentials())).given()
+                .header("Content-Type", "application/x-www-form-urlencoded").given()
+                .param("grant_type","client_credentials")
+                .request(Method.POST, "api/token").asString();
     }
 
 
-    public JSONArray searchItemRequest() throws IOException {
+    public JSONArray searchItemRequest() {
+        /**
+         *This method sends a GET request to the /search endpoint that match a keyword string.
+         *
+         * The request must contain the following headers and parameters:
+         *              @header: Authorization: Access Token
+         *              @param:  q: String
+         *              @param:  type: Album, artist, playlist, track, show and episode.
+         *
+         * @return: Top 20 artist information in Json format from Spotify Web Api
+         */
+
         UserInput input = new UserInput();
         RestAssured.baseURI = "https://api.spotify.com/v1";
 
@@ -74,8 +62,16 @@ public class SpotifyConnection {
         return JsonPath.read(response,"$..items");
     }
 
-    public void searchAlbumRequest() throws IOException {
-        String id = "3TVXtAsR1Inumwj472S9r4";
+    public JSONArray searchAlbumRequest(String id) {
+        /**
+         * This method sends a GET request to the /albums/{id} endpoint.
+         *
+         * The request must contain the following headers and parameters:
+         *             @header: Authorization: Access Token
+         *             @param:  id : String
+         *
+         * @return: Spotify catalog information for a single album.
+         */
         RestAssured.baseURI = "https://api.spotify.com/v1";
 
         RequestSpecification http = RestAssured.given();
@@ -83,13 +79,31 @@ public class SpotifyConnection {
         String response = http.given()
                 .header("Authorization", String.format("Bearer %s" , accessToken())).given()
                 .request(Method.GET, String.format("/artists/%s/albums", id)).asString();
-        System.out.println(response);
+        return JsonPath.read(response, "$..name");
 
     }
 
-    public static void main(String[] args) throws IOException {
-        SpotifyConnection connection = new SpotifyConnection();
-        connection.searchAlbumRequest();
+    private String accessToken() {
+        /**
+         * This method gets the parse access token in AccessTokenParser class
+         *
+         * @return: Parsed access token
+         */
+        AccessTokenParser parse = new AccessTokenParser();
+        return parse.parseAccessToken(authorizeCredentials());
+    }
+
+    private String encodeClientCredentials() {
+        /**
+         * This method gets the clientID and client Secret from the command line.
+
+         * @return: Base 64 encoded string that contains the client ID and client secret key.
+         */
+        ClientCredentials credentials = new ClientCredentials();
+        String clientID = credentials.getClientID();
+        String clientSecret = credentials.getClientSecretID();
+
+        return Base64.getEncoder().encodeToString((clientID + ":" + clientSecret).getBytes(StandardCharsets.UTF_8));
     }
 
 
