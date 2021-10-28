@@ -1,15 +1,15 @@
 package Controller;
 
-import model.ArtistFormatter;
-import model.SnapArtist;
-import model.SpotifyConnection;
+import model.parser.ArtistFormatter;
+import model.parser.SnapArtist;
+import model.requests.SpotifyConnection;
 import net.minidev.json.JSONArray;
 
 import java.io.IOException;
 
 public class CMDController {
 
-    public void run() throws IOException {
+    public void run() {
         SpotifyConnection spotifyConnection = new SpotifyConnection();
         JSONArray artistSearchResultJsonArray = spotifyConnection.searchItemRequest();
         SnapArtist resultArtist = new SnapArtist(artistSearchResultJsonArray);

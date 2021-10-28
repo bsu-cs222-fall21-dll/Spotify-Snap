@@ -1,6 +1,7 @@
-package model;
+package model.parserTests;
 
 import com.jayway.jsonpath.JsonPath;
+import model.parser.SearchResultParser;
 import net.minidev.json.JSONArray;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

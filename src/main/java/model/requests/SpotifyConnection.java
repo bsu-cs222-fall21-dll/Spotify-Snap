@@ -1,9 +1,11 @@
-package model;
+package model.requests;
 
 import com.jayway.jsonpath.JsonPath;
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.specification.RequestSpecification;
+import model.parser.AccessTokenParser;
+import model.parser.SnapArtist;
 import net.minidev.json.JSONArray;
 import view.ClientCredentials;
 import view.UserInput;
