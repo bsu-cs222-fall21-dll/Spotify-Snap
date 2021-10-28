@@ -19,7 +19,7 @@ public class ArtistFormatter {
         String url = formatValueInArtistJson("url");
         String total = formatValueInArtistJson("total");
 
-        return String.format("Name: %s\nId: %s\nExternal URL: %s\nUri: %s\nFollower Total: %s",
+        return String.format("\nArtist Name: %s\nArtist Id: %s\nExternal URL: %s\nUri: %s\nFollower Count: %s",
                 name,id,url,uri,total);
     }
 

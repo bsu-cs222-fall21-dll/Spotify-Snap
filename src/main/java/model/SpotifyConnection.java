@@ -5,6 +5,7 @@ import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.specification.RequestSpecification;
 import net.minidev.json.JSONArray;
+import view.ApplicationInstructions;
 import view.ClientCredentials;
 import view.UserInput;
 
@@ -27,6 +28,8 @@ public class SpotifyConnection {
 
     private String encodeClientCredentials() {
         ClientCredentials credentials = new ClientCredentials();
+        ApplicationInstructions applicationInstructions = new ApplicationInstructions();
+        applicationInstructions.displayUsageOfApplication();
         String clientID = credentials.getClientID();
         String clientSecret = credentials.getClientSecretID();
 
