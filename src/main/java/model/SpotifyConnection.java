@@ -9,6 +9,7 @@ import view.ApplicationInstructions;
 import view.ClientCredentials;
 import view.UserInput;
 
+import javax.imageio.IIOException;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.IOException;
 import java.io.InputStream;
@@ -52,7 +53,12 @@ public class SpotifyConnection {
         byte[] output = parameter.getBytes(StandardCharsets.UTF_8);
         int length = output.length;
         connection.setFixedLengthStreamingMode(length);
-        connection.connect();
+        try {
+            connection.connect();
+        } catch (IOException ioException) {
+            System.err.println("No Network Connection: Error Code 3");
+            System.exit(3);
+        }
 
         try (OutputStream outputStream = connection.getOutputStream()){
             outputStream.write(output);
