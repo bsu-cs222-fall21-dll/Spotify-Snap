@@ -11,7 +11,7 @@ public class AlbumFormatter {
         this.albumArray = album.readAlbumInfoAsJson();
     }
 
-    public String formatSnapArtist() {
+    public String formatAlbum() {
         String name = formatValueInAlbumJson("name");
         String id = formatValueInAlbumJson("id");
         String uri = formatValueInAlbumJson("uri");
