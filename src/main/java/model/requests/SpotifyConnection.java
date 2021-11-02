@@ -7,12 +7,7 @@ import io.restassured.specification.RequestSpecification;
 import model.parser.AccessTokenParser;
 import model.parser.SnapArtist;
 import net.minidev.json.JSONArray;
-import view.ClientCredentials;
 import view.UserInput;
-
-import java.nio.charset.StandardCharsets;
-import java.util.Base64;
-
 
 public class SpotifyConnection {
 
@@ -32,14 +27,14 @@ public class SpotifyConnection {
 
         RequestSpecification http = RestAssured.given();
         return http.given()
-                .header("Authorization",String.format("Basic %s", encodeClientCredentials())).given()
+                .header("Authorization",String.format("Basic %s", clientCredentials())).given()
                 .header("Content-Type", "application/x-www-form-urlencoded").given()
                 .param("grant_type","client_credentials")
                 .request(Method.POST, "api/token").asString();
     }
 
 
-    public JSONArray searchItemRequest() {
+    public JSONArray getArtistID() {
         /**
          *This method sends a GET request to the /search endpoint that match a keyword string.
          *
@@ -56,7 +51,7 @@ public class SpotifyConnection {
 
         RequestSpecification http = RestAssured.given();
         String response =  http.given()
-                .header("Authorization", String.format("Bearer %s" , accessToken())).given()
+                .header("Authorization", String.format("Bearer %s" , getAccessToken())).given()
                 .param("q",input.getArtist())
                 .param("type", "artist")
 
@@ -64,7 +59,7 @@ public class SpotifyConnection {
         return JsonPath.read(response,"$..items");
     }
 
-    public JSONArray searchAlbumRequest(SnapArtist snapArtist) {
+    public JSONArray getArtistAlbums(SnapArtist snapArtist) {
         /**
          * This method sends a GET request to the /albums/{id} endpoint.
          *
@@ -81,13 +76,13 @@ public class SpotifyConnection {
         RequestSpecification http = RestAssured.given();
 
         String response = http.given()
-                .header("Authorization", String.format("Bearer %s" , accessToken())).given()
+                .header("Authorization", String.format("Bearer %s" , getAccessToken())).given()
                 .request(Method.GET, String.format("/artists/%s/albums", id)).asString();
         return JsonPath.read(response, "$..items");
 
     }
 
-    private String accessToken() {
+    private String getAccessToken() {
         /**
          * This method gets the parse access token in AccessTokenParser class
          *
@@ -97,17 +92,12 @@ public class SpotifyConnection {
         return parse.parseAccessToken(authorizeCredentials());
     }
 
-    private String encodeClientCredentials() {
+    private String clientCredentials() {
         /**
-         * This method gets the clientID and client Secret from the command line.
-
          * @return: Base 64 encoded string that contains the client ID and client secret key.
          */
-        ClientCredentials credentials = new ClientCredentials();
-        String clientID = credentials.getClientID();
-        String clientSecret = credentials.getClientSecretID();
 
-        return Base64.getEncoder().encodeToString((clientID + ":" + clientSecret).getBytes(StandardCharsets.UTF_8));
+        return "MTVhZDNhZTM5NWZkNDRmMGEwNTlkZjJmZTNlYWJhZTE6MGU0NzcwYTQxMzk3NGEyNDg1M2M5MmE3NjI2ZWQwOTU=";
     }
 
 
