@@ -83,7 +83,17 @@ public class SpotifyConnection {
                 .header("Authorization", String.format("Bearer %s" , getAccessToken())).given()
                 .request(Method.GET, String.format("/artists/%s/albums", id)).asString();
         return JsonPath.read(response, "$..items");
+    }
 
+    public JSONArray getAlbumsTracks(String id) {
+        RestAssured.baseURI = "https://api.spotify.com/v1";
+
+        RequestSpecification http = RestAssured.given();
+        String response = http.given()
+                .header("Authorization", String.format("Bearer %s" , getAccessToken())).given()
+                .request(Method.GET, String.format("/albums/%s/tracks", id)).asString();
+        System.out.println(response);
+        return JsonPath.read(response, "$..items");
     }
 
     private String getAccessToken() {
@@ -102,6 +112,11 @@ public class SpotifyConnection {
          */
 
         return "MTVhZDNhZTM5NWZkNDRmMGEwNTlkZjJmZTNlYWJhZTE6MGU0NzcwYTQxMzk3NGEyNDg1M2M5MmE3NjI2ZWQwOTU=";
+    }
+
+    public static void main(String[] args) {
+        SpotifyConnection connection = new SpotifyConnection();
+        connection.getAlbumsTracks("3SpBlxme9WbeQdI9kx7KAV");
     }
 
 
