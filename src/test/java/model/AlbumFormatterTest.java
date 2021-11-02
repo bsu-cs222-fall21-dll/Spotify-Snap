@@ -20,7 +20,7 @@ public class AlbumFormatterTest {
 
         Album album = new Album(testArray);
         AlbumFormatter albumFormatter = new AlbumFormatter(album);
-        String formattedArtist = albumFormatter.formatSnapArtist();
+        String formattedArtist = albumFormatter.formatAlbum();
 
         String expected = """
 

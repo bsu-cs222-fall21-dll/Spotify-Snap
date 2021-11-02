@@ -72,7 +72,8 @@ public class SpotifyConnection {
          *
          * @return: Spotify catalog information for a single album.
          */
-        String id = JsonPath.read(snapArtist.readArtistInfoAsJson(), "$..id");
+        JSONArray idArray = JsonPath.read(snapArtist.readArtistInfoAsJson(), "$..id");
+        String id = idArray.get(0).toString();
         RestAssured.baseURI = "https://api.spotify.com/v1";
 
         RequestSpecification http = RestAssured.given();
