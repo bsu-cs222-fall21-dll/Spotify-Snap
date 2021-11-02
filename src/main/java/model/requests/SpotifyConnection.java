@@ -7,6 +7,7 @@ import io.restassured.specification.RequestSpecification;
 import model.parser.AccessTokenParser;
 import model.parser.SnapArtist;
 import net.minidev.json.JSONArray;
+import view.MissingArtist;
 import view.UserInput;
 
 public class SpotifyConnection {
@@ -47,6 +48,7 @@ public class SpotifyConnection {
          */
 
         UserInput input = new UserInput();
+        MissingArtist missingArtist = new MissingArtist();
         RestAssured.baseURI = "https://api.spotify.com/v1";
 
         RequestSpecification http = RestAssured.given();
@@ -56,7 +58,9 @@ public class SpotifyConnection {
                 .param("type", "artist")
 
                 .request(Method.GET, "/search").asString();
-        return JsonPath.read(response,"$..items");
+        JSONArray artistSearchRequest = JsonPath.read(response,"$..items");
+        missingArtist.checkForMissingArtist(artistSearchRequest);
+        return artistSearchRequest;
     }
 
     public JSONArray getArtistAlbums(SnapArtist snapArtist) {

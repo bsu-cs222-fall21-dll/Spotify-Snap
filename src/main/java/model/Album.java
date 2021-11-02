@@ -1,6 +1,7 @@
 package model;
 
 import com.jayway.jsonpath.JsonPath;
+import model.parser.SearchResultParser;
 import net.minidev.json.JSONArray;
 
 public class Album {
