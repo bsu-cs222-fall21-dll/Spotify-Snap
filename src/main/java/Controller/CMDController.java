@@ -1,6 +1,7 @@
 package Controller;
 
-import model.*;
+import model.parser.Album;
+import model.parser.AlbumFormatter;
 import model.parser.ArtistFormatter;
 import model.parser.SnapArtist;
 import model.requests.SpotifyConnection;

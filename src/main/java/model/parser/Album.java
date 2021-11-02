@@ -1,4 +1,4 @@
-package model;
+package model.parser;
 
 import com.jayway.jsonpath.JsonPath;
 import model.parser.SearchResultParser;
