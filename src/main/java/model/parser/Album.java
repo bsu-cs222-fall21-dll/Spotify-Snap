@@ -1,7 +1,6 @@
 package model.parser;
 
 import com.jayway.jsonpath.JsonPath;
-import model.parser.SearchResultParser;
 import net.minidev.json.JSONArray;
 
 public class Album {
@@ -12,13 +11,13 @@ public class Album {
     private final String date;
     private final String totalTracks;
 
-    public Album(JSONArray inputArray) {
+    public Album(JSONArray inputArray, int index) {
         SearchResultParser searchResultParser = new SearchResultParser(inputArray);
-        this.name = searchResultParser.parseInfo("name");
-        this.id = searchResultParser.parseInfo("id");
-        this.uri = searchResultParser.parseInfo("uri");
-        this.date = searchResultParser.parseInfo("release_date");
-        this.totalTracks = searchResultParser.parseInfo("total_tracks");
+        this.name = searchResultParser.parseInfo("name", index);
+        this.id = searchResultParser.parseInfo("id", index);
+        this.uri = searchResultParser.parseInfo("uri", index);
+        this.date = searchResultParser.parseInfo("release_date", index);
+        this.totalTracks = searchResultParser.parseInfo("total_tracks", index);
     }
 
     public JSONArray readAlbumInfoAsJson() {

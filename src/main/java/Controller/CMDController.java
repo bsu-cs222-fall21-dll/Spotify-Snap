@@ -17,7 +17,7 @@ public class CMDController {
         ArtistFormatter artistFormatter = new ArtistFormatter(resultArtist);
         System.out.println(artistFormatter.formatSnapArtist());
 
-        Album album = new Album(spotifyConnection.getArtistAlbums(resultArtist));
+        Album album = new Album(spotifyConnection.getArtistAlbums(resultArtist),0);
         AlbumFormatter albumFormatter = new AlbumFormatter(album);
         System.out.println(albumFormatter.formatAlbum());
     }

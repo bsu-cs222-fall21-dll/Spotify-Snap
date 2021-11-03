@@ -20,7 +20,7 @@ public class AlbumFormatterTest {
         JSONArray testArray = JsonPath.read(inputStream,"$..items");
 
 
-        Album album = new Album(testArray);
+        Album album = new Album(testArray,0);
         AlbumFormatter albumFormatter = new AlbumFormatter(album);
         String formattedArtist = albumFormatter.formatAlbum();
 

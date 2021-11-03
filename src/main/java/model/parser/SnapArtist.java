@@ -25,5 +25,4 @@ public class SnapArtist {
         String artistArrayAsString = String.format("{\"artist\": [{\"name\": \"%s\", \"id\": \"%s\",\"uri\": " + "\"%s\",\"url\": \"%s\" ,\"total\": \"%s\"}]}",name,id,uri,externalURL,followerCount);
         return JsonPath.read(artistArrayAsString,"$.*");
     }
-
 }
