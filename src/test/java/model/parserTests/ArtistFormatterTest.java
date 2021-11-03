@@ -2,7 +2,7 @@ package model.parserTests;
 
 import com.jayway.jsonpath.JsonPath;
 import model.parser.ArtistFormatter;
-import model.parser.SnapArtist;
+import model.parser.Artist;
 import net.minidev.json.JSONArray;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -18,8 +18,8 @@ public class ArtistFormatterTest {
         JSONArray testArray = JsonPath.read(inputStream,"$..items");
 
 
-        SnapArtist snapArtist = new SnapArtist(testArray);
-        ArtistFormatter artistFormatter = new ArtistFormatter(snapArtist);
+        Artist artist = new Artist(testArray);
+        ArtistFormatter artistFormatter = new ArtistFormatter(artist);
         String formattedArtist = artistFormatter.formatSnapArtist();
 
         String expected = "\nArtist Name: Drake\nArtist Id: 3TVXtAsR1Inumwj472S9r4\nExternal URL: https://open.spotify.com/artist/3TVXtAsR1Inumwj472S9r4\nUri: spotify:artist:3TVXtAsR1Inumwj472S9r4\nFollower Count: 58055243";

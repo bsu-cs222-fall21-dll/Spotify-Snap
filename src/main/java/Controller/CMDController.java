@@ -3,7 +3,7 @@ package Controller;
 import model.parser.Album;
 import model.parser.AlbumFormatter;
 import model.parser.ArtistFormatter;
-import model.parser.SnapArtist;
+import model.parser.Artist;
 import model.requests.SpotifyConnection;
 import net.minidev.json.JSONArray;
 
@@ -12,7 +12,7 @@ public class CMDController {
     public void run()  {
         SpotifyConnection spotifyConnection = new SpotifyConnection();
         JSONArray artistSearchResultJsonArray = spotifyConnection.getArtistID();
-        SnapArtist resultArtist = new SnapArtist(artistSearchResultJsonArray);
+        Artist resultArtist = new Artist(artistSearchResultJsonArray);
 
         ArtistFormatter artistFormatter = new ArtistFormatter(resultArtist);
         System.out.println(artistFormatter.formatSnapArtist());

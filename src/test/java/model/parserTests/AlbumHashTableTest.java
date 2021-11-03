@@ -1,6 +1,7 @@
 package model.parserTests;
 
 import com.jayway.jsonpath.JsonPath;
+import model.parser.AlbumHashTable;
 import model.parser.Album;
 import net.minidev.json.JSONArray;
 import org.junit.jupiter.api.Assertions;
@@ -9,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class AlbumTest {
+public class AlbumHashTableTest {
 
     @Test
     public void readAlbumInfoAsJsonTest() throws IOException {
@@ -21,9 +22,14 @@ public class AlbumTest {
         String testJsonString = "[[{\"name\":\"Certified Lover Boy\"," +
                 "\"id\":\"3SpBlxme9WbeQdI9kx7KAV\",\"uri\":\"spotify:album:3SpBlxme9WbeQdI9kx7KAV\"," +
                 "\"date\":\"2021-09-03\"," + "\"total_tracks\":\"21\"}]]";
-
-        JSONArray albumJsonArray = album.readAlbumInfoAsJson();
         JSONArray testArray = JsonPath.read(testJsonString,"$.*");
-        Assertions.assertEquals(testArray,albumJsonArray);
+
+        AlbumHashTable albumHashTable = new AlbumHashTable();
+        JSONArray albumJsonArray = album.readAlbumInfoAsJson();
+        JSONArray albumNameArray = JsonPath.read(albumJsonArray, "$..name");
+
+        String albumName = albumNameArray.get(0).toString();
+        albumHashTable.place(albumName,album);
+        Assertions.assertEquals(album, albumHashTable.readAtKey("Certified Lover Boy"));
     }
 }

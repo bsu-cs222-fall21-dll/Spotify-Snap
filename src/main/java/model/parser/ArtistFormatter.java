@@ -3,8 +3,8 @@ package model.parser;
 public class ArtistFormatter extends Parser {
 
 
-    public ArtistFormatter(SnapArtist snapArtist) {
-        super(snapArtist.readArtistInfoAsJson());
+    public ArtistFormatter(Artist artist) {
+        super(artist.readArtistInfoAsJson());
     }
 
     public String formatSnapArtist() {

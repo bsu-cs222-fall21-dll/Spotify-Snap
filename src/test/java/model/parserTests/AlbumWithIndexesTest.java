@@ -23,9 +23,9 @@ public class AlbumWithIndexesTest {
                 "\"id\":\"6sp02aeyiwfX35xRqwNiPv\",\"uri\":\"spotify:album:6sp02aeyiwfX35xRqwNiPv\"," +
                 "\"date\":\"2020-05-01\"," + "\"total_tracks\":\"14\"}]]";
 
-        JSONArray artistJsonArray = album.readAlbumInfoAsJson();
+        JSONArray albumJsonArray = album.readAlbumInfoAsJson();
         JSONArray testArray = JsonPath.read(testJsonString,"$.*");
-        Assertions.assertEquals(testArray,artistJsonArray);
+        Assertions.assertEquals(testArray,albumJsonArray);
     }
 
     @Test
@@ -39,9 +39,9 @@ public class AlbumWithIndexesTest {
                 "\"id\":\"6OQ9gBfg5EXeNAEwGSs6jK\",\"uri\":\"spotify:album:6OQ9gBfg5EXeNAEwGSs6jK\"," +
                 "\"date\":\"2019-08-02\"," + "\"total_tracks\":\"17\"}]]";
 
-        JSONArray artistJsonArray = album.readAlbumInfoAsJson();
+        JSONArray albumJsonArray = album.readAlbumInfoAsJson();
         JSONArray testArray = JsonPath.read(testJsonString,"$.*");
-        Assertions.assertEquals(testArray,artistJsonArray);
+        Assertions.assertEquals(testArray,albumJsonArray);
     }
 
 }

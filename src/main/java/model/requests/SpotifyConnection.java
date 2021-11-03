@@ -5,7 +5,7 @@ import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.specification.RequestSpecification;
 import model.parser.AccessTokenParser;
-import model.parser.SnapArtist;
+import model.parser.Artist;
 import net.minidev.json.JSONArray;
 import view.MissingArtist;
 import view.UserInput;
@@ -63,7 +63,7 @@ public class SpotifyConnection {
         return artistSearchRequest;
     }
 
-    public JSONArray getArtistAlbums(SnapArtist snapArtist) {
+    public JSONArray getArtistAlbums(Artist artist) {
         /**
          * This method sends a GET request to the /albums/{id} endpoint.
          *
@@ -73,7 +73,7 @@ public class SpotifyConnection {
          *
          * @return: Spotify catalog information for a single album.
          */
-        JSONArray idArray = JsonPath.read(snapArtist.readArtistInfoAsJson(), "$..id");
+        JSONArray idArray = JsonPath.read(artist.readArtistInfoAsJson(), "$..id");
         String id = idArray.get(0).toString();
         RestAssured.baseURI = "https://api.spotify.com/v1";
 

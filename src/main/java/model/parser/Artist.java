@@ -1,17 +1,16 @@
 package model.parser;
 
 import com.jayway.jsonpath.JsonPath;
-import model.parser.SearchResultParser;
 import net.minidev.json.JSONArray;
 
-public class SnapArtist {
+public class Artist {
     private final String name;
     private final String id;
     private final String uri;
     private final String externalURL;
     private final String followerCount;
 
-    public SnapArtist(JSONArray inputArray) {
+    public Artist(JSONArray inputArray) {
         SearchResultParser searchResultParser = new SearchResultParser(inputArray);
         this.name = searchResultParser.parseInfo("name");
         this.id = searchResultParser.parseInfo("id");
