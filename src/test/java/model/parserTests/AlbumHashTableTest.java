@@ -26,10 +26,10 @@ public class AlbumHashTableTest {
 
         AlbumHashTable albumHashTable = new AlbumHashTable();
         JSONArray albumJsonArray = album.readAlbumInfoAsJson();
-        JSONArray albumNameArray = JsonPath.read(albumJsonArray, "$..name");
+        JSONArray albumNameArray = JsonPath.read(albumJsonArray, "$..id");
 
         String albumName = albumNameArray.get(0).toString();
         albumHashTable.place(albumName,album);
-        Assertions.assertEquals(album, albumHashTable.readAtKey("Certified Lover Boy"));
+        Assertions.assertEquals(album, albumHashTable.readAtKey("3SpBlxme9WbeQdI9kx7KAV"));
     }
 }

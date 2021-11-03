@@ -8,11 +8,12 @@ public class AlbumHashTable {
 
     private HashMap<String,Album> albumHashMap = new HashMap<>();
 
-    public void place(String albumName, Album album) {
-        albumHashMap.put(albumName,album);
+    public void place(String albumID, Album album) {
+        albumHashMap.put(albumID,album);
     }
 
-    public Album readAtKey(String albumName) {
-        return albumHashMap.get(albumName);
+    public Album readAtKey(String albumID) {
+        return albumHashMap.get(albumID);
     }
+
 }
