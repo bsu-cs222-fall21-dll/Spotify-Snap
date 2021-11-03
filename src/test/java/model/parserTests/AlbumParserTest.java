@@ -18,7 +18,7 @@ public class AlbumParserTest {
         JSONArray testArray = JsonPath.read(inputStream,"$..items");
 
         SearchResultParser searchResultParser = new SearchResultParser(testArray);
-        String result = searchResultParser.parseArtistInfo("name");
+        String result = searchResultParser.parseInfo("name");
         Assertions.assertEquals("Certified Lover Boy",result);
     }
 
@@ -29,7 +29,7 @@ public class AlbumParserTest {
         JSONArray testArray = JsonPath.read(inputStream,"$..items");
         SearchResultParser searchResultParser = new SearchResultParser(testArray);
 
-        String result = searchResultParser.parseArtistInfo("id");
+        String result = searchResultParser.parseInfo("id");
         Assertions.assertEquals("3SpBlxme9WbeQdI9kx7KAV",result);
 
     }
@@ -41,7 +41,7 @@ public class AlbumParserTest {
         JSONArray testArray = JsonPath.read(inputStream,"$..items");
         SearchResultParser searchResultParser = new SearchResultParser(testArray);
 
-        String result = searchResultParser.parseArtistInfo("uri");
+        String result = searchResultParser.parseInfo("uri");
         Assertions.assertEquals("spotify:album:3SpBlxme9WbeQdI9kx7KAV",result);
 
     }
@@ -52,7 +52,7 @@ public class AlbumParserTest {
         JSONArray testArray = JsonPath.read(inputStream,"$..items");
         SearchResultParser searchResultParser = new SearchResultParser(testArray);
 
-        String result = searchResultParser.parseArtistInfo("release_date");
+        String result = searchResultParser.parseInfo("release_date");
         Assertions.assertEquals("2021-09-03",result);
     }
     @Test
@@ -62,7 +62,7 @@ public class AlbumParserTest {
         JSONArray testArray = JsonPath.read(inputStream,"$..items");
         SearchResultParser searchResultParser = new SearchResultParser(testArray);
 
-        String result = searchResultParser.parseArtistInfo("total_tracks");
+        String result = searchResultParser.parseInfo("total_tracks");
         Assertions.assertEquals("21",result);
     }
 

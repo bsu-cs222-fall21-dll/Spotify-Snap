@@ -13,11 +13,11 @@ public class SnapArtist {
 
     public SnapArtist(JSONArray inputArray) {
         SearchResultParser searchResultParser = new SearchResultParser(inputArray);
-        this.name = searchResultParser.parseArtistInfo("name");
-        this.id = searchResultParser.parseArtistInfo("id");
-        this.uri = searchResultParser.parseArtistInfo("uri");
-        this.externalURL = searchResultParser.parseArtistInfo("spotify");
-        this.followerCount = searchResultParser.parseArtistInfo("total");
+        this.name = searchResultParser.parseInfo("name");
+        this.id = searchResultParser.parseInfo("id");
+        this.uri = searchResultParser.parseInfo("uri");
+        this.externalURL = searchResultParser.parseInfo("spotify");
+        this.followerCount = searchResultParser.parseInfo("total");
     }
 
     public JSONArray readArtistInfoAsJson() {

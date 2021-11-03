@@ -18,7 +18,7 @@ public class ArtistParserTest {
         JSONArray testArray = JsonPath.read(inputStream,"$..items");
         SearchResultParser searchResultParser = new SearchResultParser(testArray);
 
-        String result = searchResultParser.parseArtistInfo("id");
+        String result = searchResultParser.parseInfo("id");
         Assertions.assertEquals("3TVXtAsR1Inumwj472S9r4",result);
 
     }
@@ -30,7 +30,7 @@ public class ArtistParserTest {
         JSONArray testArray = JsonPath.read(inputStream,"$..items");
         SearchResultParser searchResultParser = new SearchResultParser(testArray);
 
-        String result = searchResultParser.parseArtistInfo("name");
+        String result = searchResultParser.parseInfo("name");
         Assertions.assertEquals("Drake",result);
 
     }
@@ -41,7 +41,7 @@ public class ArtistParserTest {
         JSONArray testArray = JsonPath.read(inputStream,"$..items");
         SearchResultParser searchResultParser = new SearchResultParser(testArray);
 
-        String result = searchResultParser.parseArtistInfo("uri");
+        String result = searchResultParser.parseInfo("uri");
         Assertions.assertEquals("spotify:artist:3TVXtAsR1Inumwj472S9r4",result);
 
     }
@@ -53,7 +53,7 @@ public class ArtistParserTest {
         JSONArray testArray = JsonPath.read(inputStream,"$..items");
         SearchResultParser searchResultParser = new SearchResultParser(testArray);
 
-        String result = searchResultParser.parseArtistInfo("total");
+        String result = searchResultParser.parseInfo("total");
         Assertions.assertEquals("58055243",result);
     }
 

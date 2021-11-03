@@ -14,11 +14,11 @@ public class Album {
 
     public Album(JSONArray inputArray) {
         SearchResultParser searchResultParser = new SearchResultParser(inputArray);
-        this.name = searchResultParser.parseArtistInfo("name");
-        this.id = searchResultParser.parseArtistInfo("id");
-        this.uri = searchResultParser.parseArtistInfo("uri");
-        this.date = searchResultParser.parseArtistInfo("release_date");
-        this.totalTracks = searchResultParser.parseArtistInfo("total_tracks");
+        this.name = searchResultParser.parseInfo("name");
+        this.id = searchResultParser.parseInfo("id");
+        this.uri = searchResultParser.parseInfo("uri");
+        this.date = searchResultParser.parseInfo("release_date");
+        this.totalTracks = searchResultParser.parseInfo("total_tracks");
     }
 
     public JSONArray readAlbumInfoAsJson() {
