@@ -3,7 +3,7 @@ Spotify Snap
 This application is for users who are trying to pull live data about their favorite artists. Requires entering of a client id and secret as password hiding, is not quite ready thus making this project more for developers trying to pull basic data.
 
 ## General info
-This is the v0.1.0 release.
+This is the v0.1.5 release.
 
 ## Authors
 Wendall Roberts 
@@ -35,10 +35,4 @@ Project is created with:
 To run this project, clone this repository, and download the dependencies and plugins listed in build.gradle.
 
 ## Known Errors
-The following messages still appear in the compiler due to gradle settings
-SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-
-I believe these are a problem with gradle and don't affect the program.
 
