@@ -24,7 +24,7 @@ public class Album {
 
     public JSONArray readAlbumInfoAsJson() {
         String artistArrayAsString = String.format("{\"album\": [{\"name\": \"%s\", \"id\": \"%s\",\"uri\": "
-                + "\"%s\",\"date\": \"%s\" ,\"total_tracks\": \"%s\"}]}",name,id,uri,date,totalTracks);
+                + "\"%s\",\"date\": \"%s\" ,\"total_tracks\": \"%s\",\"index\": \"%d\"}]}",name,id,uri,date,totalTracks,index);
         return JsonPath.read(artistArrayAsString,"$.*");
     }
 
@@ -32,6 +32,6 @@ public class Album {
         if(index<=0){
             return 0;
         }
-        return index-1;
+        return index/2;
     }
 }

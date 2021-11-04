@@ -20,7 +20,7 @@ public class AlbumTest {
         Album album = new Album(inputArray,0);
         String testJsonString = "[[{\"name\":\"Certified Lover Boy\"," +
                 "\"id\":\"3SpBlxme9WbeQdI9kx7KAV\",\"uri\":\"spotify:album:3SpBlxme9WbeQdI9kx7KAV\"," +
-                "\"date\":\"2021-09-03\"," + "\"total_tracks\":\"21\"}]]";
+                "\"date\":\"2021-09-03\"," + "\"total_tracks\":\"21\",\"index\":\"0\"}]]";
 
         JSONArray albumJsonArray = album.readAlbumInfoAsJson();
         JSONArray testArray = JsonPath.read(testJsonString,"$.*");

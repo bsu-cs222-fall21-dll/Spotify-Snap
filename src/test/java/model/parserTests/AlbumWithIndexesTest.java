@@ -21,7 +21,7 @@ public class AlbumWithIndexesTest {
         Album album = new Album(inputArray,2);
         String testJsonString = "[[{\"name\":\"Certified Lover Boy\"," +
                 "\"id\":\"6sp02aeyiwfX35xRqwNiPv\",\"uri\":\"spotify:album:6sp02aeyiwfX35xRqwNiPv\"," +
-                "\"date\":\"2020-05-01\"," + "\"total_tracks\":\"14\"}]]";
+                "\"date\":\"2020-05-01\"," + "\"total_tracks\":\"14\",\"index\":\"1\"}]]";
 
         JSONArray albumJsonArray = album.readAlbumInfoAsJson();
         JSONArray testArray = JsonPath.read(testJsonString,"$.*");
@@ -37,7 +37,7 @@ public class AlbumWithIndexesTest {
         Album album = new Album(inputArray,4);
         String testJsonString = "[[{\"name\":\"Dark Lane Demo Tapes\"," +
                 "\"id\":\"6OQ9gBfg5EXeNAEwGSs6jK\",\"uri\":\"spotify:album:6OQ9gBfg5EXeNAEwGSs6jK\"," +
-                "\"date\":\"2019-08-02\"," + "\"total_tracks\":\"17\"}]]";
+                "\"date\":\"2019-08-02\"," + "\"total_tracks\":\"17\",\"index\":\"2\"}]]";
 
         JSONArray albumJsonArray = album.readAlbumInfoAsJson();
         JSONArray testArray = JsonPath.read(testJsonString,"$.*");
