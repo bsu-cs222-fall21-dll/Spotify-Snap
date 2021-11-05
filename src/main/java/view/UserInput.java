@@ -1,7 +1,5 @@
 package view;
 
-import java.util.Locale;
-
 public class UserInput {
 
     CMDInput cmdInput = new CMDInput();
@@ -11,16 +9,4 @@ public class UserInput {
         return cmdInput.inputStringViaCommandLine();
     }
 
-    public String getTypes() {
-        System.out.println("""
-                Valid Search Types: 
-                    1.) album 
-                    2.) artist 
-                    3.) playlist 
-                    4.) track
-                    5.) show and episode
-                
-                Enter search type:""");
-        return cmdInput.inputStringViaCommandLine().toLowerCase(Locale.ROOT);
-    }
 }
