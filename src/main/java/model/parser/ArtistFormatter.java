@@ -12,6 +12,7 @@ public class ArtistFormatter extends Parser {
         String name = parseInfo("name");
         String id = parseInfo("id");
         String uri = parseInfo("uri");
+
         String url = parseInfo("url");
         String total = parseInfo("total");
 

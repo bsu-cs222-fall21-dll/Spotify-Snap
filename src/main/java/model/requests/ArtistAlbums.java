@@ -30,6 +30,7 @@ private final String accessToken = getAccessToken();
         String response = http.given()
                 .header("Authorization", String.format("Bearer %s" , accessToken)).given()
                 .request(Method.GET, String.format("/artists/%s/albums", id)).asString();
+
         return JsonPath.read(response, "$..items");
     }
 }

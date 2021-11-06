@@ -36,6 +36,7 @@ public class ArtistID extends AuthorizeCredentials {
                 .param("type", "artist")
 
                 .request(Method.GET, "/search").asString();
+
         JSONArray artistSearchRequest = JsonPath.read(response,"$..items");
         missingArtist.checkForMissingArtist(artistSearchRequest);
         return artistSearchRequest;

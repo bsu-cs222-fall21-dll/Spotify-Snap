@@ -18,6 +18,7 @@ public class AlbumSongs extends AuthorizeCredentials {
         String response = http.given()
                 .header("Authorization", String.format("Bearer %s" , accessToken)).given()
                 .request(Method.GET, String.format("/albums/%s/tracks", id)).asString();
+
         return JsonPath.read(response, "$..items");
     }
 }

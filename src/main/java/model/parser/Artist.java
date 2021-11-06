@@ -14,6 +14,7 @@ public class Artist {
         SearchResultParser searchResultParser = new SearchResultParser(inputArray);
         this.name = searchResultParser.parseInfo("name");
         this.id = searchResultParser.parseInfo("id");
+
         this.uri = searchResultParser.parseInfo("uri");
         this.externalURL = searchResultParser.parseInfo("spotify");
         this.followerCount = searchResultParser.parseInfo("total");

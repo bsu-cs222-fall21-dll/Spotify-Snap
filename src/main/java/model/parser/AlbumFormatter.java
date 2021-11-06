@@ -10,6 +10,7 @@ public class AlbumFormatter extends Parser {
         String name = parseInfo("name");
         String id = parseInfo("id");
         String uri = parseInfo("uri");
+
         String date = parseInfo("date");
         String total = parseInfo("total_tracks");
 

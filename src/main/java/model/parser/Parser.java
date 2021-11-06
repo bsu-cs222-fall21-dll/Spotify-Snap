@@ -12,11 +12,13 @@ public abstract class Parser {
     }
 
     public String parseInfo(String valueToBeRead){
+
         JSONArray itemArray = JsonPath.read(infoArray, String.format("$..%s", valueToBeRead));
         return itemArray.get(0).toString();
     }
 
     public String parseInfo(String valueToBeRead,int index){
+
         JSONArray itemArray = JsonPath.read(infoArray, String.format("$..%s", valueToBeRead));
         return itemArray.get(index).toString();
     }
