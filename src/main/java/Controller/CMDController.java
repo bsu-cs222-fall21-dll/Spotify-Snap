@@ -1,9 +1,6 @@
 package Controller;
 
-import model.parser.Album;
-import model.parser.AlbumFormatter;
-import model.parser.ArtistFormatter;
-import model.parser.Artist;
+import model.parser.*;
 import model.requests.ArtistAlbums;
 import model.requests.ArtistID;
 import net.minidev.json.JSONArray;
@@ -18,9 +15,12 @@ public class CMDController {
         ArtistFormatter artistFormatter = new ArtistFormatter(resultArtist);
         System.out.println(artistFormatter.formatSnapArtist());
 
+        AlbumHashTable albumHashTable = new AlbumHashTable();
         ArtistAlbums albums = new ArtistAlbums();
-        Album album = new Album(albums.getArtistAlbums(resultArtist),0);
-        AlbumFormatter albumFormatter = new AlbumFormatter(album);
-        System.out.println(albumFormatter.formatAlbum());
+        AlbumHashTableBuilder albumHashTableBuilder = new AlbumHashTableBuilder(albums.getArtistAlbums(resultArtist));
+
+        albumHashTableBuilder.buildHashTable(albumHashTable);
+        System.out.println(albumHashTable.formatTable());
+
     }
 }
