@@ -14,7 +14,7 @@ public class AlbumHashTableBuilder extends Parser {
 
     public void buildHashTable(AlbumHashTable albumHashTable) {
 
-        for(int index=0; parseInfo("name").length()>index;index+=2){
+        for(int index=0; parseInfo("id").length()>index;index+=2){
 
             String albumID = parseInfo("id",index);
             Album albumToBeAdded = new Album(inputArray,index);

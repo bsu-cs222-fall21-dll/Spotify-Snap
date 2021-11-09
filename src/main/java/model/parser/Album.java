@@ -19,10 +19,11 @@ public class Album {
         this.id = searchResultParser.parseInfo("id", index);
 
         this.uri = searchResultParser.parseInfo("uri", index);
-        this.date = searchResultParser.parseInfo("release_date", index);
-        this.totalTracks = searchResultParser.parseInfo("total_tracks", index);
-
         this.index = calculateIndex(index);
+        this.date = searchResultParser.parseInfo("release_date", this.index);
+        this.totalTracks = searchResultParser.parseInfo("total_tracks", this.index);
+
+
     }
 
     public JSONArray readAlbumInfoAsJson() {
