@@ -1,6 +1,5 @@
 package model.parser;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class AlbumHashTable {
