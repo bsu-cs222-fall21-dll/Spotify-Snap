@@ -1,13 +1,16 @@
-package model.parser;
+package model.parser.formatter;
 
-public class ArtistFormatter extends Parser {
+import model.parser.Artist;
+import model.parser.Parser;
+
+public class ArtistFormatter extends Parser implements Formatter {
 
 
     public ArtistFormatter(Artist artist) {
         super(artist.readArtistInfoAsJson());
     }
 
-    public String formatSnapArtist() {
+    public String format() {
 
         String name = parseInfo("name");
         String id = parseInfo("id");

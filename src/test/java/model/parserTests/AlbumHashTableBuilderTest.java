@@ -1,9 +1,9 @@
 package model.parserTests;
 
 import com.jayway.jsonpath.JsonPath;
-import model.parser.AlbumHashTableBuilder;
+import model.parser.hashtable.AlbumHashTableBuilder;
 import model.parser.Album;
-import model.parser.AlbumHashTable;
+import model.parser.hashtable.AlbumHashTable;
 import net.minidev.json.JSONArray;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -26,7 +26,7 @@ public class AlbumHashTableBuilderTest {
         String testJsonString = "[[{\"name\":\"Dark Lane Demo Tapes\"," +
                 "\"id\":\"6OQ9gBfg5EXeNAEwGSs6jK\",\"uri\":\"spotify:album:6OQ9gBfg5EXeNAEwGSs6jK\"," +
                 "\"date\":\"2020-05-01\"," + "\"total_tracks\":\"14\",\"index\":\"2\"}]]";
-        Album album = albumHashTable.readAtKey("6OQ9gBfg5EXeNAEwGSs6jK");
+        Album album = (Album) albumHashTable.readAtKey("6OQ9gBfg5EXeNAEwGSs6jK");
 
         JSONArray albumJsonArray = album.readAlbumInfoAsJson();
         JSONArray testArray = JsonPath.read(testJsonString,"$.*");

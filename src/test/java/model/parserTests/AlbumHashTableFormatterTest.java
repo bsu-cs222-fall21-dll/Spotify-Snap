@@ -1,8 +1,8 @@
 package model.parserTests;
 
 import com.jayway.jsonpath.JsonPath;
-import model.parser.AlbumHashTable;
-import model.parser.AlbumHashTableBuilder;
+import model.parser.hashtable.AlbumHashTable;
+import model.parser.hashtable.AlbumHashTableBuilder;
 import net.minidev.json.JSONArray;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

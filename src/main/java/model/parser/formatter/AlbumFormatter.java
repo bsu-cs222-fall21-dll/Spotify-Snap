@@ -1,12 +1,15 @@
-package model.parser;
+package model.parser.formatter;
 
-public class AlbumFormatter extends Parser {
+import model.parser.Album;
+import model.parser.Parser;
+
+public class AlbumFormatter extends Parser implements Formatter{
 
     public AlbumFormatter(Album album) {
         super(album.readAlbumInfoAsJson());
     }
 
-    public String formatAlbum() {
+    public String format() {
         String name = parseInfo("name");
         String id = parseInfo("id");
         String uri = parseInfo("uri");
