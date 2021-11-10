@@ -3,7 +3,7 @@ package model.parser;
 import com.jayway.jsonpath.JsonPath;
 import net.minidev.json.JSONArray;
 
-public class Artist {
+public class Artist extends Parser {
     private final String name;
     private final String id;
     private final String uri;
@@ -11,13 +11,13 @@ public class Artist {
     private final String followerCount;
 
     public Artist(JSONArray inputArray) {
-        SearchResultParser searchResultParser = new SearchResultParser(inputArray);
-        this.name = searchResultParser.parseInfo("name");
-        this.id = searchResultParser.parseInfo("id");
+        super(inputArray);
+        this.name = parseInfo("name");
+        this.id = parseInfo("id");
 
-        this.uri = searchResultParser.parseInfo("uri");
-        this.externalURL = searchResultParser.parseInfo("spotify");
-        this.followerCount = searchResultParser.parseInfo("total");
+        this.uri = parseInfo("uri");
+        this.externalURL = parseInfo("spotify");
+        this.followerCount = parseInfo("total");
     }
 
     public JSONArray readArtistInfoAsJson() {
