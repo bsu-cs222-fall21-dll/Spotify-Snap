@@ -24,7 +24,7 @@ public class CMDController {
         ArtistAlbums albums = new ArtistAlbums();
         AlbumHashTableBuilder hashTableBuilder = new AlbumHashTableBuilder(albums.getArtistAlbums(resultArtist));
         hashTableBuilder.buildHashTable(albumHashTable);
-
+        albumHashTable.sortHashMapIntoArrayList();
         System.out.println(albumHashTable.formatTable());
 
     }

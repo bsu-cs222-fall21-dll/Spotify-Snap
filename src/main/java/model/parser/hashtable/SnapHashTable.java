@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 public abstract class SnapHashTable {
     protected HashMap<String,Object> snapHashMap = new HashMap<>();
-    private String[] snapArray;
+    protected String[] snapArray;
 
     public void place(String albumID, Object snapObj) {
         snapHashMap.put(albumID,snapObj);
@@ -19,7 +19,7 @@ public abstract class SnapHashTable {
     }
 
     public String formatTable() {
-        sortHashMapIntoArrayList();
+
         String snapsString = "";
         for (String currentSnapString : snapArray) {
             snapsString = String.format("%s%s\n", snapsString,currentSnapString);

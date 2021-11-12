@@ -25,7 +25,7 @@ public class SongHashTableBuilderTest {
 
         String testJsonString = "[[{\"name\":\"Champagne Poetry\"," +
                 "\"id\":\"2HSmyk2qMN8WQjuGhaQgCk\",\"uri\":\"spotify:track:2HSmyk2qMN8WQjuGhaQgCk\"," +
-                "\"duration_ms\":\"336511\"," + "\"track_number\":\"1\",\"explicit\":\"true\"}]]";
+                "\"duration_ms\":\"336511\"," + "\"index\":\"1\",\"explicit\":\"true\"}]]";
         Song song = (Song) songHashTable.readAtKey("2HSmyk2qMN8WQjuGhaQgCk");
 
         JSONArray albumJsonArray = song.readSongInfoAsJson();
