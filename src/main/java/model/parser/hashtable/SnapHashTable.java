@@ -19,7 +19,7 @@ public abstract class SnapHashTable {
     }
 
     public String formatTable() {
-        this.snapArray = sortHashMapIntoArrayList();
+        sortHashMapIntoArrayList();
         String snapsString = "";
         for (String currentSnapString : snapArray) {
             snapsString = String.format("%s%s\n", snapsString,currentSnapString);
@@ -28,9 +28,9 @@ public abstract class SnapHashTable {
         return snapsString;
     }
 
-    public String[] sortHashMapIntoArrayList(){
+    public void sortHashMapIntoArrayList(){
+        //todo add song hashtable and hashtable builder with overridden sortHashmapIntoArrayList function
         int sizeOfArrayList = snapHashMap.size();
-
         String[] sortedAlbumArray = new String[sizeOfArrayList];
         snapHashMap.forEach((snapId, snapObject) -> {
 
@@ -41,6 +41,6 @@ public abstract class SnapHashTable {
             sortedAlbumArray[index] = albumString;
 
         });
-        return sortedAlbumArray;
+        this.snapArray = sortedAlbumArray;
     }
 }

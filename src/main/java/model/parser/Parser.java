@@ -2,6 +2,7 @@ package model.parser;
 
 import com.jayway.jsonpath.JsonPath;
 import net.minidev.json.JSONArray;
+import view.MissingArtist;
 
 public abstract class Parser {
 
@@ -12,14 +13,30 @@ public abstract class Parser {
     }
 
     public String parseInfo(String valueToBeRead){
-
-        JSONArray itemArray = JsonPath.read(infoArray, String.format("$..%s", valueToBeRead));
-        return itemArray.get(0).toString();
+        try {
+            return parseFromJson(valueToBeRead,0);
+        } catch (IndexOutOfBoundsException e){
+            handleErrorMessage();
+            return "Artist Not Found";
+        }
     }
 
     public String parseInfo(String valueToBeRead,int index){
+        try {
+            return parseFromJson(valueToBeRead,index);
+        } catch (IndexOutOfBoundsException e){
+            handleErrorMessage();
+            return "Artist Not Found";
+        }
+    }
 
+    private String parseFromJson(String valueToBeRead,int index){
         JSONArray itemArray = JsonPath.read(infoArray, String.format("$..%s", valueToBeRead));
         return itemArray.get(index).toString();
+    }
+
+    private void handleErrorMessage(){
+        MissingArtist missingArtist = new MissingArtist();
+        missingArtist.printErrrorMessage();
     }
 }
