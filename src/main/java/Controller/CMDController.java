@@ -4,6 +4,7 @@ import model.parser.*;
 import model.parser.formatter.ArtistFormatter;
 import model.parser.hashtable.AlbumHashTable;
 import model.parser.hashtable.AlbumHashTableBuilder;
+import model.parser.hashtable.HashTableBuilder;
 import model.requests.ArtistAlbums;
 import model.requests.ArtistID;
 import net.minidev.json.JSONArray;
@@ -21,8 +22,8 @@ public class CMDController {
         AlbumHashTable albumHashTable = new AlbumHashTable();
 
         ArtistAlbums albums = new ArtistAlbums();
-        AlbumHashTableBuilder albumHashTableBuilder = new AlbumHashTableBuilder(albums.getArtistAlbums(resultArtist));
-        albumHashTableBuilder.buildHashTable(albumHashTable);
+        AlbumHashTableBuilder hashTableBuilder = new AlbumHashTableBuilder(albums.getArtistAlbums(resultArtist));
+        hashTableBuilder.buildHashTable(albumHashTable);
 
         System.out.println(albumHashTable.formatTable());
 

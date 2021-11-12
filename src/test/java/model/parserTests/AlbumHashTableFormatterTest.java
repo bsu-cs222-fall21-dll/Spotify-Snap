@@ -3,6 +3,7 @@ package model.parserTests;
 import com.jayway.jsonpath.JsonPath;
 import model.parser.hashtable.AlbumHashTable;
 import model.parser.hashtable.AlbumHashTableBuilder;
+import model.parser.hashtable.HashTableBuilder;
 import net.minidev.json.JSONArray;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -19,8 +20,8 @@ public class AlbumHashTableFormatterTest {
         JSONArray inputArray = JsonPath.read(inputStream,"$..items");
 
         AlbumHashTable albumHashTable = new AlbumHashTable();
-        AlbumHashTableBuilder albumHashTableBuilder = new AlbumHashTableBuilder(inputArray);
-        albumHashTableBuilder.buildHashTable(albumHashTable);
+        AlbumHashTableBuilder hashTableBuilder = new AlbumHashTableBuilder(inputArray);
+        hashTableBuilder.buildHashTable(albumHashTable);
 
         String formattedHashTable = albumHashTable.formatTable();
         Assertions.assertEquals(expectedString(),formattedHashTable);

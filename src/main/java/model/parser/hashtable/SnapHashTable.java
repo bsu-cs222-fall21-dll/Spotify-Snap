@@ -29,7 +29,6 @@ public abstract class SnapHashTable {
     }
 
     public void sortHashMapIntoArrayList(){
-        //todo add song hashtable and hashtable builder with overridden sortHashmapIntoArrayList function
         int sizeOfArrayList = snapHashMap.size();
         String[] sortedAlbumArray = new String[sizeOfArrayList];
         snapHashMap.forEach((snapId, snapObject) -> {

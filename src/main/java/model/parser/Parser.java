@@ -3,6 +3,7 @@ package model.parser;
 import com.jayway.jsonpath.JsonPath;
 import net.minidev.json.JSONArray;
 import view.MissingArtist;
+import view.ParsingErrorHandler;
 
 public abstract class Parser {
 
@@ -36,7 +37,7 @@ public abstract class Parser {
     }
 
     private void handleErrorMessage(){
-        MissingArtist missingArtist = new MissingArtist();
-        missingArtist.printErrrorMessage();
+        ParsingErrorHandler parsingErrorHandler = new ParsingErrorHandler();
+        parsingErrorHandler.printError();
     }
 }
