@@ -18,6 +18,8 @@ public class SongFormatter extends Parser implements Formatter{
         String duration_ms = parseInfo("duration_ms");
         String track_number = parseInfo("index");
         String explicit = parseInfo("explicit");
+        // solution to unicode error found in the following thread
+        // https://stackoverflow.com/questions/6198986/how-can-i-replace-non-printable-unicode-characters-in-java
         name = name.replaceAll("\uFFFD", "'");
 
 
