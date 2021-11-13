@@ -1,7 +1,7 @@
 package model.parserTests;
 
 import com.jayway.jsonpath.JsonPath;
-import model.parser.type.Song;
+import model.type.Song;
 import net.minidev.json.JSONArray;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
