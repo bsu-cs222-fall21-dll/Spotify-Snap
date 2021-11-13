@@ -3,7 +3,7 @@ package model.parserTests;
 import com.jayway.jsonpath.JsonPath;
 import model.parser.hashtable.AlbumHashTableBuilder;
 import model.parser.hashtable.HashTableBuilder;
-import model.parser.type.Album;
+import model.type.Album;
 import model.parser.hashtable.AlbumHashTable;
 import net.minidev.json.JSONArray;
 import org.junit.jupiter.api.Assertions;

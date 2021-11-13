@@ -2,7 +2,7 @@ package model.parserTests;
 
 import com.jayway.jsonpath.JsonPath;
 import model.parser.formatter.ArtistFormatter;
-import model.parser.type.Artist;
+import model.type.Artist;
 import net.minidev.json.JSONArray;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

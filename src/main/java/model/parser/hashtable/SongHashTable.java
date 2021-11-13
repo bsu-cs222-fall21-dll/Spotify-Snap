@@ -1,9 +1,8 @@
 package model.parser.hashtable;
 
-import model.parser.Album;
-import model.parser.Song;
 import model.parser.formatter.AlbumFormatter;
 import model.parser.formatter.SongFormatter;
+import model.type.Song;
 
 public class SongHashTable extends SnapHashTable {
 
