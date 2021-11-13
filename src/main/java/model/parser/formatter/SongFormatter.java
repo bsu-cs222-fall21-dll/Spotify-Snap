@@ -1,7 +1,7 @@
 package model.parser.formatter;
 
 import model.parser.Parser;
-import model.parser.Song;
+import model.type.Song;
 
 public class SongFormatter extends Parser implements Formatter{
 
@@ -11,6 +11,7 @@ public class SongFormatter extends Parser implements Formatter{
     }
 
     public String format() {
+
         String name = parseInfo("name");
         String id = parseInfo("id");
         String uri = parseInfo("uri");

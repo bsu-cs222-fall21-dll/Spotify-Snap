@@ -6,11 +6,22 @@ import io.restassured.http.Method;
 import io.restassured.specification.RequestSpecification;
 import net.minidev.json.JSONArray;
 
-public class AlbumSongs extends AuthorizeCredentials {
+import java.net.UnknownHostException;
+
+public class AlbumTracks extends AuthorizeCredentials {
 
     private final String accessToken = getAccessToken();
 
     public JSONArray getAlbumsTracks(String id) {
+        /*
+          This method sends a GET request to the /albums/{id}/tracks endpoint.
+
+          The request must contain the following headers and parameters:
+                      @header: Authorization: Access Token
+         *             @param:  id : String
+         *
+         * @return: Spotify catalog information for an album tracks.
+         */
 
         RestAssured.baseURI = "https://api.spotify.com/v1";
 

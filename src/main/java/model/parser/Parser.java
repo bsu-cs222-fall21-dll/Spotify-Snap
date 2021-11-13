@@ -2,7 +2,7 @@ package model.parser;
 
 import com.jayway.jsonpath.JsonPath;
 import net.minidev.json.JSONArray;
-import view.ParsingErrorHandler;
+import view.console.ParsingErrorHandler;
 
 public abstract class Parser {
 
@@ -13,20 +13,20 @@ public abstract class Parser {
     }
 
     public String parseInfo(String valueToBeRead){
-        /**
-         * Returns the parsed String from a Json array using the default index of zero
-         *
-         * @param valueToBeRead the key of the parsed values in the JsonArray
+        /*
+          Returns the parsed String from a Json array using the default index of zero
+
+          @param valueToBeRead the key of the parsed values in the JsonArray
          * @return              the parsed String in Json form
          */
         return handleError(valueToBeRead,0);
     }
 
     public String parseInfo(String valueToBeRead,int index){
-        /**
-         * Returns the parsed String from a Json array
-         *
-         * @param valueToBeRead the key of the parsed values in the JsonArray
+        /*
+          Returns the parsed String from a Json array
+
+          @param valueToBeRead the key of the parsed values in the JsonArray
          * @param index         the index of the value to be parsed from the JsonArray
          * @return              the parsed String in Json form
          */

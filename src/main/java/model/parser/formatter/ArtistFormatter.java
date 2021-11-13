@@ -1,10 +1,9 @@
 package model.parser.formatter;
 
-import model.parser.Artist;
 import model.parser.Parser;
+import model.type.Artist;
 
 public class ArtistFormatter extends Parser implements Formatter {
-
 
     public ArtistFormatter(Artist artist) {
         super(artist.readArtistInfoAsJson());

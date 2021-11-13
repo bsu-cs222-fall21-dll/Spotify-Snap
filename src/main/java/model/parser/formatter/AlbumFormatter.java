@@ -1,7 +1,7 @@
 package model.parser.formatter;
 
-import model.parser.Album;
 import model.parser.Parser;
+import model.type.Album;
 
 public class AlbumFormatter extends Parser implements Formatter{
 
