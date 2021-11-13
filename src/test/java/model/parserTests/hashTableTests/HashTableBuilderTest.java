@@ -1,4 +1,4 @@
-package model.parserTests;
+package model.parserTests.hashTableTests;
 
 import com.jayway.jsonpath.JsonPath;
 import model.parser.hashtable.AlbumHashTableBuilder;
