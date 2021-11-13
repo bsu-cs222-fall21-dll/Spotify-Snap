@@ -13,6 +13,7 @@ public class CMDController {
 
     public void run()  {
 
+
         ArtistID artistID = new ArtistID();
         JSONArray artistSearchResultJsonArray = artistID.getArtistID();
         Artist resultArtist = new Artist(artistSearchResultJsonArray);

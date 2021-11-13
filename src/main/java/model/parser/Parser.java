@@ -2,33 +2,35 @@ package model.parser;
 
 import com.jayway.jsonpath.JsonPath;
 import net.minidev.json.JSONArray;
-import view.MissingArtist;
 import view.ParsingErrorHandler;
 
 public abstract class Parser {
 
-    private JSONArray infoArray;
+    private final JSONArray infoArray;
 
     public Parser(JSONArray infoArray) {
         this.infoArray = infoArray;
     }
 
     public String parseInfo(String valueToBeRead){
-        try {
-            return parseFromJson(valueToBeRead,0);
-        } catch (IndexOutOfBoundsException e){
-            handleErrorMessage();
-            return "Artist Not Found";
-        }
+        /**
+         * Returns the parsed String from a Json array using the default index of zero
+         *
+         * @param valueToBeRead the key of the parsed values in the JsonArray
+         * @return              the parsed String in Json form
+         */
+        return handleError(valueToBeRead,0);
     }
 
     public String parseInfo(String valueToBeRead,int index){
-        try {
-            return parseFromJson(valueToBeRead,index);
-        } catch (IndexOutOfBoundsException e){
-            handleErrorMessage();
-            return "Artist Not Found";
-        }
+        /**
+         * Returns the parsed String from a Json array
+         *
+         * @param valueToBeRead the key of the parsed values in the JsonArray
+         * @param index         the index of the value to be parsed from the JsonArray
+         * @return              the parsed String in Json form
+         */
+        return handleError(valueToBeRead,index);
     }
 
     private String parseFromJson(String valueToBeRead,int index){
@@ -36,8 +38,17 @@ public abstract class Parser {
         return itemArray.get(index).toString();
     }
 
-    private void handleErrorMessage(){
+    private void sendErrorMessageToConsole(){
         ParsingErrorHandler parsingErrorHandler = new ParsingErrorHandler();
         parsingErrorHandler.printError();
+    }
+
+    private String handleError(String valueToBeRead, int index){
+        try {
+            return parseFromJson(valueToBeRead,index);
+        } catch (IndexOutOfBoundsException e){
+            sendErrorMessageToConsole();
+            return "Artist Not Found";
+        }
     }
 }
