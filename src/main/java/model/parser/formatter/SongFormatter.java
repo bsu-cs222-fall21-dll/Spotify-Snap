@@ -22,7 +22,6 @@ public class SongFormatter extends Parser implements Formatter{
         // https://stackoverflow.com/questions/6198986/how-can-i-replace-non-printable-unicode-characters-in-java
         name = name.replaceAll("\uFFFD", "'");
 
-
         return String.format("\nSong Name: %s\nSong Id: %s\nUri: %s\nDuration in MS: %s\nExplicit: %s\nTrack Number: %s\n",
                 name,id,uri,duration_ms,explicit,track_number);
     }
