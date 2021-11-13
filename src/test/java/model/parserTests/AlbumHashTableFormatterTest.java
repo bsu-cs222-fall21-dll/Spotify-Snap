@@ -23,6 +23,7 @@ public class AlbumHashTableFormatterTest {
         AlbumHashTableBuilder hashTableBuilder = new AlbumHashTableBuilder(inputArray);
         hashTableBuilder.buildHashTable(albumHashTable);
 
+        albumHashTable.sortHashMapIntoArrayList();
         String formattedHashTable = albumHashTable.formatTable();
         Assertions.assertEquals(expectedString(),formattedHashTable);
 

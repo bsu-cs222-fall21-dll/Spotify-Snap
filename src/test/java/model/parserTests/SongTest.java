@@ -21,7 +21,7 @@ public class SongTest {
         Song song = new Song(inputArray,0);
         String testJsonString = "[[{\"name\":\"Champagne Poetry\"," +
                 "\"id\":\"2HSmyk2qMN8WQjuGhaQgCk\",\"uri\":\"spotify:track:2HSmyk2qMN8WQjuGhaQgCk\"," +
-                "\"duration_ms\":\"336511\"," + "\"track_number\":\"1\",\"explicit\":\"true\"}]]";
+                "\"duration_ms\":\"336511\"," + "\"index\":\"1\",\"explicit\":\"true\"}]]";
 
         JSONArray songJsonArray = song.readSongInfoAsJson();
         JSONArray testArray = JsonPath.read(testJsonString,"$.*");

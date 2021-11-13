@@ -1,6 +1,6 @@
 package model.parser.hashtable;
 
-import model.type.Album;
+import model.parser.Album;
 import model.parser.formatter.AlbumFormatter;
 
 import java.util.HashMap;
@@ -19,10 +19,10 @@ public abstract class SnapHashTable {
     }
 
     public String formatTable() {
-        /*
-          Loops over the elements in the array of sorted elements and converts them into a string
-
-          @return snapsString The Hashtable information sorted and then converted into a string using the objects built in method
+        /**
+         * Loops over the elements in the array of sorted elements and converts them into a string
+         *
+         * @return snapsString The Hashtable information sorted and then converted into a string using the objects built in method
          */
         sortHashMapIntoArrayList();
         String snapsString = "";
@@ -34,9 +34,9 @@ public abstract class SnapHashTable {
     }
 
     public void sortHashMapIntoArrayList(){
-        /*
-          Loops over the elements in the HashMap and assigns them an index value into an array.
-          The index value is associated with a value stored in the Object
+        /**
+         * Loops over the elements in the HashMap and assigns them an index value into an array.
+         * The index value is associated with a value stored in the Object
          */
         int sizeOfArrayList = snapHashMap.size();
         String[] sortedAlbumArray = new String[sizeOfArrayList];
