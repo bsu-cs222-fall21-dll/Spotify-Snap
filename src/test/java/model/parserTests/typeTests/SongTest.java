@@ -1,8 +1,7 @@
-package model.parserTests;
+package model.parserTests.typeTests;
 
 import com.jayway.jsonpath.JsonPath;
 import model.type.Song;
-import model.parser.hashtable.*;
 import net.minidev.json.JSONArray;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -10,27 +9,22 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class SongHashTableBuilderTest {
+public class SongTest {
 
     @Test
-    public void readAlbumInfoAsJsonTest() throws IOException {
+    public void readSongInfoAsJsonTest() throws IOException {
+
         InputStream inputStream = Thread.currentThread().getContextClassLoader()
                 .getResourceAsStream("songs.json");
         JSONArray inputArray = JsonPath.read(inputStream,"$..items");
 
-        SongHashTable songHashTable = new SongHashTable();
-        HashTableBuilder hashTableBuilder = new SongHashTableBuilder(inputArray);
-        hashTableBuilder.buildHashTable(songHashTable);
-
+        Song song = new Song(inputArray,0);
         String testJsonString = "[[{\"name\":\"Champagne Poetry\"," +
                 "\"id\":\"2HSmyk2qMN8WQjuGhaQgCk\",\"uri\":\"spotify:track:2HSmyk2qMN8WQjuGhaQgCk\"," +
                 "\"duration_ms\":\"336511\"," + "\"index\":\"1\",\"explicit\":\"true\"}]]";
-        Song song = (Song) songHashTable.readAtKey("2HSmyk2qMN8WQjuGhaQgCk");
 
-        JSONArray albumJsonArray = song.readSongInfoAsJson();
+        JSONArray songJsonArray = song.readSongInfoAsJson();
         JSONArray testArray = JsonPath.read(testJsonString,"$.*");
-        Assertions.assertEquals(testArray,albumJsonArray);
+        Assertions.assertEquals(testArray,songJsonArray);
     }
 }
-
-

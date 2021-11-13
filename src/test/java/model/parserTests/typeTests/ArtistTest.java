@@ -1,4 +1,4 @@
-package model.parserTests;
+package model.parserTests.typeTests;
 
 import com.jayway.jsonpath.JsonPath;
 import model.type.Artist;
