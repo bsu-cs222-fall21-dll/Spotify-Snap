@@ -1,6 +1,4 @@
 package model.parser.hashtable;
-
-import model.parser.formatter.AlbumFormatter;
 import model.parser.formatter.SongFormatter;
 import model.type.Song;
 
