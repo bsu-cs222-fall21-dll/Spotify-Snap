@@ -37,7 +37,7 @@ public class SongHashTableFormatterTest {
                 Track Number: 1
                                 
                                 
-                Song Name: Papi\uFFFDs Home
+                Song Name: Papi's Home
                 Song Id: 6jy9yJfgCsMHdu2Oz4BGKX
                 Uri: spotify:track:6jy9yJfgCsMHdu2Oz4BGKX
                 Duration in MS: 178623
@@ -109,7 +109,7 @@ public class SongHashTableFormatterTest {
                 Track Number: 10
                                 
                                 
-                Song Name: Yebba\uFFFDs Heartbreak
+                Song Name: Yebba's Heartbreak
                 Song Id: 1PDP7mLiAMwhfmgIwzhOm2
                 Uri: spotify:track:1PDP7mLiAMwhfmgIwzhOm2
                 Duration in MS: 133762

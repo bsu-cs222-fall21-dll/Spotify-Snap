@@ -18,6 +18,7 @@ public class SongFormatter extends Parser implements Formatter{
         String duration_ms = parseInfo("duration_ms");
         String track_number = parseInfo("index");
         String explicit = parseInfo("explicit");
+        name = name.replaceAll("\uFFFD", "'");
 
 
         return String.format("\nSong Name: %s\nSong Id: %s\nUri: %s\nDuration in MS: %s\nExplicit: %s\nTrack Number: %s\n",
