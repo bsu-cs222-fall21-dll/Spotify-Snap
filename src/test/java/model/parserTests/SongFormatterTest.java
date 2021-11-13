@@ -2,7 +2,9 @@ package model.parserTests;
 
 import com.jayway.jsonpath.JsonPath;
 import model.parser.Album;
+import model.parser.Song;
 import model.parser.formatter.AlbumFormatter;
+import model.parser.formatter.SongFormatter;
 import net.minidev.json.JSONArray;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -10,28 +12,28 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class AlbumFormatterTest {
-
+public class SongFormatterTest {
 
     @Test
     public void formatAlbumTest() throws IOException {
         InputStream inputStream = Thread.currentThread().getContextClassLoader()
-                .getResourceAsStream("albums.json");
+                .getResourceAsStream("songs.json");
         JSONArray testArray = JsonPath.read(inputStream,"$..items");
 
 
-        Album album = new Album(testArray,0);
-        AlbumFormatter albumFormatter = new AlbumFormatter(album);
-        String formattedArtist = albumFormatter.format();
+        Song song = new Song(testArray,0);
+        SongFormatter songFormatter = new SongFormatter(song);
+        String formattedArtist = songFormatter.format();
 
         String expected = """
 
-                Album Name: Certified Lover Boy
-                Album Id: 3SpBlxme9WbeQdI9kx7KAV
-                Uri: spotify:album:3SpBlxme9WbeQdI9kx7KAV
-                Release Date: 2021-09-03
-                Total Tracks: 21""";
+                Song Name: Champagne Poetry
+                Song Id: 2HSmyk2qMN8WQjuGhaQgCk
+                Uri: spotify:track:2HSmyk2qMN8WQjuGhaQgCk
+                Duration in MS: 336511
+                Explicit: true
+                Track Number: 1
+                """;
         Assertions.assertEquals(expected,formattedArtist);
     }
-
 }

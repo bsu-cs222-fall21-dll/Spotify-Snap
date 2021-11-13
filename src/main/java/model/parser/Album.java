@@ -3,7 +3,7 @@ package model.parser;
 import com.jayway.jsonpath.JsonPath;
 import net.minidev.json.JSONArray;
 
-public class Album {
+public class Album extends Parser{
 
     private final String name;
     private final String id;
@@ -13,16 +13,14 @@ public class Album {
     private int index;
 
     public Album(JSONArray inputArray, int index) {
+        super(inputArray);
+        this.name = parseInfo("name", index);
+        this.id = parseInfo("id", index);
 
-        SearchResultParser searchResultParser = new SearchResultParser(inputArray);
-        this.name = searchResultParser.parseInfo("name", index);
-        this.id = searchResultParser.parseInfo("id", index);
-
-        this.uri = searchResultParser.parseInfo("uri", index);
+        this.uri = parseInfo("uri", index);
         this.index = calculateIndex(index);
-        this.date = searchResultParser.parseInfo("release_date", this.index);
-        this.totalTracks = searchResultParser.parseInfo("total_tracks", this.index);
-
+        this.date = parseInfo("release_date", this.index);
+        this.totalTracks = parseInfo("total_tracks", this.index);
 
     }
 

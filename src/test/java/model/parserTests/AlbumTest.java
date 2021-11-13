@@ -13,6 +13,7 @@ public class AlbumTest {
 
     @Test
     public void readAlbumInfoAsJsonTest() throws IOException {
+
         InputStream inputStream = Thread.currentThread().getContextClassLoader()
                 .getResourceAsStream("albums.json");
         JSONArray inputArray = JsonPath.read(inputStream,"$..items");
