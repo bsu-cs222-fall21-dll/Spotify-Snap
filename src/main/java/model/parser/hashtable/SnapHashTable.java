@@ -1,11 +1,12 @@
 package model.parser.hashtable;
 
-import model.parser.Album;
+import model.parser.type.Album;
 import model.parser.formatter.AlbumFormatter;
 
 import java.util.HashMap;
 
 public abstract class SnapHashTable {
+
     protected HashMap<String,Object> snapHashMap = new HashMap<>();
     private String[] snapArray;
 
@@ -29,6 +30,7 @@ public abstract class SnapHashTable {
     }
 
     public void sortHashMapIntoArrayList(){
+
         int sizeOfArrayList = snapHashMap.size();
         String[] sortedAlbumArray = new String[sizeOfArrayList];
         snapHashMap.forEach((snapId, snapObject) -> {
@@ -40,6 +42,7 @@ public abstract class SnapHashTable {
             sortedAlbumArray[index] = albumString;
 
         });
+
         this.snapArray = sortedAlbumArray;
     }
 }

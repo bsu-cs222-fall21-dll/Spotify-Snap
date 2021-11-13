@@ -1,18 +1,20 @@
-package model.parser;
+package model.parser.type;
 
 import com.jayway.jsonpath.JsonPath;
+import model.parser.Parser;
 import net.minidev.json.JSONArray;
 
 public class Song extends Parser {
 
-    private String name;
-    private String id;
-    private String uri;
-    private String duration_ms;
-    private String track_number;
-    private String explicit;
+    private final String name;
+    private final String id;
+    private final String uri;
+    private final String duration_ms;
+    private final String track_number;
+    private final String explicit;
 
     public Song(JSONArray inputArray, int index) {
+
         super(inputArray);
         this.name = parseInfo("[*].name", index);
         this.id = parseInfo("id", index);
@@ -25,6 +27,7 @@ public class Song extends Parser {
     }
 
     public JSONArray readSongInfoAsJson() {
+
         String artistArrayAsString = String.format("{\"album\": [{\"name\": \"%s\", \"id\": \"%s\",\"uri\": "
                 + "\"%s\",\"duration_ms\": \"%s\" ,\"track_number\": \"%s\",\"explicit\": \"%s\"}]}",name,id,uri,duration_ms,track_number,explicit);
         return JsonPath.read(artistArrayAsString,"$.*");

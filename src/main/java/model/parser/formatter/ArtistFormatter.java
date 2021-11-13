@@ -1,6 +1,6 @@
 package model.parser.formatter;
 
-import model.parser.Artist;
+import model.parser.type.Artist;
 import model.parser.Parser;
 
 public class ArtistFormatter extends Parser implements Formatter {

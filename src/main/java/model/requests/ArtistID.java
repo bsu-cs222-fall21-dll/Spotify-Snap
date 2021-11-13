@@ -5,20 +5,19 @@ import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.specification.RequestSpecification;
 import net.minidev.json.JSONArray;
-import view.MissingArtist;
-import view.UserInput;
+import view.console.MissingArtist;
+import view.console.UserInput;
 
 public class ArtistID extends AuthorizeCredentials {
 
     private final String accessToken = getAccessToken();
 
-
     public JSONArray getArtistID() {
-        /**
-         *This method sends a GET request to the /search endpoint that match a keyword string.
-         *
-         * The request must contain the following headers and parameters:
-         *              @header: Authorization: Access Token
+        /*
+         This method sends a GET request to the /search endpoint that match a keyword string.
+
+          The request must contain the following headers and parameters:
+                       @header: Authorization: Access Token
          *              @param:  q: String
          *              @param:  type: Album, artist, playlist, track, show and episode.
          *

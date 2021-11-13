@@ -1,7 +1,7 @@
 package model.parserTests;
 
 import com.jayway.jsonpath.JsonPath;
-import model.parser.SearchResultParser;
+import model.parser.type.SearchResult;
 import net.minidev.json.JSONArray;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -17,8 +17,8 @@ public class AlbumParserTest {
                 .getResourceAsStream("albums.json");
         JSONArray testArray = JsonPath.read(inputStream,"$..items");
 
-        SearchResultParser searchResultParser = new SearchResultParser(testArray);
-        String result = searchResultParser.parseInfo("name");
+        SearchResult searchResult = new SearchResult(testArray);
+        String result = searchResult.parseInfo("name");
         Assertions.assertEquals("Certified Lover Boy",result);
     }
 
@@ -27,9 +27,9 @@ public class AlbumParserTest {
         InputStream inputStream = Thread.currentThread().getContextClassLoader()
                 .getResourceAsStream("albums.json");
         JSONArray testArray = JsonPath.read(inputStream,"$..items");
-        SearchResultParser searchResultParser = new SearchResultParser(testArray);
+        SearchResult searchResult = new SearchResult(testArray);
 
-        String result = searchResultParser.parseInfo("id");
+        String result = searchResult.parseInfo("id");
         Assertions.assertEquals("3SpBlxme9WbeQdI9kx7KAV",result);
 
     }
@@ -39,9 +39,9 @@ public class AlbumParserTest {
         InputStream inputStream = Thread.currentThread().getContextClassLoader()
                 .getResourceAsStream("albums.json");
         JSONArray testArray = JsonPath.read(inputStream,"$..items");
-        SearchResultParser searchResultParser = new SearchResultParser(testArray);
+        SearchResult searchResult = new SearchResult(testArray);
 
-        String result = searchResultParser.parseInfo("uri");
+        String result = searchResult.parseInfo("uri");
         Assertions.assertEquals("spotify:album:3SpBlxme9WbeQdI9kx7KAV",result);
 
     }
@@ -50,9 +50,9 @@ public class AlbumParserTest {
         InputStream inputStream = Thread.currentThread().getContextClassLoader()
                 .getResourceAsStream("albums.json");
         JSONArray testArray = JsonPath.read(inputStream,"$..items");
-        SearchResultParser searchResultParser = new SearchResultParser(testArray);
+        SearchResult searchResult = new SearchResult(testArray);
 
-        String result = searchResultParser.parseInfo("release_date");
+        String result = searchResult.parseInfo("release_date");
         Assertions.assertEquals("2021-09-03",result);
     }
     @Test
@@ -60,9 +60,9 @@ public class AlbumParserTest {
         InputStream inputStream = Thread.currentThread().getContextClassLoader()
                 .getResourceAsStream("albums.json");
         JSONArray testArray = JsonPath.read(inputStream,"$..items");
-        SearchResultParser searchResultParser = new SearchResultParser(testArray);
+        SearchResult searchResult = new SearchResult(testArray);
 
-        String result = searchResultParser.parseInfo("total_tracks");
+        String result = searchResult.parseInfo("total_tracks");
         Assertions.assertEquals("21",result);
     }
 

@@ -1,9 +1,11 @@
-package model.parser;
+package model.parser.type;
 
 import com.jayway.jsonpath.JsonPath;
+import model.parser.Parser;
 import net.minidev.json.JSONArray;
 
 public class Artist extends Parser {
+
     private final String name;
     private final String id;
     private final String uri;
@@ -11,6 +13,7 @@ public class Artist extends Parser {
     private final String followerCount;
 
     public Artist(JSONArray inputArray) {
+
         super(inputArray);
         this.name = parseInfo("name");
         this.id = parseInfo("id");

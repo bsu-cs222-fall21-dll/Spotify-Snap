@@ -1,18 +1,20 @@
-package model.parser;
+package model.parser.type;
 
 import com.jayway.jsonpath.JsonPath;
+import model.parser.Parser;
 import net.minidev.json.JSONArray;
 
-public class Album extends Parser{
+public class Album extends Parser {
 
     private final String name;
     private final String id;
     private final String uri;
     private final String date;
     private final String totalTracks;
-    private int index;
+    private final int index;
 
     public Album(JSONArray inputArray, int index) {
+
         super(inputArray);
         this.name = parseInfo("name", index);
         this.id = parseInfo("id", index);

@@ -4,19 +4,21 @@ import com.jayway.jsonpath.JsonPath;
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.specification.RequestSpecification;
-import model.parser.Artist;
+import model.parser.type.Artist;
 import net.minidev.json.JSONArray;
+
+import java.net.UnknownHostException;
 
 public class ArtistAlbums extends AuthorizeCredentials {
 
 private final String accessToken = getAccessToken();
 
     public JSONArray getArtistAlbums(Artist artist) {
-        /**
-         * This method sends a GET request to the /albums/{id} endpoint.
-         *
-         * The request must contain the following headers and parameters:
-         *             @header: Authorization: Access Token
+        /*
+          This method sends a GET request to the /albums/{id} endpoint.
+
+          The request must contain the following headers and parameters:
+                      @header: Authorization: Access Token
          *             @param:  id : String
          *
          * @return: Spotify catalog information for a single album.

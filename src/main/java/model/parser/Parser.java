@@ -2,12 +2,11 @@ package model.parser;
 
 import com.jayway.jsonpath.JsonPath;
 import net.minidev.json.JSONArray;
-import view.MissingArtist;
-import view.ParsingErrorHandler;
+import view.console.ParsingErrorHandler;
 
 public abstract class Parser {
 
-    private JSONArray infoArray;
+    private final JSONArray infoArray;
 
     public Parser(JSONArray infoArray) {
         this.infoArray = infoArray;

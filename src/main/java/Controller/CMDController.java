@@ -1,17 +1,18 @@
 package Controller;
 
-import model.parser.*;
 import model.parser.formatter.ArtistFormatter;
 import model.parser.hashtable.AlbumHashTable;
 import model.parser.hashtable.AlbumHashTableBuilder;
-import model.parser.hashtable.HashTableBuilder;
+import model.parser.type.Artist;
 import model.requests.ArtistAlbums;
 import model.requests.ArtistID;
 import net.minidev.json.JSONArray;
 
+import java.net.UnknownHostException;
+
 public class CMDController {
 
-    public void run()  {
+    public void run() {
 
         ArtistID artistID = new ArtistID();
         JSONArray artistSearchResultJsonArray = artistID.getArtistID();

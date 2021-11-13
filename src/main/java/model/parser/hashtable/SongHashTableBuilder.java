@@ -1,12 +1,11 @@
 package model.parser.hashtable;
 
-import model.parser.Album;
-import model.parser.Song;
+import model.parser.type.Song;
 import net.minidev.json.JSONArray;
 
 public class SongHashTableBuilder extends HashTableBuilder {
 
-    private JSONArray inputArray;
+    private final JSONArray inputArray;
 
     public SongHashTableBuilder(JSONArray inputArray) {
         super(inputArray);
