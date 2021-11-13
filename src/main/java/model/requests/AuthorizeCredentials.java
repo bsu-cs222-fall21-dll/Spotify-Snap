@@ -3,7 +3,7 @@ package model.requests;
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.specification.RequestSpecification;
-import model.parser.type.AccessToken;
+import model.type.AccessToken;
 
 public abstract class AuthorizeCredentials {
     //TODO Network Error Handler

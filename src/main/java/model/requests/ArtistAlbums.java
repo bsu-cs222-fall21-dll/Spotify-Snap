@@ -4,7 +4,7 @@ import com.jayway.jsonpath.JsonPath;
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.specification.RequestSpecification;
-import model.parser.type.Artist;
+import model.type.Artist;
 import net.minidev.json.JSONArray;
 
 import java.net.UnknownHostException;

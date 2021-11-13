@@ -1,4 +1,4 @@
-package model.parser.type;
+package model.type;
 
 import model.parser.Parser;
 import net.minidev.json.JSONArray;

@@ -1,4 +1,4 @@
-package model.parser.type;
+package model.type;
 
 import com.jayway.jsonpath.JsonPath;
 import net.minidev.json.JSONArray;

@@ -1,7 +1,7 @@
 package model.parser.hashtable;
 
-import model.parser.type.Album;
 import model.parser.Parser;
+import model.type.Album;
 import net.minidev.json.JSONArray;
 
 public abstract class HashTableBuilder extends Parser {
