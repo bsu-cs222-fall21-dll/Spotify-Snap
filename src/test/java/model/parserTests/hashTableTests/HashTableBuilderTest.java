@@ -27,7 +27,7 @@ public class HashTableBuilderTest {
         String testJsonString = "[[{\"name\":\"Dark Lane Demo Tapes\"," +
                 "\"id\":\"6OQ9gBfg5EXeNAEwGSs6jK\",\"uri\":\"spotify:album:6OQ9gBfg5EXeNAEwGSs6jK\"," +
                 "\"date\":\"2020-05-01\"," + "\"total_tracks\":\"14\",\"index\":\"2\"}]]";
-        Album album = (Album) albumHashTable.readAtKey("6OQ9gBfg5EXeNAEwGSs6jK");
+        Album album = (Album) albumHashTable.readAtKey("2");
 
         JSONArray albumJsonArray = album.readAlbumInfoAsJson();
         JSONArray testArray = JsonPath.read(testJsonString,"$.*");

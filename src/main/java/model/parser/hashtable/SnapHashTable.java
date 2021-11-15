@@ -10,13 +10,13 @@ public abstract class SnapHashTable {
     protected HashMap<String,Object> snapHashMap = new HashMap<>();
     protected String[] snapArray;
 
-    public void place(String albumID, Object snapObj) {
-        snapHashMap.put(albumID,snapObj);
+    public void place(String snapIndex, Object snapObj) {
+        snapHashMap.put(snapIndex,snapObj);
 
     }
 
-    public Object readAtKey(String snapId) {
-        return snapHashMap.get(snapId);
+    public Object readAtKey(String snapIndex) {
+        return snapHashMap.get(snapIndex);
     }
 
     public String formatTable() {
@@ -27,8 +27,9 @@ public abstract class SnapHashTable {
          */
         sortHashMapIntoArrayList();
         String snapsString = "";
-        for (String currentSnapString : snapArray) {
-            snapsString = String.format("%s%s\n", snapsString,currentSnapString);
+        for (int index=1;index<snapArray.length;index++) {
+
+            snapsString = String.format("%sIndex: %d%s\n\n", snapsString,index,snapArray[index]);
         }
 
         return snapsString;
@@ -41,7 +42,7 @@ public abstract class SnapHashTable {
          */
         int sizeOfArrayList = snapHashMap.size();
         String[] sortedAlbumArray = new String[sizeOfArrayList];
-        snapHashMap.forEach((snapId, snapObject) -> {
+        snapHashMap.forEach((snapIndex, snapObject) -> {
 
             AlbumFormatter albumFormatter = new AlbumFormatter((Album) snapObject);
             String albumString = albumFormatter.format();

@@ -20,7 +20,7 @@ public abstract class HashTableBuilder extends Parser {
 
             String snapID = parseInfo("id",index);
             Album albumToBeAdded = new Album(inputArray,index);
-            snapHashTable.place(snapID,albumToBeAdded);
+            snapHashTable.place(String.format("%d",index/2),albumToBeAdded);
         }
     }
 }

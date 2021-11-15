@@ -10,4 +10,9 @@ public class UserInput {
         return cmdInput.inputStringViaCommandLine();
     }
 
+    public String getAlbum(){
+        System.out.println("Enter the index of the album you would like the songs of: ");
+        return cmdInput.inputStringViaCommandLine();
+    }
+
 }

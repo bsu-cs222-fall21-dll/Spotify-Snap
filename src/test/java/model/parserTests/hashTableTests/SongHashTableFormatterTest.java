@@ -28,15 +28,7 @@ public class SongHashTableFormatterTest {
 
     private String expectedString(){
         return """
-                                
-                Song Name: Champagne Poetry
-                Song Id: 2HSmyk2qMN8WQjuGhaQgCk
-                Uri: spotify:track:2HSmyk2qMN8WQjuGhaQgCk
-                Duration in MS: 336511
-                Explicit: true
-                Track Number: 1
-                                
-                                
+                Index: 1
                 Song Name: Papi's Home
                 Song Id: 6jy9yJfgCsMHdu2Oz4BGKX
                 Uri: spotify:track:6jy9yJfgCsMHdu2Oz4BGKX
@@ -45,6 +37,7 @@ public class SongHashTableFormatterTest {
                 Track Number: 2
                                 
                                 
+                Index: 2
                 Song Name: Girls Want Girls (with Lil Baby)
                 Song Id: 37Nqx7iavZpotJSDXZWbJ3
                 Uri: spotify:track:37Nqx7iavZpotJSDXZWbJ3
@@ -53,6 +46,7 @@ public class SongHashTableFormatterTest {
                 Track Number: 3
                                 
                                 
+                Index: 3
                 Song Name: In The Bible (with Lil Durk & Giveon)
                 Song Id: 61S79KIVA4I9FXbnsylEHT
                 Uri: spotify:track:61S79KIVA4I9FXbnsylEHT
@@ -61,6 +55,7 @@ public class SongHashTableFormatterTest {
                 Track Number: 4
                                 
                                 
+                Index: 4
                 Song Name: Love All (with JAY-Z)
                 Song Id: 4VCbgIdr8ptegWeJpqLVHH
                 Uri: spotify:track:4VCbgIdr8ptegWeJpqLVHH
@@ -69,6 +64,7 @@ public class SongHashTableFormatterTest {
                 Track Number: 5
                                 
                                 
+                Index: 5
                 Song Name: Fair Trade (with Travis Scott)
                 Song Id: 40iJIUlhi6renaREYGeIDS
                 Uri: spotify:track:40iJIUlhi6renaREYGeIDS
@@ -77,6 +73,7 @@ public class SongHashTableFormatterTest {
                 Track Number: 6
                                 
                                 
+                Index: 6
                 Song Name: Way 2 Sexy (with Future & Young Thug)
                 Song Id: 0k1WUmIRnG3xU6fvvDVfRG
                 Uri: spotify:track:0k1WUmIRnG3xU6fvvDVfRG
@@ -85,6 +82,7 @@ public class SongHashTableFormatterTest {
                 Track Number: 7
                                 
                                 
+                Index: 7
                 Song Name: TSU
                 Song Id: 4s7QLoImIwmPi9L6dq1nVW
                 Uri: spotify:track:4s7QLoImIwmPi9L6dq1nVW
@@ -93,6 +91,7 @@ public class SongHashTableFormatterTest {
                 Track Number: 8
                                 
                                 
+                Index: 8
                 Song Name: N 2 Deep
                 Song Id: 34D6FJysnQioVingDKufuf
                 Uri: spotify:track:34D6FJysnQioVingDKufuf
@@ -101,6 +100,7 @@ public class SongHashTableFormatterTest {
                 Track Number: 9
                                 
                                 
+                Index: 9
                 Song Name: Pipe Down
                 Song Id: 11pEKMLmavDu8fxOB5QjbQ
                 Uri: spotify:track:11pEKMLmavDu8fxOB5QjbQ
@@ -109,6 +109,7 @@ public class SongHashTableFormatterTest {
                 Track Number: 10
                                 
                                 
+                Index: 10
                 Song Name: Yebba's Heartbreak
                 Song Id: 1PDP7mLiAMwhfmgIwzhOm2
                 Uri: spotify:track:1PDP7mLiAMwhfmgIwzhOm2
@@ -117,6 +118,7 @@ public class SongHashTableFormatterTest {
                 Track Number: 11
                                 
                                 
+                Index: 11
                 Song Name: No Friends In The Industry
                 Song Id: 2tUL6dZf1mywCj5WvCPZw6
                 Uri: spotify:track:2tUL6dZf1mywCj5WvCPZw6
@@ -125,6 +127,7 @@ public class SongHashTableFormatterTest {
                 Track Number: 12
                                 
                                 
+                Index: 12
                 Song Name: Knife Talk (with 21 Savage ft. Project Pat)
                 Song Id: 2BcMwX1MPV6ZHP4tUT9uq6
                 Uri: spotify:track:2BcMwX1MPV6ZHP4tUT9uq6
@@ -133,6 +136,7 @@ public class SongHashTableFormatterTest {
                 Track Number: 13
                                 
                                 
+                Index: 13
                 Song Name: 7am On Bridle Path
                 Song Id: 42m3eP1JJhtzffal9B136J
                 Uri: spotify:track:42m3eP1JJhtzffal9B136J
@@ -141,6 +145,7 @@ public class SongHashTableFormatterTest {
                 Track Number: 14
                                 
                                 
+                Index: 14
                 Song Name: Race My Mind
                 Song Id: 2Q3jFbyE61mCjS3SkW4toJ
                 Uri: spotify:track:2Q3jFbyE61mCjS3SkW4toJ
@@ -149,12 +154,14 @@ public class SongHashTableFormatterTest {
                 Track Number: 15
                                 
                                 
+                Index: 15
                 Song Name: Fountains (with Tems)
                 Song Id: 08XWh5c0BMyD1nKVxxl91z
                 Uri: spotify:track:08XWh5c0BMyD1nKVxxl91z
                 Duration in MS: 192417
                 Explicit: true
                 Track Number: 16
+                                
                                 
                 """;
     }
