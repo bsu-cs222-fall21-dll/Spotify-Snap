@@ -1,6 +1,7 @@
-package model;
+package model.parserTests.typeTests;
 
 import com.jayway.jsonpath.JsonPath;
+import model.type.SearchResult;
 import net.minidev.json.JSONArray;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -15,9 +16,9 @@ public class ArtistParserTest {
         InputStream inputStream = Thread.currentThread().getContextClassLoader()
                 .getResourceAsStream("newResults.json");
         JSONArray testArray = JsonPath.read(inputStream,"$..items");
-        ArtistParser artistParser = new ArtistParser();
+        SearchResult searchResult = new SearchResult(testArray);
 
-        String result = artistParser.parseArtistId(testArray);
+        String result = searchResult.parseInfo("id");
         Assertions.assertEquals("3TVXtAsR1Inumwj472S9r4",result);
 
     }
@@ -27,9 +28,9 @@ public class ArtistParserTest {
         InputStream inputStream = Thread.currentThread().getContextClassLoader()
                 .getResourceAsStream("newResults.json");
         JSONArray testArray = JsonPath.read(inputStream,"$..items");
-        ArtistParser artistParser = new ArtistParser();
+        SearchResult searchResult = new SearchResult(testArray);
 
-        String result = artistParser.parseArtistName(testArray);
+        String result = searchResult.parseInfo("name");
         Assertions.assertEquals("Drake",result);
 
     }
@@ -38,9 +39,9 @@ public class ArtistParserTest {
         InputStream inputStream = Thread.currentThread().getContextClassLoader()
                 .getResourceAsStream("newResults.json");
         JSONArray testArray = JsonPath.read(inputStream,"$..items");
-        ArtistParser artistParser = new ArtistParser();
+        SearchResult searchResult = new SearchResult(testArray);
 
-        String result = artistParser.parseArtistUri(testArray);
+        String result = searchResult.parseInfo("uri");
         Assertions.assertEquals("spotify:artist:3TVXtAsR1Inumwj472S9r4",result);
 
     }
@@ -50,9 +51,9 @@ public class ArtistParserTest {
         InputStream inputStream = Thread.currentThread().getContextClassLoader()
                 .getResourceAsStream("newResults.json");
         JSONArray testArray = JsonPath.read(inputStream,"$..items");
-        ArtistParser artistParser = new ArtistParser();
+        SearchResult searchResult = new SearchResult(testArray);
 
-        String result = artistParser.parseArtistFollowersTotal(testArray);
+        String result = searchResult.parseInfo("total");
         Assertions.assertEquals("58055243",result);
     }
 

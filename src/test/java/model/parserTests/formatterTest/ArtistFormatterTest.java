@@ -1,6 +1,8 @@
-package model;
+package model.parserTests.formatterTest;
 
 import com.jayway.jsonpath.JsonPath;
+import model.parser.formatter.ArtistFormatter;
+import model.type.Artist;
 import net.minidev.json.JSONArray;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -16,11 +18,11 @@ public class ArtistFormatterTest {
         JSONArray testArray = JsonPath.read(inputStream,"$..items");
 
 
-        SnapArtist snapArtist = new SnapArtist(testArray);
-        ArtistFormatter artistFormatter = new ArtistFormatter(snapArtist);
-        String formattedArtist = artistFormatter.formatSnapArtist();
+        Artist artist = new Artist(testArray);
+        ArtistFormatter artistFormatter = new ArtistFormatter(artist);
+        String formattedArtist = artistFormatter.format();
 
-        String expected = "Name: Drake\nId: 3TVXtAsR1Inumwj472S9r4\nExternal URL: https://open.spotify.com/artist/3TVXtAsR1Inumwj472S9r4\nUri: spotify:artist:3TVXtAsR1Inumwj472S9r4\nFollower Total: 58055243";
+        String expected = "\nArtist Name: Drake\nArtist Id: 3TVXtAsR1Inumwj472S9r4\nExternal URL: https://open.spotify.com/artist/3TVXtAsR1Inumwj472S9r4\nUri: spotify:artist:3TVXtAsR1Inumwj472S9r4\nFollower Count: 58055243";
         Assertions.assertEquals(expected,formattedArtist);
     }
 }

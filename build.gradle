@@ -1,8 +1,10 @@
 plugins {
     id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.7'
 }
 
-group 'org.example'
+group 'edu.bsu.cs222'
 version '1.0-SNAPSHOT'
 
 
@@ -14,11 +16,19 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
     implementation group: 'com.jayway.jsonpath', name: 'json-path', version: '2.6.0'
-    // https://mvnrepository.com/artifact/io.rest-assured/rest-assured
     implementation group: 'io.rest-assured', name: 'rest-assured', version: '4.4.0'
+    implementation 'org.slf4j:slf4j-simple:1.7.32'
+    implementation group: 'org.openjfx', name: 'javafx', version: '11', ext: 'pom'
+
 
 }
 
 test {
     useJUnitPlatform()
 }
+
+javafx {
+    modules = ['javafx.controls', 'javafx.fxml']
+    version = '13.0.2'
+}
+mainClassName = 'edu.bsu.cs22.main'
