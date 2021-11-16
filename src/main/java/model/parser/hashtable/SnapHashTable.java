@@ -27,9 +27,9 @@ public abstract class SnapHashTable {
          */
         sortHashMapIntoArrayList();
         String snapsString = "";
-        for (int index=1;index<snapArray.length;index++) {
+        for (int index=0;index<snapArray.length;index++) {
 
-            snapsString = String.format("%sIndex: %d%s\n\n", snapsString,index,snapArray[index]);
+            snapsString = String.format("%sIndex: %d%s\n\n", snapsString,index+1,snapArray[index]);
         }
 
         return snapsString;

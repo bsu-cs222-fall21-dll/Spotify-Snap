@@ -16,8 +16,9 @@ public class SongsRequester {
 
     private String getIdOfAlbum(AlbumHashTable albumHashTableToBeSelectedFrom){
 
-        String albumIndex = handleErrorIfInputIsLargerThanHashTable(albumHashTableToBeSelectedFrom);
-
+        String desiredAlbumIndex = handleErrorIfInputIsLargerThanHashTable(albumHashTableToBeSelectedFrom);
+        int index = Integer.parseInt(desiredAlbumIndex)-1;
+        String albumIndex = String.format("%d",index);
         Album selectedAlbum = (Album) albumHashTableToBeSelectedFrom.readAtKey(albumIndex);
         AlbumFormatter albumFormatter = new AlbumFormatter(selectedAlbum);
         return albumFormatter.parseInfo("id");
