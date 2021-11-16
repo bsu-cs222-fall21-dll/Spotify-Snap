@@ -31,4 +31,5 @@ javafx {
     modules = ['javafx.controls', 'javafx.fxml']
     version = '13.0.2'
 }
-mainClassName = 'edu.bsu.cs22.main'
+
+mainClassName = 'view.gui.spotifySnapInterface'
