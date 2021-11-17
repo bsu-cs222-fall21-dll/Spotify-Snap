@@ -25,10 +25,14 @@ public class spotifySnapInterface extends Application {
         urlArea.getChildren().add(textField);
         parent.getChildren().add(urlArea);
 
-        Button button = new Button("Search Artist");
-        button.setOnAction(event -> System.out.println("I would like to see info on " + textField.getText()));
+        TextField outputField = new TextField();
 
-        parent.getChildren().add(button);
+        Button button = new Button("Search Artist");
+        button.setOnAction(event -> {
+            outputField.setText("I would like artist info on " + textField.getText());
+        });
+
+        parent.getChildren().addAll(button, outputField);
 
         primaryStage.setScene(new Scene(parent, 370, 425));
         primaryStage.show();
