@@ -6,7 +6,7 @@ import net.minidev.json.JSONArray;
 
 public abstract class HashTableBuilder extends Parser {
 
-    private final JSONArray inputArray;
+    protected final JSONArray inputArray;
 
     public HashTableBuilder(JSONArray inputArray) {
 

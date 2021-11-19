@@ -12,8 +12,29 @@ import java.io.InputStream;
 
 public class SongHashTableBuilderTest {
 
+
     @Test
-    public void readAlbumInfoAsJsonTest() throws IOException {
+    public void readSongInfoAsJsonFromSecondFileTest() throws IOException {
+        InputStream inputStream = Thread.currentThread().getContextClassLoader()
+                .getResourceAsStream("diabolusInMusicaSongsTest.json");
+        JSONArray inputArray = JsonPath.read(inputStream,"$..[*]");
+
+        SongHashTable songHashTable = new SongHashTable();
+        HashTableBuilder hashTableBuilder = new SongHashTableBuilder(inputArray);
+        hashTableBuilder.buildHashTable(songHashTable);
+
+        String testJsonString = "[[{\"name\":\"Bitter Peace\",\"id\":\"7Amiwp5D26ULS0qgMRPkpa\",\"uri\":" +
+                "\"spotify:track:7Amiwp5D26ULS0qgMRPkpa\",\"duration_ms\":\"272080\",\"index\":\"1\",\"explicit\":\"true\"}]]";
+
+        Song song = (Song) songHashTable.readAtKey("7Amiwp5D26ULS0qgMRPkpa");
+
+        JSONArray albumJsonArray = song.readSongInfoAsJson();
+        JSONArray testArray = JsonPath.read(testJsonString,"$.*");
+        Assertions.assertEquals(testArray,albumJsonArray);
+    }
+
+    @Test
+    public void readSongInfoAsJsonTest() throws IOException {
         InputStream inputStream = Thread.currentThread().getContextClassLoader()
                 .getResourceAsStream("songs.json");
         JSONArray inputArray = JsonPath.read(inputStream,"$..items");
@@ -31,6 +52,8 @@ public class SongHashTableBuilderTest {
         JSONArray testArray = JsonPath.read(testJsonString,"$.*");
         Assertions.assertEquals(testArray,albumJsonArray);
     }
+
+
 }
 
 

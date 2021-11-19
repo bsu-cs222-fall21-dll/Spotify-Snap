@@ -6,7 +6,7 @@ import io.restassured.http.Method;
 import io.restassured.specification.RequestSpecification;
 import net.minidev.json.JSONArray;
 
-import java.net.UnknownHostException;
+
 
 public class AlbumTracks extends AuthorizeCredentials {
 

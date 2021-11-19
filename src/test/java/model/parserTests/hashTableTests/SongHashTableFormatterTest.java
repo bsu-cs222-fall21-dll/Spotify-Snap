@@ -25,6 +25,21 @@ public class SongHashTableFormatterTest {
         Assertions.assertEquals(expectedString(),formattedHashTable);
 
     }
+    @Test
+    public void formatSongsTableSlayerTest() throws IOException {
+        InputStream inputStream = Thread.currentThread().getContextClassLoader()
+                .getResourceAsStream("diabolusInMusicaSongsTest.json");
+        JSONArray inputArray = JsonPath.read(inputStream,"$..items");
+
+        SongHashTable songHashTable = new SongHashTable();
+        HashTableBuilder hashTableBuilder = new SongHashTableBuilder(inputArray);
+        hashTableBuilder.buildHashTable(songHashTable);
+
+        songHashTable.sortHashMapIntoArrayList();
+        String formattedHashTable = songHashTable.formatTable();
+        Assertions.assertEquals(expectedString(),formattedHashTable);
+
+    }
 
     private String expectedString(){
         return """

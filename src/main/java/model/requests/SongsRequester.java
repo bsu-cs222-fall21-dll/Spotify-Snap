@@ -30,6 +30,7 @@ public class SongsRequester {
         AlbumTracks albumTracks = new AlbumTracks();
         SongHashTable songHashTable = new SongHashTable();
         SongHashTableBuilder songHashTableBuilder = new SongHashTableBuilder(albumTracks.getAlbumsTracks(id));
+        //todo Fixing Parsing error that happens after line 34
         songHashTableBuilder.buildHashTable(songHashTable);
         songHashTable.sortHashMapIntoArrayList();
         return songHashTable;
