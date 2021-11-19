@@ -20,7 +20,8 @@ public class SongHashTableBuilder extends HashTableBuilder {
           @param snapHashTable the Hashtable used to store the Objects
          */
 
-        for(int index=0; parseInfo("name").length()>index; index++){
+
+        for(int index=0; calculateArraySize("duration_ms")>index; index++){
             String songID = parseInfo("[*].id",index);
             Song songToBeAdded = new Song(inputArray,index);
             snapHashTable.place(songID,songToBeAdded);

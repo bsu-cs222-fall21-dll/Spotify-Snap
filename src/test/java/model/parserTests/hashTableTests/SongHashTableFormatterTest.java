@@ -37,7 +37,7 @@ public class SongHashTableFormatterTest {
 
         songHashTable.sortHashMapIntoArrayList();
         String formattedHashTable = songHashTable.formatTable();
-        Assertions.assertEquals(expectedString(),formattedHashTable);
+        Assertions.assertEquals(secondExpectedString(),formattedHashTable);
 
     }
 
@@ -187,6 +187,146 @@ public class SongHashTableFormatterTest {
                 Track Number: 16
                                 
                                 
+                Index: 17
+                Song Name: Get Along Better
+                Song Id: 5ScbulRnixQ2XAdvrPMFjz
+                Uri: spotify:track:5ScbulRnixQ2XAdvrPMFjz
+                Duration in MS: 229303
+                Explicit: true
+                Track Number: 17
+                                
+                                
+                Index: 18
+                Song Name: You Only Live Twice (with Lil Wayne & Rick Ross)
+                Song Id: 50ceCGZ3oD3U5caQV5bP6f
+                Uri: spotify:track:50ceCGZ3oD3U5caQV5bP6f
+                Duration in MS: 213103
+                Explicit: true
+                Track Number: 18
+                                
+                                
+                Index: 19
+                Song Name: IMY2 (with Kid Cudi)
+                Song Id: 7F9cT6hIRhnFCYP6GKS0tf
+                Uri: spotify:track:7F9cT6hIRhnFCYP6GKS0tf
+                Duration in MS: 252378
+                Explicit: true
+                Track Number: 19
+                                
+                                
+                Index: 20
+                Song Name: F*****g Fans
+                Song Id: 3RkNXZvOSMMElmmXztDc94
+                Uri: spotify:track:3RkNXZvOSMMElmmXztDc94
+                Duration in MS: 245131
+                Explicit: true
+                Track Number: 20
+                                
+                                
+                """;
+    }
+
+    private String secondExpectedString(){
+        return """
+                Index: 1
+                Song Name: Bitter Peace
+                Song Id: 7Amiwp5D26ULS0qgMRPkpa
+                Uri: spotify:track:7Amiwp5D26ULS0qgMRPkpa
+                Duration in MS: 272080
+                Explicit: true
+                Track Number: 1
+                                
+                                
+                Index: 2
+                Song Name: Death's Head
+                Song Id: 5Y64EBsSx34nTB4gB1kAFv
+                Uri: spotify:track:5Y64EBsSx34nTB4gB1kAFv
+                Duration in MS: 209373
+                Explicit: true
+                Track Number: 2
+                                
+                                
+                Index: 3
+                Song Name: Stain Of Mind
+                Song Id: 35CwMBsnwRDHpAY9F9wY6e
+                Uri: spotify:track:35CwMBsnwRDHpAY9F9wY6e
+                Duration in MS: 205093
+                Explicit: true
+                Track Number: 3
+                                
+                                
+                Index: 4
+                Song Name: Overt Enemy
+                Song Id: 7vlEsbJ73GcQtz6sMzZmEP
+                Uri: spotify:track:7vlEsbJ73GcQtz6sMzZmEP
+                Duration in MS: 281533
+                Explicit: true
+                Track Number: 4
+                                
+                                
+                Index: 5
+                Song Name: Perversions Of Pain
+                Song Id: 0G1jkkBpIo6GO7Tl4fC6zq
+                Uri: spotify:track:0G1jkkBpIo6GO7Tl4fC6zq
+                Duration in MS: 210573
+                Explicit: true
+                Track Number: 5
+                                
+                                
+                Index: 6
+                Song Name: Love To Hate
+                Song Id: 4iVPjXyOfqZq5Yr5dRY6vW
+                Uri: spotify:track:4iVPjXyOfqZq5Yr5dRY6vW
+                Duration in MS: 185840
+                Explicit: true
+                Track Number: 6
+                                
+                                
+                Index: 7
+                Song Name: Desire
+                Song Id: 4wXvXAdwC7549nwLmlsp65
+                Uri: spotify:track:4wXvXAdwC7549nwLmlsp65
+                Duration in MS: 258653
+                Explicit: true
+                Track Number: 7
+                                
+                                
+                Index: 8
+                Song Name: In The Name Of God
+                Song Id: 5Tpe1VCcAfrUBNlXOiz51p
+                Uri: spotify:track:5Tpe1VCcAfrUBNlXOiz51p
+                Duration in MS: 218066
+                Explicit: true
+                Track Number: 8
+                                
+                                
+                Index: 9
+                Song Name: Scrum
+                Song Id: 15OQUYrEXrWIFWoycUjp16
+                Uri: spotify:track:15OQUYrEXrWIFWoycUjp16
+                Duration in MS: 138760
+                Explicit: true
+                Track Number: 9
+                                
+                                
+                Index: 10
+                Song Name: Screaming From The Sky
+                Song Id: 2UcpWK46N1M3Nlrddpd2Up
+                Uri: spotify:track:2UcpWK46N1M3Nlrddpd2Up
+                Duration in MS: 192600
+                Explicit: true
+                Track Number: 10
+                                
+                                
+                Index: 11
+                Song Name: Point
+                Song Id: 5N78cLYc3piYCFvwSEljjD
+                Uri: spotify:track:5N78cLYc3piYCFvwSEljjD
+                Duration in MS: 252586
+                Explicit: true
+                Track Number: 11
+                                
+                                                
                 """;
     }
 }
