@@ -23,13 +23,13 @@ public class Album extends Parser {
          * @param index      the index that the album occupies
          */
         super(inputArray);
-        this.name = parseInfo("name", index);
-        this.id = parseInfo("id", index);
+        this.name = parseInfo("[*].name", index);
+        this.id = parseInfo("[*].id", index);
 
-        this.uri = parseInfo("uri", index);
-        this.index = calculateIndex(index);
-        this.date = parseInfo("release_date", this.index);
-        this.totalTracks = parseInfo("total_tracks", this.index);
+        this.uri = parseInfo("[*].uri", index);
+        this.index = index;
+        this.date = parseInfo("release_date", index);
+        this.totalTracks = parseInfo("total_tracks", index);
 
     }
 
@@ -43,16 +43,4 @@ public class Album extends Parser {
         return JsonPath.read(artistArrayAsString,"$.*");
     }
 
-    private int calculateIndex(int index){
-        /*
-          Divides the index of the album by two in order to compensate for how the JSONArray is looped over
-
-          @param index      the index that the album occupies
-         * @return index     the corrected value of the index
-         */
-        if(index<=0){
-            return 0;
-        }
-        return index/2;
-    }
 }

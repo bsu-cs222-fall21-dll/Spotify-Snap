@@ -16,11 +16,10 @@ public abstract class HashTableBuilder extends Parser {
 
     public void buildHashTable(SnapHashTable snapHashTable) {
 
-        for(int index=0; parseInfo("id").length()>index;index+=2){
+        for(int index=0; calculateArraySize("total_tracks")>index;index++){
 
-            String snapID = parseInfo("id",index);
             Album albumToBeAdded = new Album(inputArray,index);
-            snapHashTable.place(String.format("%d",index/2),albumToBeAdded);
+            snapHashTable.place(String.format("%d",index),albumToBeAdded);
         }
     }
 }
