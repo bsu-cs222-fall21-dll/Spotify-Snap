@@ -21,7 +21,7 @@ public class AlbumHashTableTest {
         Album album = new Album(inputArray,0);
 
         AlbumHashTable albumHashTable = new AlbumHashTable();
-        JSONArray albumJsonArray = album.readAlbumInfoAsJson();
+        JSONArray albumJsonArray = album.readInfoAsJsonArray();
         JSONArray albumNameArray = JsonPath.read(albumJsonArray, "$..id");
 
         String albumName = albumNameArray.get(0).toString();

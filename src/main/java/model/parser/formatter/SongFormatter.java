@@ -7,7 +7,7 @@ public class SongFormatter extends Parser implements Formatter{
 
 
     public SongFormatter(Song song) {
-        super(song.readSongInfoAsJson());
+        super(song.readInfoAsJsonArray());
     }
 
     public String format() {

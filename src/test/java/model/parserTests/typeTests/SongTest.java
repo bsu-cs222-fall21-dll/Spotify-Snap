@@ -23,7 +23,7 @@ public class SongTest {
                 "\"id\":\"2HSmyk2qMN8WQjuGhaQgCk\",\"uri\":\"spotify:track:2HSmyk2qMN8WQjuGhaQgCk\"," +
                 "\"duration_ms\":\"336511\"," + "\"index\":\"1\",\"explicit\":\"true\"}]]";
 
-        JSONArray songJsonArray = song.readSongInfoAsJson();
+        JSONArray songJsonArray = song.readInfoAsJsonArray();
         JSONArray testArray = JsonPath.read(testJsonString,"$.*");
         Assertions.assertEquals(testArray,songJsonArray);
     }

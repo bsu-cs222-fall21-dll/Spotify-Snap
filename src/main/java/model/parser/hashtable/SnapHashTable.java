@@ -3,15 +3,16 @@ package model.parser.hashtable;
 
 import model.parser.formatter.AlbumFormatter;
 import model.type.Album;
+import model.type.SnapObject;
 
 import java.util.HashMap;
 
 public abstract class SnapHashTable {
-    protected HashMap<String,Object> snapHashMap = new HashMap<>();
+    protected HashMap<String, SnapObject> snapHashMap = new HashMap<>();
     protected String[] snapArray;
 
-    public void place(String snapIndex, Object snapObj) {
-        snapHashMap.put(snapIndex,snapObj);
+    public void place(String snapIndex, SnapObject snapObject) {
+        snapHashMap.put(snapIndex,snapObject);
 
     }
 
@@ -47,7 +48,6 @@ public abstract class SnapHashTable {
             AlbumFormatter albumFormatter = new AlbumFormatter((Album) snapObject);
             String albumString = albumFormatter.format();
             int index = Integer.parseInt(albumFormatter.parseInfo("index"));
-
             sortedAlbumArray[index] = albumString;
 
         });

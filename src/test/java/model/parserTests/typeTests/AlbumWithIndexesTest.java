@@ -22,7 +22,7 @@ public class AlbumWithIndexesTest {
         String testJsonString = "[[{\"name\":\"Dark Lane Demo Tapes\",\"id\":\"6OQ9gBfg5EXeNAEwGSs6jK\"," +
                 "\"uri\":\"spotify:album:6OQ9gBfg5EXeNAEwGSs6jK\",\"date\":\"2020-05-01\",\"total_tracks\":\"14\",\"index\":\"2\"}]]";
 
-        JSONArray albumJsonArray = album.readAlbumInfoAsJson();
+        JSONArray albumJsonArray = album.readInfoAsJsonArray();
         JSONArray testArray = JsonPath.read(testJsonString,"$.*");
         Assertions.assertEquals(testArray,albumJsonArray);
     }
@@ -37,7 +37,7 @@ public class AlbumWithIndexesTest {
         String testJsonString = "[[{\"name\":\"Care Package\",\"id\":\"7dqpveMVcWgbzqYrOdkFTD\"," +
                 "\"uri\":\"spotify:album:7dqpveMVcWgbzqYrOdkFTD\",\"date\":\"2019-08-02\",\"total_tracks\":\"17\",\"index\":\"4\"}]]";
 
-        JSONArray albumJsonArray = album.readAlbumInfoAsJson();
+        JSONArray albumJsonArray = album.readInfoAsJsonArray();
         JSONArray testArray = JsonPath.read(testJsonString,"$.*");
         Assertions.assertEquals(testArray,albumJsonArray);
     }

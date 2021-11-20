@@ -4,7 +4,7 @@ import com.jayway.jsonpath.JsonPath;
 import model.parser.Parser;
 import net.minidev.json.JSONArray;
 
-public class Song extends Parser {
+public class Song extends Parser implements SnapObject {
 
     private final String name;
     private final String id;
@@ -34,7 +34,7 @@ public class Song extends Parser {
 
     }
 
-    public JSONArray readSongInfoAsJson() {
+    public JSONArray readInfoAsJsonArray() {
         /*
           Builds a Json array with the info from the variable in the class
           @return JsonArray the Song's stored information as a JsonArray

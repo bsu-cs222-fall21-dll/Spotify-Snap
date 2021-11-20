@@ -29,7 +29,7 @@ public class HashTableBuilderTest {
                 "\"date\":\"2020-05-01\"," + "\"total_tracks\":\"14\",\"index\":\"2\"}]]";
         Album album = (Album) albumHashTable.readAtKey("2");
 
-        JSONArray albumJsonArray = album.readAlbumInfoAsJson();
+        JSONArray albumJsonArray = album.readInfoAsJsonArray();
         JSONArray testArray = JsonPath.read(testJsonString,"$.*");
         Assertions.assertEquals(testArray,albumJsonArray);
     }

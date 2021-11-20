@@ -28,7 +28,7 @@ public class SongHashTableBuilderTest {
 
         Song song = (Song) songHashTable.readAtKey("7Amiwp5D26ULS0qgMRPkpa");
 
-        JSONArray albumJsonArray = song.readSongInfoAsJson();
+        JSONArray albumJsonArray = song.readInfoAsJsonArray();
         JSONArray testArray = JsonPath.read(testJsonString,"$.*");
         Assertions.assertEquals(testArray,albumJsonArray);
     }
@@ -48,7 +48,7 @@ public class SongHashTableBuilderTest {
                 "\"duration_ms\":\"336511\"," + "\"index\":\"1\",\"explicit\":\"true\"}]]";
         Song song = (Song) songHashTable.readAtKey("2HSmyk2qMN8WQjuGhaQgCk");
 
-        JSONArray albumJsonArray = song.readSongInfoAsJson();
+        JSONArray albumJsonArray = song.readInfoAsJsonArray();
         JSONArray testArray = JsonPath.read(testJsonString,"$.*");
         Assertions.assertEquals(testArray,albumJsonArray);
     }

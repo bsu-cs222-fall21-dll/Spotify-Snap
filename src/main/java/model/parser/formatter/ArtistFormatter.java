@@ -6,7 +6,7 @@ import model.type.Artist;
 public class ArtistFormatter extends Parser implements Formatter {
 
     public ArtistFormatter(Artist artist) {
-        super(artist.readArtistInfoAsJson());
+        super(artist.readInfoAsJsonArray());
     }
 
     public String format() {

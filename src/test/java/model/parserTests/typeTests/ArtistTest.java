@@ -23,7 +23,7 @@ public class ArtistTest {
                 "\"url\":\"https:\\/\\/open.spotify.com\\/artist\\/3TVXtAsR1Inumwj472S9r4\"," +
                 "\"total\":\"58055243\"}]]";
 
-        JSONArray artistJsonArray = testArtist.readArtistInfoAsJson();
+        JSONArray artistJsonArray = testArtist.readInfoAsJsonArray();
         JSONArray testArray = JsonPath.read(testJsonString,"$.*");
         Assertions.assertEquals(testArray,artistJsonArray);
     }

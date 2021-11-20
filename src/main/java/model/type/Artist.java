@@ -4,7 +4,7 @@ import com.jayway.jsonpath.JsonPath;
 import model.parser.Parser;
 import net.minidev.json.JSONArray;
 
-public class Artist extends Parser {
+public class Artist extends Parser implements SnapObject {
     private final String name;
     private final String id;
     private final String uri;
@@ -27,7 +27,7 @@ public class Artist extends Parser {
         this.followerCount = parseInfo("total");
     }
 
-    public JSONArray readArtistInfoAsJson() {
+    public JSONArray readInfoAsJsonArray() {
         /*
           Builds a Json array with the info from the variable in the class
           @return JsonArray the Artist's stored information as a JsonArray
