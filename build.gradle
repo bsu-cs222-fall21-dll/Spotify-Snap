@@ -5,7 +5,7 @@ plugins {
 }
 
 group 'edu.bsu.cs222'
-version '1.0-SNAPSHOT'
+version '1.0'
 
 
 repositories {
@@ -31,4 +31,4 @@ javafx {
     modules = ['javafx.controls', 'javafx.fxml']
     version = '13.0.2'
 }
-mainClassName = 'edu.bsu.cs22.main'
+mainClassName = 'edu.bsu.cs22.GUI'
