@@ -8,8 +8,14 @@ import javafx.scene.paint.Color;
 
 public class setGUIBackgroundColor {
 
-    public Background modifyBackground() {
+    public Background modifyBackgroundBlack() {
         BackgroundFill backgroundFill = new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY);
+        Background background = new Background(backgroundFill);
+        return background;
+    }
+
+    public Background modifyBackgroundGreen() {
+        BackgroundFill backgroundFill = new BackgroundFill(Color.LIGHTGREEN, CornerRadii.EMPTY, Insets.EMPTY);
         Background background = new Background(backgroundFill);
         return background;
     }
