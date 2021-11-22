@@ -17,7 +17,7 @@ public class GUI extends Application {
     public void start(Stage primaryStage) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainScene.fxml")));
 
-        Scene scene = new Scene(root, 300, 275);
+        Scene scene = new Scene(root);
 
         primaryStage.setTitle("Spotify Snap");
         primaryStage.setScene(scene);
