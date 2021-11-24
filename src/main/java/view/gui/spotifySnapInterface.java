@@ -15,6 +15,7 @@ public class spotifySnapInterface extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         VBox parent = new VBox();
+        setSpotifyLogo setSpotifyLogo = new setSpotifyLogo();
 
         GUIText guiText = new GUIText();
         setGUIBackgroundColor setGUIBackgroundColor = new setGUIBackgroundColor();
@@ -25,16 +26,6 @@ public class spotifySnapInterface extends Application {
         TextField textField = new TextField();
         TextField outputField = new TextField();
         outputField.setPrefSize(180,200);
-
-//        Image image = new Image(getClass().getResourceAsStream("Spotify_Icon_Green.png"));
-//        ImageView imageView = new ImageView();
-//        imageView.setImage(image);
-//        imageView.setFitHeight(100);
-//        imageView.setPreserveRatio(true);
-
-//        HBox hBox = new HBox(10);
-//        hBox.setAlignment(Pos.TOP_CENTER);
-//        hBox.getChildren().addAll(imageView);
 
         HBox urlArea = new HBox();
         urlArea.setAlignment(Pos.TOP_CENTER);
@@ -50,6 +41,7 @@ public class spotifySnapInterface extends Application {
         parent.setSpacing(8);
         parent.setBackground(setGUIBackgroundColor.modifyBackgroundBlack());
         parent.getChildren().addAll(
+                setSpotifyLogo.getLogo(),
                 guiText.modifyText(titleText,25),
                 urlArea,
                 button,

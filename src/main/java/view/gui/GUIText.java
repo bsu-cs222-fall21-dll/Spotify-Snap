@@ -8,7 +8,7 @@ import javafx.scene.text.Text;
 public class GUIText {
 
     public Text modifyText(Text text, Integer fontSize) {
-        text.setFill(Color.LIGHTGREEN);
+        text.setFill(Color.MEDIUMSEAGREEN);
         Font font = Font.font("Verdana", FontWeight.EXTRA_BOLD, fontSize);
         text.setFont(font);
         return text;
