@@ -16,8 +16,8 @@ public class CMDInput {
     public void checkForMissingInput(String userInput) {
 
         if (userInput.isEmpty()) {
-            System.err.println("Missing Input: Error Code 1");
-            System.exit(1);
+            System.err.println("Please input a value");
+            inputStringViaCommandLine();
         }
     }
 }

@@ -38,7 +38,7 @@ public abstract class Parser {
         return itemArray.get(index).toString();
     }
 
-    private void sendErrorMessageToConsole(){
+    private void readErrorMessage(){
         ParsingErrorHandler parsingErrorHandler = new ParsingErrorHandler();
         parsingErrorHandler.printError();
     }
@@ -47,8 +47,8 @@ public abstract class Parser {
         try {
             return parseFromJson(valueToBeRead,index);
         } catch (IndexOutOfBoundsException e){
-            sendErrorMessageToConsole();
-            return "Artist Not Found";
+            readErrorMessage();
+            return "Info Not Found";
         }
     }
 

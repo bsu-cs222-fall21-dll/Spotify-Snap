@@ -32,4 +32,4 @@ javafx {
     version = '13.0.2'
 }
 
-mainClassName = 'GUI'
+mainClassName = 'view.gui.spotifySnapInterface'
