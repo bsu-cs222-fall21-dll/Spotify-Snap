@@ -51,4 +51,9 @@ public abstract class Parser {
             return "Artist Not Found";
         }
     }
+
+    public int calculateArraySize(String elementSizeToBeCalculated){
+        JSONArray itemArray = JsonPath.read(infoArray, String.format("$..%s", elementSizeToBeCalculated));
+        return itemArray.size();
+    }
 }

@@ -5,7 +5,7 @@ import model.parser.hashtable.AlbumHashTable;
 import model.parser.hashtable.SongHashTable;
 import model.parser.hashtable.SongHashTableBuilder;
 import model.type.Album;
-import view.console.UserInput;
+import view.console.AlbumIndexCheckIfIntHandler;
 
 public class SongsRequester {
     public SongHashTable requestSongs(AlbumHashTable albumHashTableToBeSelectedFrom){
@@ -15,8 +15,10 @@ public class SongsRequester {
     }
 
     private String getIdOfAlbum(AlbumHashTable albumHashTableToBeSelectedFrom){
-        UserInput userInput = new UserInput();
-        String albumIndex = userInput.getAlbum();
+
+        String desiredAlbumIndex = handleErrorIfInputIsLargerThanHashTable(albumHashTableToBeSelectedFrom);
+        int index = Integer.parseInt(desiredAlbumIndex)-1;
+        String albumIndex = String.format("%d",index);
         Album selectedAlbum = (Album) albumHashTableToBeSelectedFrom.readAtKey(albumIndex);
         AlbumFormatter albumFormatter = new AlbumFormatter(selectedAlbum);
         return albumFormatter.parseInfo("id");
@@ -31,5 +33,10 @@ public class SongsRequester {
         songHashTableBuilder.buildHashTable(songHashTable);
         songHashTable.sortHashMapIntoArrayList();
         return songHashTable;
+    }
+
+    private String handleErrorIfInputIsLargerThanHashTable(AlbumHashTable albumHashTableToBeSelectedFrom){
+        AlbumIndexCheckIfIntHandler albumIndexCheckIfIntHandler = new AlbumIndexCheckIfIntHandler();
+        return albumIndexCheckIfIntHandler.checkIfAlbumIndexOutOfRange(albumHashTableToBeSelectedFrom);
     }
 }

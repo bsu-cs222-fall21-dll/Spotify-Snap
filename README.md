@@ -1,9 +1,9 @@
 Spotify Snap
 
-This application is for users who are trying to pull live data about their favorite artists. Requires entering of a client id and secret as password hiding, is not quite ready thus making this project more for developers trying to pull basic data.
+This application is for users who are trying to pull live data about their favorite artists. 
 
 ## General info
-This is the v0.1.6 release.
+This is the v0.2.0 release.
 
 ## Authors
 Wendall Roberts 

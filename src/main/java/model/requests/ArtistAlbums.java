@@ -7,8 +7,6 @@ import io.restassured.specification.RequestSpecification;
 import model.type.Artist;
 import net.minidev.json.JSONArray;
 
-import java.net.UnknownHostException;
-
 public class ArtistAlbums extends AuthorizeCredentials {
 
 private final String accessToken = getAccessToken();
@@ -23,7 +21,7 @@ private final String accessToken = getAccessToken();
          *
          * @return: Spotify catalog information for a single album.
          */
-        JSONArray idArray = JsonPath.read(artist.readArtistInfoAsJson(), "$..id");
+        JSONArray idArray = JsonPath.read(artist.readInfoAsJsonArray(), "$..id");
         String id = idArray.get(0).toString();
         RestAssured.baseURI = "https://api.spotify.com/v1";
 

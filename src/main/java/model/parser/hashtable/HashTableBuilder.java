@@ -2,11 +2,15 @@ package model.parser.hashtable;
 
 import model.parser.Parser;
 import model.type.Album;
+import model.type.Artist;
+import model.type.SnapObject;
 import net.minidev.json.JSONArray;
+
+import java.lang.reflect.Type;
 
 public abstract class HashTableBuilder extends Parser {
 
-    private final JSONArray inputArray;
+    protected final JSONArray inputArray;
 
     public HashTableBuilder(JSONArray inputArray) {
 
@@ -16,11 +20,10 @@ public abstract class HashTableBuilder extends Parser {
 
     public void buildHashTable(SnapHashTable snapHashTable) {
 
-        for(int index=0; parseInfo("id").length()>index;index+=2){
+        for(int index=0; calculateArraySize("name")>index;index++){
 
-            String snapID = parseInfo("id",index);
-            Album albumToBeAdded = new Album(inputArray,index);
-            snapHashTable.place(String.format("%d",index/2),albumToBeAdded);
+            SnapObject snapObject = new Artist(inputArray);
+            snapHashTable.place(String.format("%d",index),snapObject);
         }
     }
 }

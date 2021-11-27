@@ -6,7 +6,7 @@ import model.type.Album;
 public class AlbumFormatter extends Parser implements Formatter{
 
     public AlbumFormatter(Album album) {
-        super(album.readAlbumInfoAsJson());
+        super(album.readInfoAsJsonArray());
     }
 
     public String format() {

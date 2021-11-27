@@ -4,11 +4,11 @@ import net.minidev.json.JSONArray;
 
 public class SongHashTableBuilder extends HashTableBuilder {
 
-    private final JSONArray inputArray;
 
     public SongHashTableBuilder(JSONArray inputArray) {
         super(inputArray);
-        this.inputArray = inputArray;
+
+
     }
 
     @Override
@@ -19,10 +19,15 @@ public class SongHashTableBuilder extends HashTableBuilder {
 
           @param snapHashTable the Hashtable used to store the Objects
          */
-        for(int index=0; parseInfo("duration_ms").length()>index;index++){
+
+
+        for(int index=0; calculateArraySize("duration_ms")>index; index++){
             String songID = parseInfo("[*].id",index);
             Song songToBeAdded = new Song(inputArray,index);
             snapHashTable.place(songID,songToBeAdded);
+
         }
+
     }
+
 }

@@ -6,7 +6,11 @@ public class UserInput {
 
     public String getArtist() {
 
-        System.out.println("Enter Artist Name: ");
+        System.out.println("""
+                ========================= Spotify Snap =========================
+                
+                Enter artist name:
+                """);
         return cmdInput.inputStringViaCommandLine();
     }
 
