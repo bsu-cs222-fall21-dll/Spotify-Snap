@@ -9,13 +9,15 @@ import model.requests.ArtistID;
 import model.requests.SongsRequester;
 import model.type.Artist;
 import net.minidev.json.JSONArray;
+import view.console.UserInput;
 
 public class ModelController {
 
     public Artist searchForArtist(){
 
         ArtistID artistID = new ArtistID();
-        JSONArray artistSearchResultJsonArray = artistID.getArtistID();
+        UserInput userInput = new UserInput();
+        JSONArray artistSearchResultJsonArray = artistID.getArtistID(userInput.getArtist());
         ArtistErrorHandler artistErrorHandler = new ArtistErrorHandler(artistSearchResultJsonArray);
         return artistErrorHandler.checkIfArtistIsvalid();
     }

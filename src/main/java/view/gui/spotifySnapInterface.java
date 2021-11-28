@@ -4,18 +4,22 @@ import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import model.parser.formatter.ArtistFormatter;
+import model.type.Artist;
 
 public class spotifySnapInterface extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         VBox parent = new VBox();
         setSpotifyLogo setSpotifyLogo = new setSpotifyLogo();
+        setGUIButtonAction setGUIButtonAction = new setGUIButtonAction();
 
         GUIText guiText = new GUIText();
         setGUIBackgroundColor setGUIBackgroundColor = new setGUIBackgroundColor();
@@ -24,7 +28,7 @@ public class spotifySnapInterface extends Application {
         Text descriptionText = new Text("Enter Artist: ");
 
         TextField textField = new TextField();
-        TextField outputField = new TextField();
+        TextArea outputField = new TextArea();
         outputField.setPrefSize(180,200);
 
         HBox urlArea = new HBox();
@@ -34,7 +38,9 @@ public class spotifySnapInterface extends Application {
         Button button = new Button("Search Artist");
         button.setBackground(setGUIBackgroundColor.modifyBackgroundGreen());
         button.setOnAction(event -> {
-            outputField.setText("I would like artist info on " + textField.getText());
+            Artist resultArtist = setGUIButtonAction.getArtist(textField.getText());
+            ArtistFormatter artistFormatter = new ArtistFormatter(resultArtist);
+            outputField.setText(artistFormatter.format());
         });
 
         parent.setAlignment(Pos.TOP_CENTER);
