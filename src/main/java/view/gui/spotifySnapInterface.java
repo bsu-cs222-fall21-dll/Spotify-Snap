@@ -45,7 +45,6 @@ public class spotifySnapInterface extends Application {
             ArtistFormatter artistFormatter = new ArtistFormatter(resultArtist);
 
             AlbumHashTable albumHashTable = modelController.searchForAlbums(resultArtist);
-            //System.out.println(albumHashTable.formatTable());
             outputField.setText(artistFormatter.format() + "\n" + albumHashTable.formatTable());
         });
 
