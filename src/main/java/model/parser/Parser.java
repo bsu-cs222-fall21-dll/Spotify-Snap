@@ -6,7 +6,7 @@ import view.console.ParsingErrorHandler;
 
 public abstract class Parser {
 
-    private final JSONArray infoArray;
+    protected final JSONArray infoArray;
 
     public Parser(JSONArray infoArray) {
         this.infoArray = infoArray;
