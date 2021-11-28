@@ -1,5 +1,6 @@
 package view.gui;
 
+import Controller.ModelController;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -12,6 +13,7 @@ import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.parser.formatter.ArtistFormatter;
+import model.parser.hashtable.AlbumHashTable;
 import model.type.Artist;
 
 public class spotifySnapInterface extends Application {
@@ -38,9 +40,13 @@ public class spotifySnapInterface extends Application {
         Button button = new Button("Search Artist");
         button.setBackground(setGUIBackgroundColor.modifyBackgroundGreen());
         button.setOnAction(event -> {
+            ModelController modelController = new ModelController();
             Artist resultArtist = setGUIButtonAction.getArtist(textField.getText());
             ArtistFormatter artistFormatter = new ArtistFormatter(resultArtist);
-            outputField.setText(artistFormatter.format());
+
+            AlbumHashTable albumHashTable = modelController.searchForAlbums(resultArtist);
+            //System.out.println(albumHashTable.formatTable());
+            outputField.setText(artistFormatter.format() + "\n" + albumHashTable.formatTable());
         });
 
         parent.setAlignment(Pos.TOP_CENTER);
