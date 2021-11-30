@@ -1,4 +1,4 @@
-package view.gui;
+package view.gui.styling;
 
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;

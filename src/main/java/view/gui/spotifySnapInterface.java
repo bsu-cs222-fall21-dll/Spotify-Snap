@@ -7,14 +7,16 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.parser.formatter.ArtistFormatter;
 import model.parser.hashtable.AlbumHashTable;
 import model.type.Artist;
+import view.gui.requests.setGUIButtonAction;
+import view.gui.styling.GUIText;
+import view.gui.styling.setGUIBackgroundColor;
+import view.gui.styling.setSpotifyLogo;
 
 public class spotifySnapInterface extends Application {
     @Override

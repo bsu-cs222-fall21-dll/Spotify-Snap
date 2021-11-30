@@ -1,4 +1,4 @@
-package view.gui;
+package view.gui.requests;
 
 import model.requests.ArtistErrorHandler;
 import model.requests.ArtistID;

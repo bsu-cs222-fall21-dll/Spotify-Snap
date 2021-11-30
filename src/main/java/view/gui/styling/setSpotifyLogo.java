@@ -1,4 +1,4 @@
-package view.gui;
+package view.gui.styling;
 
 import javafx.geometry.Pos;
 import javafx.scene.image.Image;
