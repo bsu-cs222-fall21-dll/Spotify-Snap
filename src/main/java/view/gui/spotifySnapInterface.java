@@ -29,21 +29,21 @@ public class spotifySnapInterface extends Application {
         setGUIBackgroundColor setGUIBackgroundColor = new setGUIBackgroundColor();
 
         Text titleText = new Text("Spotify-Snap");
-        Text descriptionText = new Text("Enter Artist: ");
+        Text artistSearchBoxDescriptionText = new Text("Enter Artist: ");
 
-        TextField textField = new TextField();
+        TextField artistInputField = new TextField();
         TextArea outputField = new TextArea();
         outputField.setPrefSize(180,200);
 
         HBox urlArea = new HBox();
         urlArea.setAlignment(Pos.TOP_CENTER);
-        urlArea.getChildren().addAll(guiText.modifyText(descriptionText, 15), textField);
+        urlArea.getChildren().addAll(guiText.modifyText(artistSearchBoxDescriptionText, 15), artistInputField);
 
         Button button = new Button("Search Artist");
         button.setBackground(setGUIBackgroundColor.modifyBackgroundGreen());
         button.setOnAction(event -> {
             ModelController modelController = new ModelController();
-            Artist resultArtist = setGUIButtonAction.getArtist(textField.getText());
+            Artist resultArtist = setGUIButtonAction.getArtist(artistInputField.getText());
             ArtistFormatter artistFormatter = new ArtistFormatter(resultArtist);
 
             AlbumHashTable albumHashTable = modelController.searchForAlbums(resultArtist);
