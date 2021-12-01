@@ -5,12 +5,12 @@ import model.parser.hashtable.AlbumHashTable;
 public class AlbumIndexCheckIfIntHandler {
     private AlbumHashTable albumHashTableToBeSelectedFrom;
 
-    public String checkIfAlbumIndexOutOfRange(AlbumHashTable albumHashTableToBeSelectedFrom){
+    public String checkIfAlbumIndexOutOfRange(AlbumHashTable albumHashTableToBeSelectedFrom, String userInput){
         this.albumHashTableToBeSelectedFrom = albumHashTableToBeSelectedFrom;
-        UserInput userInput = new UserInput();
-        String albumIndex =  userInput.getAlbum();
+//        UserInput userInput = new UserInput();
+//        String albumIndex =  userInput.getAlbum();
         try {
-            return checkIfValueInSizeOfHashMap(albumIndex);
+            return checkIfValueInSizeOfHashMap(userInput);
 
         } catch (NumberFormatException exception){
             System.out.println("Not a valid selection, returning default album");

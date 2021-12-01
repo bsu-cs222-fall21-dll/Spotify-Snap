@@ -8,15 +8,15 @@ import model.type.Album;
 import view.console.AlbumIndexCheckIfIntHandler;
 
 public class SongsRequester {
-    public SongHashTable requestSongs(AlbumHashTable albumHashTableToBeSelectedFrom){
+    public SongHashTable requestSongs(AlbumHashTable albumHashTableToBeSelectedFrom, String userInput){
 
-        String id = getIdOfAlbum(albumHashTableToBeSelectedFrom);
+        String id = getIdOfAlbum(albumHashTableToBeSelectedFrom, userInput);
         return searchForSongs(id);
     }
 
-    private String getIdOfAlbum(AlbumHashTable albumHashTableToBeSelectedFrom){
+    private String getIdOfAlbum(AlbumHashTable albumHashTableToBeSelectedFrom, String userInput){
 
-        String desiredAlbumIndex = handleErrorIfInputIsLargerThanHashTable(albumHashTableToBeSelectedFrom);
+        String desiredAlbumIndex = handleErrorIfInputIsLargerThanHashTable(albumHashTableToBeSelectedFrom, userInput);
         int index = Integer.parseInt(desiredAlbumIndex)-1;
         String albumIndex = String.format("%d",index);
         Album selectedAlbum = (Album) albumHashTableToBeSelectedFrom.readAtKey(albumIndex);
@@ -35,8 +35,8 @@ public class SongsRequester {
         return songHashTable;
     }
 
-    private String handleErrorIfInputIsLargerThanHashTable(AlbumHashTable albumHashTableToBeSelectedFrom){
+    private String handleErrorIfInputIsLargerThanHashTable(AlbumHashTable albumHashTableToBeSelectedFrom, String userInput){
         AlbumIndexCheckIfIntHandler albumIndexCheckIfIntHandler = new AlbumIndexCheckIfIntHandler();
-        return albumIndexCheckIfIntHandler.checkIfAlbumIndexOutOfRange(albumHashTableToBeSelectedFrom);
+        return albumIndexCheckIfIntHandler.checkIfAlbumIndexOutOfRange(albumHashTableToBeSelectedFrom, userInput);
     }
 }

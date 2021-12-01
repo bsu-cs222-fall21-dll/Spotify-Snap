@@ -35,8 +35,8 @@ public class ModelController {
     }
 
 
-    public SongHashTable createSongHashTable(AlbumHashTable albumHashTable){
+    public SongHashTable createSongHashTable(AlbumHashTable albumHashTable, String userInput){
         SongsRequester songsRequester = new SongsRequester();
-        return songsRequester.requestSongs(albumHashTable);
+        return songsRequester.requestSongs(albumHashTable, userInput);
     }
 }
