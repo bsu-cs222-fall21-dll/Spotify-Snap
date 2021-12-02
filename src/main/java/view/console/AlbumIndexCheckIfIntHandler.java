@@ -7,8 +7,6 @@ public class AlbumIndexCheckIfIntHandler {
 
     public String checkIfAlbumIndexOutOfRange(AlbumHashTable albumHashTableToBeSelectedFrom, String userInput){
         this.albumHashTableToBeSelectedFrom = albumHashTableToBeSelectedFrom;
-//        UserInput userInput = new UserInput();
-//        String albumIndex =  userInput.getAlbum();
         try {
             return checkIfValueInSizeOfHashMap(userInput);
 

@@ -6,7 +6,7 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
 
-public class setGUIBackgroundColor {
+public class SetGUIBackgroundColor {
 
     public Background modifyBackgroundBlack() {
         BackgroundFill backgroundFill = new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY);

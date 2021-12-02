@@ -14,20 +14,20 @@ import model.parser.formatter.ArtistFormatter;
 import model.parser.hashtable.AlbumHashTable;
 import model.parser.hashtable.SongHashTable;
 import model.type.Artist;
-import view.gui.requests.setGUIButtonAction;
+import view.gui.requests.SetGUIButtonAction;
 import view.gui.styling.GUIText;
-import view.gui.styling.setGUIBackgroundColor;
-import view.gui.styling.setSpotifyLogo;
+import view.gui.styling.SetGUIBackgroundColor;
+import view.gui.styling.SetSpotifyLogo;
 
 public class spotifySnapInterface extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         VBox parent = new VBox();
-        setSpotifyLogo setSpotifyLogo = new setSpotifyLogo();
-        setGUIButtonAction setGUIButtonAction = new setGUIButtonAction();
+        SetSpotifyLogo setSpotifyLogo = new SetSpotifyLogo();
+        SetGUIButtonAction setGUIButtonAction = new SetGUIButtonAction();
 
         GUIText guiText = new GUIText();
-        setGUIBackgroundColor setGUIBackgroundColor = new setGUIBackgroundColor();
+        SetGUIBackgroundColor setGUIBackgroundColor = new SetGUIBackgroundColor();
 
         Text titleText = new Text("Spotify-Snap");
         Text artistSearchBoxDescriptionText = new Text("Enter Artist: ");
@@ -54,21 +54,20 @@ public class spotifySnapInterface extends Application {
             outputField.setText(artistFormatter.format() + "\n" + albumHashTable.formatTable());
 
             albumButton.setOnAction(event1 -> {
-                //outputField.setText("Hello World");
                 SongHashTable songHashTable = modelController.createSongHashTable(albumHashTable, albumIndexInputField.getText());
                 outputField.setText(songHashTable.formatTable());
             });
         });
 
-        HBox urlArea = new HBox(8);
-        urlArea.setAlignment(Pos.TOP_CENTER);
-        urlArea.getChildren().addAll(guiText.modifyText(artistSearchBoxDescriptionText, 15),
+        HBox artistInputHBox = new HBox(8);
+        artistInputHBox.setAlignment(Pos.TOP_CENTER);
+        artistInputHBox.getChildren().addAll(guiText.modifyText(artistSearchBoxDescriptionText, 15),
                 artistInputField,
                 artistButton);
 
-        HBox urlArea2 = new HBox(8);
-        urlArea2.setAlignment(Pos.TOP_CENTER);
-        urlArea2.getChildren().addAll(guiText.modifyText(albumSearchBoxDescriptionText, 15),
+        HBox albumIndexInputHbox = new HBox(8);
+        albumIndexInputHbox.setAlignment(Pos.TOP_CENTER);
+        albumIndexInputHbox.getChildren().addAll(guiText.modifyText(albumSearchBoxDescriptionText, 15),
                 albumIndexInputField,
                 albumButton);
 
@@ -78,8 +77,8 @@ public class spotifySnapInterface extends Application {
         parent.getChildren().addAll(
                 setSpotifyLogo.getLogo(),
                 guiText.modifyText(titleText,25),
-                urlArea,
-                urlArea2,
+                artistInputHBox,
+                albumIndexInputHbox,
                 outputField);
 
         Scene scene = new Scene(parent, 600, 500);

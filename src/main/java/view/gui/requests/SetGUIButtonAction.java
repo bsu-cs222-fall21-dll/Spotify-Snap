@@ -5,7 +5,7 @@ import model.requests.ArtistID;
 import model.type.Artist;
 import net.minidev.json.JSONArray;
 
-public class setGUIButtonAction {
+public class SetGUIButtonAction {
     public Artist getArtist(String artist) {
         ArtistID artistID = new ArtistID();
         JSONArray artistSearchResultJsonArray = artistID.getArtistID(artist);

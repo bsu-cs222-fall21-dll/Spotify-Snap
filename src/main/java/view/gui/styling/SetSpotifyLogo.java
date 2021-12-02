@@ -5,7 +5,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 
-public class setSpotifyLogo {
+public class SetSpotifyLogo {
     public HBox getLogo() {
 
         Image image = new Image(Thread.currentThread().getContextClassLoader().getResourceAsStream("Spotify_Icon_Green.png"));
