@@ -13,6 +13,5 @@ public class MissingArtist {
     public void printErrorMessage(){
 
         System.err.println("Artist Not Found: Error Code 2");
-        System.exit(2);
     }
 }
