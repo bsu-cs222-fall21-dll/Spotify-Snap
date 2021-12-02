@@ -31,5 +31,4 @@ javafx {
     modules = ['javafx.controls', 'javafx.fxml']
     version = '13.0.2'
 }
-
 mainClassName = 'view.gui.spotifySnapInterface'

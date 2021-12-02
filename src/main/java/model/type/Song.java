@@ -25,7 +25,6 @@ public class Song extends Parser implements SnapObject {
 
         this.name = parseInfo("[*].name", index);
         this.id = parseInfo("[*].id", index);
-
         this.uri = parseInfo("[*].uri", index);
         this.duration_ms = parseInfo("duration_ms", index);
         this.track_number = parseInfo("track_number", index);
@@ -33,6 +32,7 @@ public class Song extends Parser implements SnapObject {
         this.explicit = parseInfo("explicit",0);
 
     }
+
 
     public JSONArray readInfoAsJsonArray() {
         /*

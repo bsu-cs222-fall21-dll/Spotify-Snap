@@ -34,5 +34,10 @@ Project is created with:
 ## Setup
 To run this project, clone this repository, and download the dependencies and plugins listed in build.gradle.
 
+## Source for Music TestFile
+https://musopen.org/music/3773-orchestral-suite-no-1-in-c-major-bwv-1066/
+Which is released under the following license: https://creativecommons.org/publicdomain/mark/1.0/
+
+
 ## Known Errors
 
