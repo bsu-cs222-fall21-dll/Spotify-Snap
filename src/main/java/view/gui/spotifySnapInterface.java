@@ -25,7 +25,6 @@ public class spotifySnapInterface extends Application {
         VBox parent = new VBox();
         SetSpotifyLogo setSpotifyLogo = new SetSpotifyLogo();
         SetGUIButtonAction setGUIButtonAction = new SetGUIButtonAction();
-
         GUIText guiText = new GUIText();
         SetGUIBackgroundColor setGUIBackgroundColor = new SetGUIBackgroundColor();
 
