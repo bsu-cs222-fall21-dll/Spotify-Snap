@@ -1,6 +1,7 @@
 package model.parser.formatter;
 
 import model.parser.Parser;
+import model.type.MillisecondToMinuteConverter;
 import model.type.Song;
 
 public class SongFormatter extends Parser implements Formatter{
@@ -11,6 +12,7 @@ public class SongFormatter extends Parser implements Formatter{
     }
 
     public String format() {
+        MillisecondToMinuteConverter millisecondToMinuteConverter = new MillisecondToMinuteConverter();
 
 
         String name = parseInfo("name");
@@ -25,7 +27,7 @@ public class SongFormatter extends Parser implements Formatter{
         name = name.replaceAll("\uFFFD", "'");
 
 
-        return String.format("\nSong Name: %s\nSong Id: %s\nUri: %s\nDuration in MS: %s\nExplicit: %s\nTrack Number: %s\n",
-                name,id,uri,duration_ms,explicit,track_number);
+        return String.format("\nSong Name: %s\nSong Id: %s\nUri: %s\nDuration in MIN: %s\nExplicit: %s\nTrack Number: %s\n",
+                name,id,uri,millisecondToMinuteConverter.convertToMin(duration_ms),explicit,track_number);
     }
 }
