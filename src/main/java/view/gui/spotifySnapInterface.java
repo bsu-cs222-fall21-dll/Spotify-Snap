@@ -21,6 +21,7 @@ import view.gui.requests.SetGUIButtonAction;
 import view.gui.styling.GUIText;
 import view.gui.styling.SetGUIBackgroundColor;
 import view.gui.styling.SetSpotifyLogo;
+import view.gui.styling.TextAreaStyling;
 
 public class spotifySnapInterface extends Application {
     @Override
@@ -30,6 +31,7 @@ public class spotifySnapInterface extends Application {
         SetGUIButtonAction setGUIButtonAction = new SetGUIButtonAction();
         GUIText guiText = new GUIText();
         SetGUIBackgroundColor setGUIBackgroundColor = new SetGUIBackgroundColor();
+        TextAreaStyling textAreaStyling = new TextAreaStyling();
 
         Text titleText = new Text("Spotify-Snap");
         Text artistSearchBoxDescriptionText = new Text("Enter Artist: ");
@@ -39,10 +41,7 @@ public class spotifySnapInterface extends Application {
         TextField albumIndexInputField = new TextField();
 
         TextArea outputField = new TextArea();
-        outputField.setPrefSize(180,200);
-        outputField.setStyle("-fx-control-inner-background:#000000; -fx-text-fill: #3cb371; ");
-
-
+        textAreaStyling.modifyTextAreaStyling(outputField);
 
         Button artistButton = new Button("Search Artist");
         artistButton.setBackground(setGUIBackgroundColor.modifyBackgroundGreen());
