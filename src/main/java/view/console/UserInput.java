@@ -16,7 +16,9 @@ public class UserInput {
 
     public String getAlbum(){
         System.out.println("Enter the index of the album you would like the songs of: ");
-        return cmdInput.inputStringViaCommandLine();
+        String inputString = cmdInput.inputStringViaCommandLine();
+        inputString = cmdInput.checkForMissingInput(inputString);
+        return inputString;
     }
 
 }

@@ -19,8 +19,6 @@ public class CMDArtistErrorHandler extends Parser implements ArtistErrorHandler 
         } else {
             return new Artist(this.infoArray);
         }
-
     }
-
 
 }

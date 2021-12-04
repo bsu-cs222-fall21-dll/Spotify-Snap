@@ -7,7 +7,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.*;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.parser.formatter.ArtistFormatter;
@@ -21,7 +22,7 @@ import view.gui.styling.SetSpotifyLogo;
 
 public class spotifySnapInterface extends Application {
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage)  {
         VBox parent = new VBox();
         SetSpotifyLogo setSpotifyLogo = new SetSpotifyLogo();
         SetGUIButtonAction setGUIButtonAction = new SetGUIButtonAction();
@@ -47,15 +48,18 @@ public class spotifySnapInterface extends Application {
         artistButton.setOnAction(event -> {
             ModelController modelController = new ModelController();
             Artist resultArtist = setGUIButtonAction.getArtist(artistInputField.getText());
-            ArtistFormatter artistFormatter = new ArtistFormatter(resultArtist);
+            if(resultArtist!=null){
+                ArtistFormatter artistFormatter = new ArtistFormatter(resultArtist);
 
-            AlbumHashTable albumHashTable = modelController.searchForAlbums(resultArtist);
-            outputField.setText(artistFormatter.format() + "\n" + albumHashTable.formatTable());
+                AlbumHashTable albumHashTable = modelController.searchForAlbums(resultArtist);
+                outputField.setText(artistFormatter.format() + "\n" + albumHashTable.formatTable());
 
-            albumButton.setOnAction(event1 -> {
-                SongHashTable songHashTable = modelController.createSongHashTable(albumHashTable, albumIndexInputField.getText());
-                outputField.setText(songHashTable.formatTable());
-            });
+                albumButton.setOnAction(event1 -> {
+                    SongHashTable songHashTable = modelController.createSongHashTable(albumHashTable, albumIndexInputField.getText());
+                    outputField.setText(songHashTable.formatTable());
+                });
+            }
+
         });
 
         HBox artistInputHBox = new HBox(8);

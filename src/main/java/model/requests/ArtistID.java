@@ -5,8 +5,6 @@ import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.specification.RequestSpecification;
 import net.minidev.json.JSONArray;
-import view.console.MissingArtist;
-import view.console.UserInput;
 
 public class ArtistID extends AuthorizeCredentials {
 
@@ -24,7 +22,6 @@ public class ArtistID extends AuthorizeCredentials {
          * @return: Top 20 artist information in Json format from Spotify Web Api
          */
 
-        MissingArtist missingArtist = new MissingArtist();
         RestAssured.baseURI = "https://api.spotify.com/v1";
 
         RequestSpecification http = RestAssured.given();
@@ -35,8 +32,6 @@ public class ArtistID extends AuthorizeCredentials {
 
                 .request(Method.GET, "/search").asString();
 
-        JSONArray artistSearchRequest = JsonPath.read(response,"$..items");
-        missingArtist.checkForMissingArtist(artistSearchRequest);
-        return artistSearchRequest;
+        return JsonPath.read(response,"$..items");
     }
 }

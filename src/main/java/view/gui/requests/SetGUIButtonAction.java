@@ -1,10 +1,10 @@
 package view.gui.requests;
 
 import javafx.scene.control.Alert;
-import view.console.CMDArtistErrorHandler;
 import model.requests.ArtistID;
 import model.type.Artist;
 import net.minidev.json.JSONArray;
+import view.gui.errorHandling.GUIArtistErrorHandler;
 
 import java.util.Objects;
 
@@ -18,8 +18,8 @@ public class SetGUIButtonAction {
             inputAlert.showAndWait();
         }
         JSONArray artistSearchResultJsonArray = artistID.getArtistID(artist);
-        CMDArtistErrorHandler CMDArtistErrorHandler = new CMDArtistErrorHandler(artistSearchResultJsonArray);
+        GUIArtistErrorHandler guiArtistErrorHandler = new GUIArtistErrorHandler(artistSearchResultJsonArray);
 
-        return CMDArtistErrorHandler.checkIfArtistIsvalid();
+        return guiArtistErrorHandler.checkIfArtistIsvalid();
     }
 }

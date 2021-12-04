@@ -1,6 +1,5 @@
 package model.type;
 
-import java.text.DecimalFormat;
 
 public class MillisecondToMinuteConverter {
 
