@@ -10,14 +10,11 @@ public class SetGUIBackgroundColor {
 
     public Background modifyBackgroundBlack() {
         BackgroundFill backgroundFill = new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY);
-        Background background = new Background(backgroundFill);
-        return background;
+        return new Background(backgroundFill);
     }
 
     public Background modifyBackgroundGreen() {
         BackgroundFill backgroundFill = new BackgroundFill(Color.MEDIUMSEAGREEN, CornerRadii.EMPTY, Insets.EMPTY);
-        Background background = new Background(backgroundFill);
-        return background;
+        return new Background(backgroundFill);
     }
-
 }
