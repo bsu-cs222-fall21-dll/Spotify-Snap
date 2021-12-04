@@ -9,6 +9,7 @@ import model.requests.ArtistID;
 import model.requests.SongsRequester;
 import model.type.Artist;
 import net.minidev.json.JSONArray;
+import view.console.UserInput;
 
 
 public class CMDController {
@@ -29,7 +30,8 @@ public class CMDController {
     private Artist searchForArtist(){
 
         ArtistID artistID = new ArtistID();
-        JSONArray artistSearchResultJsonArray = artistID.getArtistID();
+        UserInput input = new UserInput();
+        JSONArray artistSearchResultJsonArray = artistID.getArtistID(input.getArtist());
         return new Artist(artistSearchResultJsonArray);
     }
 

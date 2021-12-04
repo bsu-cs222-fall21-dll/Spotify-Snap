@@ -12,7 +12,7 @@ public class ArtistID extends AuthorizeCredentials {
 
     private final String accessToken = getAccessToken();
 
-    public JSONArray getArtistID() {
+    public JSONArray getArtistID(String artist) {
         /*
          This method sends a GET request to the /search endpoint that match a keyword string.
 
@@ -24,14 +24,13 @@ public class ArtistID extends AuthorizeCredentials {
          * @return: Top 20 artist information in Json format from Spotify Web Api
          */
 
-        UserInput input = new UserInput();
         MissingArtist missingArtist = new MissingArtist();
         RestAssured.baseURI = "https://api.spotify.com/v1";
 
         RequestSpecification http = RestAssured.given();
         String response =  http.given()
                 .header("Authorization", String.format("Bearer %s" , accessToken)).given()
-                .param("q",input.getArtist())
+                .param("q",artist)
                 .param("type", "artist")
 
                 .request(Method.GET, "/search").asString();
