@@ -7,6 +7,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -38,6 +40,9 @@ public class spotifySnapInterface extends Application {
 
         TextArea outputField = new TextArea();
         outputField.setPrefSize(180,200);
+        outputField.setStyle("-fx-control-inner-background:#000000; -fx-text-fill: #3cb371; ");
+
+
 
         Button artistButton = new Button("Search Artist");
         artistButton.setBackground(setGUIBackgroundColor.modifyBackgroundGreen());
