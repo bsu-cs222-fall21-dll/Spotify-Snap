@@ -11,7 +11,6 @@ public class AlbumIndexCheckIfIntHandler {
             return checkIfValueInSizeOfHashMap(userInput);
 
         } catch (NumberFormatException exception){
-            System.out.println("Not a valid selection, returning default album");
             return "1";
         }
     }
@@ -21,7 +20,6 @@ public class AlbumIndexCheckIfIntHandler {
         if(albumHashTableToBeSelectedFrom.size()-1>=albumIndexAsInt){
             return albumIndex;
         } else {
-            System.out.println("Not a valid selection, returning default album");
             return "1";
         }
     }
