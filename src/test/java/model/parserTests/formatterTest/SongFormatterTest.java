@@ -24,14 +24,14 @@ public class SongFormatterTest {
         String formattedArtist = songFormatter.format();
 
         String expected = """
-
-                Song Name: Champagne Poetry
-                Song Id: 2HSmyk2qMN8WQjuGhaQgCk
-                Uri: spotify:track:2HSmyk2qMN8WQjuGhaQgCk
-                Duration in MS: 336511
-                Explicit: true
-                Track Number: 1
-                """;
+                    
+                    Song Name: Champagne Poetry
+                    Song Id: 2HSmyk2qMN8WQjuGhaQgCk
+                    Uri: spotify:track:2HSmyk2qMN8WQjuGhaQgCk
+                    Duration in MIN: 5.6
+                    Explicit: true
+                    Track Number: 1
+                    """;
         Assertions.assertEquals(expected,formattedArtist);
     }
 }
