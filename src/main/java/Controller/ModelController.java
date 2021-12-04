@@ -4,7 +4,7 @@ import model.parser.hashtable.AlbumHashTable;
 import model.parser.hashtable.AlbumHashTableBuilder;
 import model.parser.hashtable.SongHashTable;
 import model.requests.ArtistAlbums;
-import model.requests.ArtistErrorHandler;
+import view.console.CMDArtistErrorHandler;
 import model.requests.ArtistID;
 import model.requests.SongsRequester;
 import model.type.Artist;
@@ -18,8 +18,8 @@ public class ModelController {
         ArtistID artistID = new ArtistID();
         UserInput userInput = new UserInput();
         JSONArray artistSearchResultJsonArray = artistID.getArtistID(userInput.getArtist());
-        ArtistErrorHandler artistErrorHandler = new ArtistErrorHandler(artistSearchResultJsonArray);
-        return artistErrorHandler.checkIfArtistIsvalid();
+        CMDArtistErrorHandler CMDArtistErrorHandler = new CMDArtistErrorHandler(artistSearchResultJsonArray);
+        return CMDArtistErrorHandler.checkIfArtistIsvalid();
     }
 
 

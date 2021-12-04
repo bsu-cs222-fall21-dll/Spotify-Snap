@@ -1,12 +1,13 @@
-package model.requests;
+package view.console;
 
 import Controller.ModelController;
 import model.parser.Parser;
 import model.type.Artist;
 import net.minidev.json.JSONArray;
+import view.ArtistErrorHandler;
 
-public class ArtistErrorHandler extends Parser {
-    public ArtistErrorHandler(JSONArray infoArray) {
+public class CMDArtistErrorHandler extends Parser implements ArtistErrorHandler {
+    public CMDArtistErrorHandler(JSONArray infoArray) {
         super(infoArray);
 
     }
