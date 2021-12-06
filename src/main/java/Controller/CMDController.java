@@ -15,7 +15,8 @@ import view.console.UserInput;
 public class CMDController {
 
     public void run() {
-        Artist resultArtist = searchForArtist();
+        UserInput input = new UserInput();
+        Artist resultArtist = searchForArtist(input.getArtist());
         ArtistFormatter artistFormatter = new ArtistFormatter(resultArtist);
         System.out.println(artistFormatter.format());
 
@@ -27,11 +28,10 @@ public class CMDController {
 
     }
 
-    private Artist searchForArtist(){
+    private Artist searchForArtist(String input){
 
         ArtistID artistID = new ArtistID();
-        UserInput input = new UserInput();
-        JSONArray artistSearchResultJsonArray = artistID.getArtistID(input.getArtist());
+        JSONArray artistSearchResultJsonArray = artistID.getArtistID(input);
         return new Artist(artistSearchResultJsonArray);
     }
 

@@ -1,65 +1,80 @@
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
+import model.parser.formatter.ArtistFormatter;
 import model.parser.hashtable.AlbumHashTable;
 import model.parser.hashtable.AlbumHashTableBuilder;
+import model.parser.hashtable.SongHashTable;
 import model.requests.ArtistAlbums;
 import model.requests.ArtistID;
+import model.requests.SongsRequester;
 import model.type.Artist;
 import net.minidev.json.JSONArray;
 
-import java.io.IOException;
-import java.util.Objects;
 
 public class SceneOneController {
 
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
+    public TextArea albumsField;
+    public TextArea tracksField;
+    public TextArea profileField;
+    public TextField indexField;
+    public Button index;
 
-    @FXML
     public Label spotifySnapLabel;
-    @FXML
     public Button searchButton;
-    @FXML
-    public TextField userInputField;
-    @FXML
     public ImageView spotifyImage;
+    public TextField searchField;
 
 
-    public void searchButtonHandler(ActionEvent event) throws IOException {
-        if (userInputField.getText().isEmpty()) {
+    public void searchButtonHandler(ActionEvent event) {
+        String userInput = searchField.getText();
+
+        if (userInput.isEmpty()) {
             validateFieldIsEmpty();
         } else {
-
-            switchScene(event);
+            displayInformation(userInput);
         }
 
     }
 
-    public void switchScene(ActionEvent event) throws IOException {
+    public void displayInformation(String artist) {
+        Artist result = searchForArtist(artist);
+        ArtistFormatter artistFormatter = new ArtistFormatter(result);
+        profileField.setText(artistFormatter.format());
 
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("SecondaryScene.fxml")));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        AlbumHashTable albumHashTable = searchForAlbums(result);
+        albumsField.setText(albumHashTable.formatTable());
+
+        SongsRequester songsRequester = new SongsRequester();
+        SongHashTable songHashTable = songsRequester.requestSongs(albumHashTable);
+        tracksField.setText(songHashTable.formatTable());
+
     }
+
+    public Artist searchForArtist(String userInput) {
+
+        ArtistID artistID = new ArtistID();
+        JSONArray array = artistID.getArtistID(userInput);
+        return new Artist(array);
+    }
+
+    public AlbumHashTable searchForAlbums(Artist result) {
+        AlbumHashTable albumHashTable = new AlbumHashTable();
+        ArtistAlbums albums = new ArtistAlbums();
+        AlbumHashTableBuilder hashTableBuilder = new AlbumHashTableBuilder(albums.getArtistAlbums(result));
+
+        hashTableBuilder.buildHashTable(albumHashTable);
+        albumHashTable.sortHashMapIntoArrayList();
+        return albumHashTable;
+    }
+
 
     public void validateFieldIsEmpty(){
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Warning");
-        alert.setHeaderText("Empty Field");
-        alert.setContentText("Enter search");
-        alert.showAndWait();
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Warning");
+            alert.setHeaderText("Empty Field");
+            alert.show();
+
     }
+
 }
