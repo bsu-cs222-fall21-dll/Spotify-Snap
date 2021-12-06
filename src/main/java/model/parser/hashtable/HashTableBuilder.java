@@ -1,12 +1,9 @@
 package model.parser.hashtable;
 
 import model.parser.Parser;
-import model.type.Album;
 import model.type.Artist;
 import model.type.SnapObject;
 import net.minidev.json.JSONArray;
-
-import java.lang.reflect.Type;
 
 public abstract class HashTableBuilder extends Parser {
 

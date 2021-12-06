@@ -46,7 +46,7 @@ public class SceneOneController {
         albumsField.setText(albumHashTable.formatTable());
 
         SongsRequester songsRequester = new SongsRequester();
-        SongHashTable songHashTable = songsRequester.requestSongs(albumHashTable);
+        SongHashTable songHashTable = songsRequester.requestSongs(albumHashTable, indexField.getText());
         tracksField.setText(songHashTable.formatTable());
 
     }

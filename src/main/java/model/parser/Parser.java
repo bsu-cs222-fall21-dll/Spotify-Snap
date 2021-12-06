@@ -6,7 +6,7 @@ import view.console.ParsingErrorHandler;
 
 public abstract class Parser {
 
-    private final JSONArray infoArray;
+    protected final JSONArray infoArray;
 
     public Parser(JSONArray infoArray) {
         this.infoArray = infoArray;
@@ -38,7 +38,7 @@ public abstract class Parser {
         return itemArray.get(index).toString();
     }
 
-    private void sendErrorMessageToConsole(){
+    private void readErrorMessage(){
         ParsingErrorHandler parsingErrorHandler = new ParsingErrorHandler();
         parsingErrorHandler.printError();
     }
@@ -47,8 +47,8 @@ public abstract class Parser {
         try {
             return parseFromJson(valueToBeRead,index);
         } catch (IndexOutOfBoundsException e){
-            sendErrorMessageToConsole();
-            return "Artist Not Found";
+            readErrorMessage();
+            return "Info Not Found";
         }
     }
 

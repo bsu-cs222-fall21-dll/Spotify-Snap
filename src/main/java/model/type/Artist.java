@@ -12,12 +12,6 @@ public class Artist extends Parser implements SnapObject {
     private final String followerCount;
 
     public Artist(JSONArray inputArray) {
-        /*
-          Constructs Artist object using info from JSONArray obtained via Spotify.
-          The construction is handled via the Parser super class.
-
-          @param inputArray the JsonArray used to assign values
-         */
         super(inputArray);
         this.name = parseInfo("name");
         this.id = parseInfo("id");
@@ -28,10 +22,6 @@ public class Artist extends Parser implements SnapObject {
     }
 
     public JSONArray readInfoAsJsonArray() {
-        /*
-          Builds a Json array with the info from the variable in the class
-          @return JsonArray the Artist's stored information as a JsonArray
-         */
         String artistArrayAsString = String.format("{\"artist\": [{\"name\": \"%s\", \"id\": \"%s\",\"uri\": " + "\"%s\",\"url\": \"%s\" ,\"total\": \"%s\"}]}",name,id,uri,externalURL,followerCount);
         return JsonPath.read(artistArrayAsString,"$.*");
     }

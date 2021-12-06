@@ -17,7 +17,6 @@ public class SongsHashTableTest {
     public void compareSongObjectsTypeTest() throws IOException {
         InputStream inputStream = Thread.currentThread().getContextClassLoader()
                 .getResourceAsStream("songs.json");
-        System.out.println("debug");
         JSONArray inputArray = JsonPath.read(inputStream,"$..items");
 
         Song song = new Song(inputArray,0);

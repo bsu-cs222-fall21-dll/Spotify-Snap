@@ -23,7 +23,7 @@ public class CMDController {
         AlbumHashTable albumHashTable = searchForAlbums(resultArtist);
         System.out.println(albumHashTable.formatTable());
         SongsRequester songsRequester = new SongsRequester();
-        SongHashTable songHashTable = songsRequester.requestSongs(albumHashTable);
+        SongHashTable songHashTable = songsRequester.requestSongs(albumHashTable,input.getAlbum());
         System.out.println(songHashTable.formatTable());
 
     }

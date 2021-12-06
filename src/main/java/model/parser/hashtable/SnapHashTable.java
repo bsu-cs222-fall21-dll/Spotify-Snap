@@ -37,10 +37,6 @@ public abstract class SnapHashTable {
     }
 
     public void sortHashMapIntoArrayList(){
-        /*
-          Loops over the elements in the HashMap and assigns them an index value into an array.
-          The index value is associated with a value stored in the Object
-         */
         int sizeOfArrayList = snapHashMap.size();
         String[] sortedAlbumArray = new String[sizeOfArrayList];
         snapHashMap.forEach((snapIndex, snapObject) -> {
