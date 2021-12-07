@@ -54,21 +54,23 @@ public class spotifySnapInterface extends Application {
             ModelController modelController = new ModelController();
             CheckNetworkConnection checkNetworkConnection = new CheckNetworkConnection();
 
-            checkNetworkConnection.NetworkError();
+            try {
+                Artist resultArtist = setGUIButtonAction.getArtist(artistInputField.getText());
+                if (resultArtist != null) {
+                    ArtistFormatter artistFormatter = new ArtistFormatter(resultArtist);
 
-            Artist resultArtist = setGUIButtonAction.getArtist(artistInputField.getText());
-            if(resultArtist!=null){
-                ArtistFormatter artistFormatter = new ArtistFormatter(resultArtist);
+                    AlbumHashTable albumHashTable = modelController.searchForAlbums(resultArtist);
+                    outputField.setText(artistFormatter.format() + "\n" + albumHashTable.formatTable());
 
-                AlbumHashTable albumHashTable = modelController.searchForAlbums(resultArtist);
-                outputField.setText(artistFormatter.format() + "\n" + albumHashTable.formatTable());
-
-                albumButton.setOnAction(event1 -> {
-                    SongHashTable songHashTable = modelController.createSongHashTable(albumHashTable, albumIndexInputField.getText());
-                    outputField.setText(songHashTable.formatTable());
-                });
-            } else {
-                missingArtist.artistNotFoundError();
+                    albumButton.setOnAction(event1 -> {
+                        SongHashTable songHashTable = modelController.createSongHashTable(albumHashTable, albumIndexInputField.getText());
+                        outputField.setText(songHashTable.formatTable());
+                    });
+                } else {
+                    missingArtist.artistNotFoundError();
+                }
+            } catch (Exception e) {
+                checkNetworkConnection.NetworkError();
             }
 
         });

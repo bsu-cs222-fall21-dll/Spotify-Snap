@@ -29,7 +29,6 @@ public abstract class AuthorizeCredentials {
                     .request(Method.POST, "api/token").asString();
         } catch (Exception e) {
             System.err.println("Error Code 3: No Network Connection");
-            System.exit(3);
         }
         return null;
     }

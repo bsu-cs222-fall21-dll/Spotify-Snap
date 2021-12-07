@@ -8,6 +8,5 @@ public class CheckNetworkConnection {
         alert.setHeaderText("Error Code 3");
         alert.setContentText("Missing Network Connection: Error Code 3");
         alert.showAndWait();
-        System.exit(3);
     }
 }
