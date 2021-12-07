@@ -6,7 +6,6 @@ import io.restassured.specification.RequestSpecification;
 import model.type.AccessToken;
 
 public abstract class AuthorizeCredentials {
-    //TODO Network Error Handler
 
     private String authorizeCredentials() {
         /*
@@ -21,12 +20,18 @@ public abstract class AuthorizeCredentials {
          */
         RestAssured.baseURI = "https://accounts.spotify.com/";
 
-        RequestSpecification http = RestAssured.given();
-        return http.given()
-                .header("Authorization", String.format("Basic %s", clientCredentials())).given()
-                .header("Content-Type", "application/x-www-form-urlencoded").given()
-                .param("grant_type", "client_credentials")
-                .request(Method.POST, "api/token").asString();
+        try {
+            RequestSpecification http = RestAssured.given();
+            return http.given()
+                    .header("Authorization", String.format("Basic %s", clientCredentials())).given()
+                    .header("Content-Type", "application/x-www-form-urlencoded").given()
+                    .param("grant_type", "client_credentials")
+                    .request(Method.POST, "api/token").asString();
+        } catch (Exception e) {
+            System.err.println("Error Code 3: No Network Connection");
+            System.exit(3);
+        }
+        return null;
     }
 
     public String getAccessToken() {

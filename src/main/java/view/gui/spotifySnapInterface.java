@@ -7,8 +7,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -17,6 +15,8 @@ import model.parser.formatter.ArtistFormatter;
 import model.parser.hashtable.AlbumHashTable;
 import model.parser.hashtable.SongHashTable;
 import model.type.Artist;
+import view.gui.errorHandling.CheckNetworkConnection;
+import view.gui.errorHandling.MissingArtist;
 import view.gui.requests.SetGUIButtonAction;
 import view.gui.styling.GUIText;
 import view.gui.styling.SetGUIBackgroundColor;
@@ -32,6 +32,7 @@ public class spotifySnapInterface extends Application {
         GUIText guiText = new GUIText();
         SetGUIBackgroundColor setGUIBackgroundColor = new SetGUIBackgroundColor();
         TextAreaStyling textAreaStyling = new TextAreaStyling();
+        MissingArtist missingArtist = new MissingArtist();
 
         Text titleText = new Text("Spotify-Snap");
         Text artistSearchBoxDescriptionText = new Text("Enter Artist: ");
@@ -51,6 +52,10 @@ public class spotifySnapInterface extends Application {
 
         artistButton.setOnAction(event -> {
             ModelController modelController = new ModelController();
+            CheckNetworkConnection checkNetworkConnection = new CheckNetworkConnection();
+
+            checkNetworkConnection.NetworkError();
+
             Artist resultArtist = setGUIButtonAction.getArtist(artistInputField.getText());
             if(resultArtist!=null){
                 ArtistFormatter artistFormatter = new ArtistFormatter(resultArtist);
@@ -62,6 +67,8 @@ public class spotifySnapInterface extends Application {
                     SongHashTable songHashTable = modelController.createSongHashTable(albumHashTable, albumIndexInputField.getText());
                     outputField.setText(songHashTable.formatTable());
                 });
+            } else {
+                missingArtist.artistNotFoundError();
             }
 
         });
@@ -72,9 +79,9 @@ public class spotifySnapInterface extends Application {
                 artistInputField,
                 artistButton);
 
-        HBox albumIndexInputHbox = new HBox(8);
-        albumIndexInputHbox.setAlignment(Pos.TOP_CENTER);
-        albumIndexInputHbox.getChildren().addAll(guiText.modifyText(albumSearchBoxDescriptionText, 15),
+        HBox albumIndexInputHBox = new HBox(8);
+        albumIndexInputHBox.setAlignment(Pos.TOP_CENTER);
+        albumIndexInputHBox.getChildren().addAll(guiText.modifyText(albumSearchBoxDescriptionText, 15),
                 albumIndexInputField,
                 albumButton);
 
@@ -85,7 +92,7 @@ public class spotifySnapInterface extends Application {
                 setSpotifyLogo.getLogo(),
                 guiText.modifyText(titleText,25),
                 artistInputHBox,
-                albumIndexInputHbox,
+                albumIndexInputHBox,
                 outputField);
 
         Scene scene = new Scene(parent, 600, 500);
