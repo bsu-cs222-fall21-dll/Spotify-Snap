@@ -6,7 +6,7 @@ import net.minidev.json.JSONArray;
 
 public class Album extends Parser implements SnapObject {
 
-    private final String name;
+    private String name;
     private final String id;
     private final String uri;
     private final String date;
@@ -23,9 +23,11 @@ public class Album extends Parser implements SnapObject {
         this.date = parseInfo("release_date", index);
         this.totalTracks = parseInfo("total_tracks", index);
 
+
     }
 
     public JSONArray readInfoAsJsonArray() {
+        name = name.replaceAll("\""," ");
         String artistArrayAsString = String.format("{\"album\": [{\"name\": \"%s\", \"id\": \"%s\",\"uri\": "
                 + "\"%s\",\"date\": \"%s\" ,\"total_tracks\": \"%s\",\"index\": \"%d\"}]}",name,id,uri,date,totalTracks,index);
         return JsonPath.read(artistArrayAsString,"$.*");
