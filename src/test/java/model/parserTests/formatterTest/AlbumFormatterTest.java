@@ -30,7 +30,8 @@ public class AlbumFormatterTest {
                 Album Id: 3SpBlxme9WbeQdI9kx7KAV
                 Uri: spotify:album:3SpBlxme9WbeQdI9kx7KAV
                 Release Date: 2021-09-03
-                Total Tracks: 21""";
+                Total Tracks: 21
+                """;
         Assertions.assertEquals(expected,formattedArtist);
     }
 

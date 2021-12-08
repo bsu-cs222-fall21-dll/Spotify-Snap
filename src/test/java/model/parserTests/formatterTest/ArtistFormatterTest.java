@@ -22,7 +22,7 @@ public class ArtistFormatterTest {
         ArtistFormatter artistFormatter = new ArtistFormatter(artist);
         String formattedArtist = artistFormatter.format();
 
-        String expected = "\nArtist Name: Drake\nArtist Id: 3TVXtAsR1Inumwj472S9r4\nExternal URL: https://open.spotify.com/artist/3TVXtAsR1Inumwj472S9r4\nUri: spotify:artist:3TVXtAsR1Inumwj472S9r4\nFollower Count: 58055243";
+        String expected = "\nArtist Name: Drake\nArtist Id: 3TVXtAsR1Inumwj472S9r4\nExternal URL: https://open.spotify.com/artist/3TVXtAsR1Inumwj472S9r4\nUri: spotify:artist:3TVXtAsR1Inumwj472S9r4\nFollower Count: 58055243\n";
         Assertions.assertEquals(expected,formattedArtist);
     }
 }

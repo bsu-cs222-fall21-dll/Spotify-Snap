@@ -13,7 +13,8 @@ import view.console.UserInput;
 
 public class ModelController {
 
-    public Artist searchForArtist(){
+
+    public Artist searchForArtistInCMD(){
 
         ArtistID artistID = new ArtistID();
         UserInput userInput = new UserInput();

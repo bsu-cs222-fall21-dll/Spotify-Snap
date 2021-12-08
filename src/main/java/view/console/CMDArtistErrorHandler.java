@@ -12,10 +12,12 @@ public class CMDArtistErrorHandler extends Parser implements ArtistErrorHandler 
 
     }
 
+
     public Artist checkIfArtistIsvalid(){
         if (calculateArraySize("*")<2){
             ModelController modelController = new ModelController();
-            return modelController.searchForArtist();
+            System.err.println("Artist Not found");
+            return modelController.searchForArtistInCMD();
         } else {
             return new Artist(this.infoArray);
         }

@@ -14,7 +14,7 @@ public class CMDController {
         ModelController modelController = new ModelController();
         ConnectionError connectionError = new ConnectionError();
         try {
-            Artist resultArtist = modelController.searchForArtist();
+            Artist resultArtist = modelController.searchForArtistInCMD();
             ArtistFormatter artistFormatter = new ArtistFormatter(resultArtist);
             System.out.println(artistFormatter.format());
 
