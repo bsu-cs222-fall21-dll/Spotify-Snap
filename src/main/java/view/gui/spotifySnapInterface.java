@@ -42,6 +42,7 @@ public class spotifySnapInterface extends Application {
         TextField albumIndexInputField = new TextField();
 
         TextArea outputField = new TextArea();
+        outputField.setEditable(false);
         textAreaStyling.modifyTextAreaStyling(outputField);
 
         Button artistButton = new Button("Search Artist");
