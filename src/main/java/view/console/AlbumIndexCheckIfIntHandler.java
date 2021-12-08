@@ -17,9 +17,9 @@ public class AlbumIndexCheckIfIntHandler {
 
     private String checkIfValueInSizeOfHashMap(String albumIndex){
         int albumIndexAsInt = Integer.parseInt(albumIndex);
-        if(albumHashTableToBeSelectedFrom.size()-1>=albumIndexAsInt){
+        if(albumHashTableToBeSelectedFrom.size()-1>=albumIndexAsInt && albumIndexAsInt > 0 ){
             return albumIndex;
-        } else {
+        }  else {
             return "1";
         }
     }
