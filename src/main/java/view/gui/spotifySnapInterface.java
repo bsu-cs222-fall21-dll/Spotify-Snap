@@ -35,7 +35,7 @@ public class spotifySnapInterface extends Application {
         MissingArtist missingArtist = new MissingArtist();
 
         Text titleText = new Text("Spotify-Snap");
-        Text artistSearchBoxDescriptionText = new Text("Enter Artist: ");
+        Text artistSearchBoxDescriptionText = new Text("Enter Artist Name: ");
         Text albumSearchBoxDescriptionText = new Text("Enter Album Index: ");
 
         TextField artistInputField = new TextField();
