@@ -18,7 +18,7 @@ public class ArtistFormatter extends Parser implements Formatter {
         String url = parseInfo("url");
         String total = parseInfo("total");
 
-        return String.format("\nArtist Name: %s\nArtist Id: %s\nExternal URL: %s\nUri: %s\nFollower Count: %s",
+        return String.format("\nArtist Name: %s\nArtist Id: %s\nExternal URL: %s\nUri: %s\nFollower Count: %s\n",
                 name,id,url,uri,total);
     }
 }

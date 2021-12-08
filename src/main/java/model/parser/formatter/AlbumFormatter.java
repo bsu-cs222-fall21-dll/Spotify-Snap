@@ -17,7 +17,7 @@ public class AlbumFormatter extends Parser implements Formatter{
         String date = parseInfo("date");
         String total = parseInfo("total_tracks");
 
-        return String.format("\nAlbum Name: %s\nAlbum Id: %s\nUri: %s\nRelease Date: %s\nTotal Tracks: %s",
+        return String.format("\nAlbum Name: %s\nAlbum Id: %s\nUri: %s\nRelease Date: %s\nTotal Tracks: %s\n",
                 name,id,uri,date,total);
     }
 
