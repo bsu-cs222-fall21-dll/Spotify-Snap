@@ -16,7 +16,7 @@ Gerardo Garcia
 
 ## Main Entrypoints
 * Main.java: Run to use application with the command line.
-* Two Options for GUI. Open the program with intellij and the build.gradle file can be used to select which desired GUI
+* Run GUI be selecting Gradle on the right-hand side, then under application select run
 
 
 ## Technologies
@@ -36,9 +36,8 @@ Project is created with:
 
 ## Setup
 To run this project, clone this repository, and download the dependencies and plugins listed in build.gradle. To select a GUI version use do one of the following
-* Paste the following line into the program's build.gradle file to run one version of the gui
+* Paste the following line into the program's build.gradle file to run the GUI
 * mainClassName = 'view.gui.spotifySnapInterface'
-* Or replace 'view.gui.spotifySnapInterface' with 'GUI'
 
 ## Known Errors
 
