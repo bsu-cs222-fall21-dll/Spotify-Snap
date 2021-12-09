@@ -36,7 +36,7 @@ public class spotifySnapInterface extends Application {
 
         Text titleText = new Text("Spotify-Snap");
         Text artistSearchBoxDescriptionText = new Text("Enter Artist Name: ");
-        Text albumSearchBoxDescriptionText = new Text("Enter Album Index: ");
+        Text albumSearchBoxDescriptionText = new Text("Enter Album Index:");
 
         TextField artistInputField = new TextField();
         TextField albumIndexInputField = new TextField();
@@ -48,7 +48,7 @@ public class spotifySnapInterface extends Application {
         Button artistButton = new Button("Search Artist");
         artistButton.setBackground(setGUIBackgroundColor.modifyBackgroundGreen());
 
-        Button albumButton = new Button("Search Songs");
+        Button albumButton = new Button("Search Album");
         albumButton.setBackground(setGUIBackgroundColor.modifyBackgroundGreen());
 
         artistButton.setOnAction(event -> {
@@ -92,13 +92,13 @@ public class spotifySnapInterface extends Application {
         parent.setSpacing(8);
         parent.setBackground(setGUIBackgroundColor.modifyBackgroundBlack());
         parent.getChildren().addAll(
-                setSpotifyLogo.getLogo(),
                 guiText.modifyText(titleText,25),
+                setSpotifyLogo.getLogo(),
                 artistInputHBox,
                 albumIndexInputHBox,
                 outputField);
 
-        Scene scene = new Scene(parent, 600, 500);
+        Scene scene = new Scene(parent, 600, 550);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
