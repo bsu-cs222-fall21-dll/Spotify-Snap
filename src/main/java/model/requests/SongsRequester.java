@@ -8,6 +8,7 @@ import model.type.Album;
 import view.console.AlbumIndexCheckIfIntHandler;
 
 public class SongsRequester {
+
     public SongHashTable requestSongs(AlbumHashTable albumHashTableToBeSelectedFrom, String userInput){
 
         String id = getIdOfAlbum(albumHashTableToBeSelectedFrom, userInput);

@@ -9,7 +9,9 @@ import view.gui.errorHandling.GUIArtistErrorHandler;
 import java.util.Objects;
 
 public class SetGUIButtonAction {
+
     public Artist getArtist(String artist) {
+
         ArtistID artistID = new ArtistID();
         if (Objects.equals(artist, "")) {
             Alert inputAlert = new Alert(Alert.AlertType.ERROR);

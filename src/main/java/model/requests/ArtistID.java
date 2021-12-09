@@ -11,16 +11,6 @@ public class ArtistID extends AuthorizeCredentials {
     private final String accessToken = getAccessToken();
 
     public JSONArray getArtistID(String artist) {
-        /*
-         This method sends a GET request to the /search endpoint that match a keyword string.
-
-          The request must contain the following headers and parameters:
-                       @header: Authorization: Access Token
-         *              @param:  q: String
-         *              @param:  type: Album, artist, playlist, track, show and episode.
-         *
-         * @return: Top 20 artist information in Json format from Spotify Web Api
-         */
 
         RestAssured.baseURI = "https://api.spotify.com/v1";
 

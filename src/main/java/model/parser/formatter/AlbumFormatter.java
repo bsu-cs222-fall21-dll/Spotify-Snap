@@ -10,6 +10,7 @@ public class AlbumFormatter extends Parser implements Formatter{
     }
 
     public String format() {
+
         String name = parseInfo("name");
         String id = parseInfo("id");
         String uri = parseInfo("uri");

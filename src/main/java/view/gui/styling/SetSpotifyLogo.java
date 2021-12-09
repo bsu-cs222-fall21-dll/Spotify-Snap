@@ -5,10 +5,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 
+import java.util.Objects;
+
 public class SetSpotifyLogo {
     public HBox getLogo() {
 
-        Image image = new Image(Thread.currentThread().getContextClassLoader().getResourceAsStream("Spotify_Icon_Green.png"));
+        Image image = new Image(Objects.requireNonNull(Thread.currentThread().getContextClassLoader().getResourceAsStream("Spotify_Icon_Green.png")));
         ImageView imageView = new ImageView();
         imageView.setImage(image);
         imageView.setFitHeight(100);

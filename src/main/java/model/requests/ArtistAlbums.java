@@ -12,15 +12,7 @@ public class ArtistAlbums extends AuthorizeCredentials {
 private final String accessToken = getAccessToken();
 
     public JSONArray getArtistAlbums(Artist artist) {
-        /*
-          This method sends a GET request to the /albums/{id} endpoint.
 
-          The request must contain the following headers and parameters:
-                      @header: Authorization: Access Token
-         *             @param:  id : String
-         *
-         * @return: Spotify catalog information for a single album.
-         */
         JSONArray idArray = JsonPath.read(artist.readInfoAsJsonArray(), "$..id");
         String id = idArray.get(0).toString();
         RestAssured.baseURI = "https://api.spotify.com/v1";

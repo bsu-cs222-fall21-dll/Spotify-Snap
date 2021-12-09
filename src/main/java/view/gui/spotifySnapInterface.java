@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -33,7 +34,7 @@ public class spotifySnapInterface extends Application {
         SetGUIBackgroundColor setGUIBackgroundColor = new SetGUIBackgroundColor();
         TextAreaStyling textAreaStyling = new TextAreaStyling();
         MissingArtist missingArtist = new MissingArtist();
-
+        primaryStage.getIcons().add(new Image("Spotify_Icon_RGB_Black.png"));
         Text titleText = new Text("Spotify-Snap");
         Text artistSearchBoxDescriptionText = new Text("Enter Artist Name: ");
         Text albumSearchBoxDescriptionText = new Text("Enter Album Index:");
@@ -62,10 +63,13 @@ public class spotifySnapInterface extends Application {
 
                     AlbumHashTable albumHashTable = modelController.searchForAlbums(resultArtist);
                     outputField.setText(artistFormatter.format() + "\n" + albumHashTable.formatTable());
+                    outputField.setEditable(false);
+
 
                     albumButton.setOnAction(event1 -> {
                         SongHashTable songHashTable = modelController.createSongHashTable(albumHashTable, albumIndexInputField.getText());
                         outputField.setText(songHashTable.formatTable());
+                        outputField.setEditable(false);
                     });
                 } else {
                     missingArtist.artistNotFoundError();
